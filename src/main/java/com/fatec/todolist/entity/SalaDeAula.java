@@ -1,8 +1,12 @@
 package com.fatec.todolist.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "sala_de_aula")
 public class SalaDeAula {
 

@@ -1,6 +1,8 @@
 package com.fatec.todolist.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -9,6 +11,8 @@ enum tipoEntrega{
 }
 
 @Entity
+@Getter
+@Setter
 public class atividade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
