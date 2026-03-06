@@ -121,28 +121,29 @@ Apos adicionar, a documentacao interativa fica disponivel em: `http://localhost:
 
 ### 5.1 Endpoints publicos (aluno - sem autenticacao)
 
-| Metodo | Rota | Descricao |
-|---|---|---|
-| `POST` | `/api/salas/acessar` | Aluno envia `{ codigoConvite: "ABC123" }` e recebe dados da sala |
-| `GET` | `/api/salas/{salaId}/materias` | Lista todas as materias de uma sala |
-| `GET` | `/api/materias/{materiaId}/atividades` | Lista todas as atividades de uma materia |
-| `GET` | `/api/atividades/{atividadeId}` | Detalhes de uma atividade (link, regras, prazo) |
+| Metodo | Rota | Descricao | Status |
+|---|---|---|---|
+| `POST` | `/api/salas/acessar` | Aluno envia `{ codigoConvite: "ABC123" }` e recebe dados da sala | ✅ |
+| `GET` | `/api/salas` | Lista todas as salas | ✅ |
+| `GET` | `/api/salas/{salaId}/materias` | Lista todas as materias de uma sala | |
+| `GET` | `/api/materias/{materiaId}/atividades` | Lista todas as atividades de uma materia | |
+| `GET` | `/api/atividades/{atividadeId}` | Detalhes de uma atividade (link, regras, prazo) | |
 
 ### 5.2 Endpoints protegidos (lider - Spring Security)
 
 O lider envia a resposta secreta via header HTTP: `X-Lider-Secret: resposta123`. O Spring Security valida contra o `segredoLider` da sala.
 
-| Metodo | Rota | Descricao |
-|---|---|---|
-| `POST` | `/api/admin/salas` | Criar nova sala (gera codigo convite automatico) |
-| `PUT` | `/api/admin/salas/{salaId}` | Atualizar sala |
-| `DELETE` | `/api/admin/salas/{salaId}` | Remover sala |
-| `POST` | `/api/admin/salas/{salaId}/materias` | Adicionar materia na sala |
-| `PUT` | `/api/admin/materias/{materiaId}` | Atualizar materia |
-| `DELETE` | `/api/admin/materias/{materiaId}` | Remover materia |
-| `POST` | `/api/admin/materias/{materiaId}/atividades` | Adicionar atividade |
-| `PUT` | `/api/admin/atividades/{atividadeId}` | Atualizar atividade |
-| `DELETE` | `/api/admin/atividades/{atividadeId}` | Remover atividade |
+| Metodo | Rota | Descricao | Status |
+|---|---|---|---|
+| `POST` | `/api/admin/salas` | Criar nova sala (gera codigo convite automatico) | ✅ |
+| `PUT` | `/api/admin/salas/{salaId}` | Atualizar sala | |
+| `DELETE` | `/api/admin/salas/{salaId}` | Remover sala | |
+| `POST` | `/api/admin/salas/{salaId}/materias` | Adicionar materia na sala | |
+| `PUT` | `/api/admin/materias/{materiaId}` | Atualizar materia | |
+| `DELETE` | `/api/admin/materias/{materiaId}` | Remover materia | |
+| `POST` | `/api/admin/materias/{materiaId}/atividades` | Adicionar atividade | |
+| `PUT` | `/api/admin/atividades/{atividadeId}` | Atualizar atividade | |
+| `DELETE` | `/api/admin/atividades/{atividadeId}` | Remover atividade | |
 
 ### 5.3 Configuracao Spring Security
 
