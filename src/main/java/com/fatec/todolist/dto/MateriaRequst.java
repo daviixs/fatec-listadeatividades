@@ -7,4 +7,4 @@ public record MateriaRequst (
         @NotBlank String nome,
         @NotBlank String professor,
         @NotNull Long salaId
-        ) {}
+){}
