@@ -119,38 +119,57 @@ Apos adicionar, a documentacao interativa fica disponivel em: `http://localhost:
 
 ## 5. Endpoints da API
 
-### 5.1 Endpoints publicos (aluno - sem autenticacao)
+**Atualizacao:** 2026-03-10
 
-| Metodo | Rota | Descricao | Status |
-|---|---|---|---|
-| `POST` | `/api/salas/acessar` | Aluno envia `{ codigoConvite: "ABC123" }` e recebe dados da sala | ✅ |
-| `GET` | `/api/salas` | Lista todas as salas | ✅ |
-| `GET` | `/api/salas/{salaId}/materias` | Lista todas as materias de uma sala | |
-| `GET` | `/api/materias/{materiaId}/atividades` | Lista todas as atividades de uma materia | |
-| `GET` | `/api/atividades/{atividadeId}` | Detalhes de uma atividade (link, regras, prazo) | |
+### 5.1 Endpoints implementados no codigo (controllers atuais)
 
-### 5.2 Endpoints protegidos (lider - Spring Security)
+| Metodo | Rota | Origem |
+|---|---|---|
+| `GET` | `/api/salas` | `SalaDeAulaController` |
+| `POST` | `/api/salas` | `SalaDeAulaController` |
+| `POST` | `/api/salas/acessar` | `SalaDeAulaController` |
+| `GET` | `/api/materias` | `MateriaController` |
+| `GET` | `/api/materias/{id}` | `MateriaController` |
+| `GET` | `/api/materias/sala/{salaId}` | `MateriaController` |
+| `POST` | `/api/materias` | `MateriaController` |
+| `PUT` | `/api/materias/{id}` | `MateriaController` |
+| `DELETE` | `/api/materias/{id}` | `MateriaController` |
+| `GET` | `/api/atividades` | `AtividadeController` |
+| `GET` | `/api/atividades/{id}` | `AtividadeController` |
+| `GET` | `/api/atividades/expirando?horas={24|48|72}` | `AtividadeController` |
+| `POST` | `/api/atividades` | `AtividadeController` |
+| `PUT` | `/api/atividades/{id}` | `AtividadeController` |
+| `DELETE` | `/api/atividades/{id}` | `AtividadeController` |
+| `POST` | `/api/salas/{salaId}/alunos` | `AlunoController` |
+| `GET` | `/api/salas/{salaId}/alunos` | `AlunoController` |
+| `POST` | `/api/salas/{salaId}/entradas` | `EntradaSalaController` |
+| `GET` | `/api/salas/{salaId}/entradas` | `EntradaSalaController` |
+| `PATCH` | `/api/salas/{salaId}/entradas/{id}/aprovar` | `EntradaSalaController` |
+| `POST` | `/api/atividades/{atividadeId}/votacao` | `VotacaoController` |
+| `GET` | `/api/atividades/{atividadeId}/votacao` | `VotacaoController` |
+| `POST` | `/api/atividades/{atividadeId}/votacao/votos?alunoId={id}` | `VotacaoController` |
 
-O lider envia a resposta secreta via header HTTP: `X-Lider-Secret: resposta123`. O Spring Security valida contra o `segredoLider` da sala.
+### 5.2 Endpoints planejados no design original que ainda faltam (ou estao em rota diferente)
 
-| Metodo | Rota | Descricao | Status |
-|---|---|---|---|
-| `POST` | `/api/admin/salas` | Criar nova sala (gera codigo convite automatico) | ✅ |
-| `PUT` | `/api/admin/salas/{salaId}` | Atualizar sala | |
-| `DELETE` | `/api/admin/salas/{salaId}` | Remover sala | |
-| `POST` | `/api/admin/salas/{salaId}/materias` | Adicionar materia na sala | |
-| `PUT` | `/api/admin/materias/{materiaId}` | Atualizar materia | |
-| `DELETE` | `/api/admin/materias/{materiaId}` | Remover materia | |
-| `POST` | `/api/admin/materias/{materiaId}/atividades` | Adicionar atividade | |
-| `PUT` | `/api/admin/atividades/{atividadeId}` | Atualizar atividade | |
-| `DELETE` | `/api/admin/atividades/{atividadeId}` | Remover atividade | |
+| Metodo | Rota do plano (2026-03-04) | Situacao atual |
+|---|---|---|
+| `GET` | `/api/salas/{salaId}/materias` | ❌ Nao implementado nessa rota. Existe equivalente em `/api/materias/sala/{salaId}` |
+| `GET` | `/api/materias/{materiaId}/atividades` | ❌ Ainda nao implementado |
+| `POST` | `/api/admin/salas` | ❌ Nao implementado nessa rota. Hoje existe `POST /api/salas` (sem prefixo `/api/admin`) |
+| `PUT` | `/api/admin/salas/{salaId}` | ❌ Ainda nao implementado |
+| `DELETE` | `/api/admin/salas/{salaId}` | ❌ Ainda nao implementado |
+| `POST` | `/api/admin/salas/{salaId}/materias` | ❌ Nao implementado nessa rota. Hoje existe `POST /api/materias` |
+| `PUT` | `/api/admin/materias/{materiaId}` | ❌ Nao implementado nessa rota. Hoje existe `PUT /api/materias/{id}` |
+| `DELETE` | `/api/admin/materias/{materiaId}` | ❌ Nao implementado nessa rota. Hoje existe `DELETE /api/materias/{id}` |
+| `POST` | `/api/admin/materias/{materiaId}/atividades` | ❌ Nao implementado nessa rota. Hoje existe `POST /api/atividades` |
+| `PUT` | `/api/admin/atividades/{atividadeId}` | ❌ Nao implementado nessa rota. Hoje existe `PUT /api/atividades/{id}` |
+| `DELETE` | `/api/admin/atividades/{atividadeId}` | ❌ Nao implementado nessa rota. Hoje existe `DELETE /api/atividades/{id}` |
 
-### 5.3 Configuracao Spring Security
+### 5.3 Observacao sobre seguranca (estado atual)
 
-- Rotas `/api/salas/acessar`, `/api/salas/**`, `/api/materias/**`, `/api/atividades/**` -> `permitAll()`
-- Rotas `/api/admin/**` -> autenticado via filtro customizado (`LiderSecretFilter`)
-- CORS habilitado para `http://localhost:5173` (Vite dev server)
-- CSRF desabilitado (API REST stateless)
+- O design original previa rotas `/api/admin/**` protegidas por Spring Security.
+- No estado atual do codigo, os controllers expostos usam rotas publicas (sem prefixo `/api/admin`).
+- Recomenda-se alinhar novamente rotas e regras de autorizacao antes de publicar em producao.
 
 ---
 

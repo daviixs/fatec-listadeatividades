@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface SalaDeAulaRespository extends JpaRepository<SalaDeAula, Integer> {
+public interface SalaDeAulaRepository extends JpaRepository<SalaDeAula, Integer> {
 
     Optional<SalaDeAula> findByCodigoConvite(String codigoConvite);
 

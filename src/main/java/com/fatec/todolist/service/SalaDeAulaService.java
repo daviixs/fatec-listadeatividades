@@ -3,7 +3,7 @@ package com.fatec.todolist.service;
 import com.fatec.todolist.dto.SalaDeAulaRequest;
 import com.fatec.todolist.entity.SalaDeAula;
 import com.fatec.todolist.exception.RecursoNaoEncontradoException;
-import com.fatec.todolist.repository.SalaDeAulaRespository;
+import com.fatec.todolist.repository.SalaDeAulaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,9 +13,9 @@ import java.util.UUID;
 @Service
 public class SalaDeAulaService {
 
-    private final SalaDeAulaRespository salaRepository;
+    private final SalaDeAulaRepository salaRepository;
 
-    public SalaDeAulaService(SalaDeAulaRespository salaRepository) {
+    public SalaDeAulaService(SalaDeAulaRepository salaRepository) {
         this.salaRepository = salaRepository;
     }
 

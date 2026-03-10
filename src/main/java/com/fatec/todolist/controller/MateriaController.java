@@ -1,6 +1,6 @@
 package com.fatec.todolist.controller;
 
-import com.fatec.todolist.dto.MateriaRequst;
+import com.fatec.todolist.dto.MateriaRequest;
 import com.fatec.todolist.dto.MateriaResponse;
 import com.fatec.todolist.entity.Materia;
 import com.fatec.todolist.service.MateriaService;
@@ -46,14 +46,14 @@ public class MateriaController {
     }
 
     @PostMapping
-    public ResponseEntity<MateriaResponse> criarMateria(@Valid @RequestBody MateriaRequst request) {
+    public ResponseEntity<MateriaResponse> criarMateria(@Valid @RequestBody MateriaRequest request) {
         Materia materia = materiaService.criarMateria(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(toResponse(materia));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<MateriaResponse> atualizarMateria(@PathVariable Long id,
-                                                            @Valid @RequestBody MateriaRequst request) {
+                                                            @Valid @RequestBody MateriaRequest request) {
         Materia materia = materiaService.atualizarMateria(id, request);
         return ResponseEntity.ok(toResponse(materia));
     }

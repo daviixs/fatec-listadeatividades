@@ -1,11 +1,11 @@
 package com.fatec.todolist.service;
 
-import com.fatec.todolist.dto.MateriaRequst;
+import com.fatec.todolist.dto.MateriaRequest;
 import com.fatec.todolist.entity.Materia;
 import com.fatec.todolist.entity.SalaDeAula;
 import com.fatec.todolist.exception.RecursoNaoEncontradoException;
 import com.fatec.todolist.repository.MateriaRepository;
-import com.fatec.todolist.repository.SalaDeAulaRespository;
+import com.fatec.todolist.repository.SalaDeAulaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,10 +15,10 @@ import java.util.List;
 public class MateriaService {
 
     private final MateriaRepository materiaRepository;
-    private final SalaDeAulaRespository salaRepository;
+    private final SalaDeAulaRepository salaRepository;
 
     public MateriaService(MateriaRepository materiaRepository,
-                          SalaDeAulaRespository salaRepository) {
+                          SalaDeAulaRepository salaRepository) {
         this.materiaRepository = materiaRepository;
         this.salaRepository = salaRepository;
     }
@@ -41,7 +41,7 @@ public class MateriaService {
     }
 
     @Transactional
-    public Materia criarMateria(MateriaRequst request) {
+    public Materia criarMateria(MateriaRequest request) {
         SalaDeAula sala = salaRepository.findById(request.salaId().intValue())
                 .orElseThrow(() -> new RecursoNaoEncontradoException(
                         "Sala não encontrada com id: " + request.salaId()));
@@ -55,7 +55,7 @@ public class MateriaService {
     }
 
     @Transactional
-    public Materia atualizarMateria(Long id, MateriaRequst request) {
+    public Materia atualizarMateria(Long id, MateriaRequest request) {
         Materia materia = materiaRepository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException(
                         "Matéria não encontrada com id: " + id));

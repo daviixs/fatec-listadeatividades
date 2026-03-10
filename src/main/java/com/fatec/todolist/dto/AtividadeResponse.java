@@ -1,15 +1,15 @@
 package com.fatec.todolist.dto;
 
-
+import com.fatec.todolist.entity.TipoEntrega;
 import java.time.LocalDate;
 
 public record AtividadeResponse (
-    Long Id,
-    String Titulo,
-    String Descricao,
-    Enum tipo_entrega,
-    String link_entrega,
+    Long id,
+    String titulo,
+    String descricao,
+    TipoEntrega tipoEntrega,
+    String linkEntrega,
     String regras,
     LocalDate prazo,
-    String materia
+    String materiaNome
 ){}
