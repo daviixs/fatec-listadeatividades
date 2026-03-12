@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/hooks/useAppDispatch';
 import { fetchCursoPorNome } from '@/features/cursos/cursosSlice';
 import { cadastrarEmail, verificarEmail, excluirEmail } from '@/features/lembrete/lembreteSlice';
@@ -14,6 +14,7 @@ import CursoCard from './CursoCard';
 
 export default function CursoDetalhesPage() {
   const { cursoNome } = useParams<{ cursoNome: string }>();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { cursoSelecionado, loading } = useAppSelector((s) => s.cursos);
   const { emailCadastrado, loading: loadingEmail } = useAppSelector((s) => s.lembrete);
@@ -26,6 +27,12 @@ export default function CursoDetalhesPage() {
       dispatch(fetchCursoPorNome(cursoNome));
     }
   }, [dispatch, cursoNome]);
+
+  useEffect(() => {
+    if (cursoNome?.toUpperCase() === 'DSM') {
+      navigate(`/cursos/${cursoNome}/noite`);
+    }
+  }, [cursoNome, navigate]);
 
   useEffect(() => {
     if (cursoNome && emailCadastrado === null) {
@@ -196,17 +203,15 @@ export default function CursoDetalhesPage() {
       <div>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Selecione o Período</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {cursoNome?.toUpperCase() !== 'DSM' && (
-            <Link
-              to={`/cursos/${cursoNome}/manha`}
-            >
-              <CursoCard
-                nome="Manhã"
-                semestre=""
-                onClick={() => {}}
-              />
-            </Link>
-          )}
+          <Link
+            to={`/cursos/${cursoNome}/manha`}
+          >
+            <CursoCard
+              nome="Manhã"
+              semestre=""
+              onClick={() => {}}
+            />
+          </Link>
           <Link
             to={`/cursos/${cursoNome}/noite`}
           >
