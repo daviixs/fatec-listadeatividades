@@ -196,15 +196,17 @@ export default function CursoDetalhesPage() {
       <div>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Selecione o Período</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Link
-            to={`/cursos/${cursoNome}/manha`}
-          >
-            <CursoCard
-              nome="Manhã"
-              semestre=""
-              onClick={() => {}}
-            />
-          </Link>
+          {cursoNome?.toUpperCase() !== 'DSM' && (
+            <Link
+              to={`/cursos/${cursoNome}/manha`}
+            >
+              <CursoCard
+                nome="Manhã"
+                semestre=""
+                onClick={() => {}}
+              />
+            </Link>
+          )}
           <Link
             to={`/cursos/${cursoNome}/noite`}
           >
