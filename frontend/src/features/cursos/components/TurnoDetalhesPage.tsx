@@ -69,8 +69,8 @@ export default function TurnoDetalhesPage() {
 
   const turnoFormatado = turno === 'manha' ? 'Manhã' : 'Noite';
 
-  const semestresPorTurno = cursoSelecionado?.semestres.filter(s => 
-    s.nome.toLowerCase().includes(turno?.toLowerCase() || '')
+  const semestresPorTurno = cursoSelecionado?.semestres.filter(s =>
+    s.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(turno?.toLowerCase() || '')
   ) || [];
 
   if (loading) {
