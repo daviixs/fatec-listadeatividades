@@ -45,6 +45,9 @@ public class DataInitializer implements CommandLineRunner {
 
         for (CursoConfig curso : CursoConfig.values()) {
             for (Turno turno : Turno.values()) {
+                if (curso == CursoConfig.DSM && turno == Turno.MANHA) {
+                    continue;
+                }
                 for (int semestre = 1; semestre <= 6; semestre++) {
                     String nomeSala = String.format("%s %d° %s",
                         curso.getSigla(),
