@@ -50,6 +50,12 @@ public class AtividadeService {
                 .collect(Collectors.toList());
     }
 
+    public List<AtividadeResponse> listarPorMateria(Long materiaId) {
+        return repository.findByMateriaId(materiaId).stream()
+                .map(this::converterParaResponse)
+                .collect(Collectors.toList());
+    }
+
     public List<AtividadeResponse> listarExpirando(int horas) {
         LocalDate hoje = LocalDate.now();
         LocalDate limite = hoje.plusDays(horas / 24);

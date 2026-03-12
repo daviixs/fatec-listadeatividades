@@ -24,6 +24,12 @@ public class SalaDeAulaService {
         return salaRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
+    public SalaDeAula buscarPorId(Integer id) {
+        return salaRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Sala nao encontrada"));
+    }
+
     @Transactional
     public SalaDeAula criarSala(SalaDeAulaRequest request) {
         SalaDeAula sala = new SalaDeAula();
@@ -32,6 +38,23 @@ public class SalaDeAulaService {
         sala.setSegredoLider(request.segredoLider());
         sala.setCodigoConvite(gerarCodigoConvite());
         return salaRepository.save(sala);
+    }
+
+    @Transactional
+    public SalaDeAula atualizarSala(Integer id, SalaDeAulaRequest request) {
+        SalaDeAula sala = buscarPorId(id);
+        sala.setNome(request.nome());
+        sala.setSemestre(request.semestre());
+        sala.setSegredoLider(request.segredoLider());
+        return salaRepository.save(sala);
+    }
+
+    @Transactional
+    public void deletarSala(Integer id) {
+        if (!salaRepository.existsById(id)) {
+            throw new RecursoNaoEncontradoException("Sala nao encontrada");
+        }
+        salaRepository.deleteById(id);
     }
 
     public SalaDeAula acessarPorCodigo(String codigo) {

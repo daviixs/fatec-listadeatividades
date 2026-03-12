@@ -91,6 +91,17 @@ public class EntradaSalaService {
         entradaRepository.save(entrada);
     }
 
+    public EntradaSalaResponse buscarPorId(Long entradaId, Integer salaId) {
+        EntradaSala entrada = entradaRepository.findById(entradaId)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Entrada não encontrada"));
+
+        if (!entrada.getSala().getId().equals(salaId)) {
+            throw new IllegalArgumentException("Entrada não pertence a esta sala");
+        }
+
+        return converterParaResponse(entrada, entrada.getAluno());
+    }
+
     public Optional<EntradaSalaResponse> buscarPorAluno(Long alunoId, Integer salaId) {
         return entradaRepository.findByAlunoIdAndSalaId(alunoId, salaId)
                 .map(e -> converterParaResponse(e, e.getAluno()));

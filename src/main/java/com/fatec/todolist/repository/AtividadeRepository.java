@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface AtividadeRepository extends JpaRepository<Atividade, Long> {
     List<Atividade> findByPrazoBetween(LocalDate inicio, LocalDate fim);
+    List<Atividade> findByMateriaId(Long materiaId);
 }
