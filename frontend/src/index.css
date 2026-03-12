@@ -2,6 +2,8 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import "./styles/animations.css";
+@import "./styles/theme.css";
 
 @custom-variant dark (&:is(.dark *));
 

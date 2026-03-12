@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/hooks/useAppDispatch';
 import { fetchCursoPorNome } from '@/features/cursos/cursosSlice';
 import { cadastrarEmail, verificarEmail, excluirEmail } from '@/features/lembrete/lembreteSlice';
@@ -14,7 +14,6 @@ import CursoCard from './CursoCard';
 
 export default function CursoDetalhesPage() {
   const { cursoNome } = useParams<{ cursoNome: string }>();
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { cursoSelecionado, loading } = useAppSelector((s) => s.cursos);
   const { emailCadastrado, loading: loadingEmail } = useAppSelector((s) => s.lembrete);
@@ -27,12 +26,6 @@ export default function CursoDetalhesPage() {
       dispatch(fetchCursoPorNome(cursoNome));
     }
   }, [dispatch, cursoNome]);
-
-  useEffect(() => {
-    if (cursoNome?.toUpperCase() === 'DSM') {
-      navigate(`/cursos/${cursoNome}/noite`);
-    }
-  }, [cursoNome, navigate]);
 
   useEffect(() => {
     if (cursoNome && emailCadastrado === null) {
@@ -95,14 +88,14 @@ export default function CursoDetalhesPage() {
 
   const info = cursoInfo[cursoNome?.toUpperCase() as keyof typeof cursoInfo];
 
-  if (loading) {
+   if (loading) {
     return (
       <div className="space-y-4">
         <div className="animate-pulse space-y-4">
-          <div className="h-32 bg-gray-200 rounded-lg"></div>
+          <div className="h-32 bg-gray-200 rounded-2xl"></div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="h-24 bg-gray-200 rounded-lg"></div>
+              <div key={i} className="h-24 bg-gray-200 rounded-2xl"></div>
             ))}
           </div>
         </div>
@@ -112,24 +105,24 @@ export default function CursoDetalhesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-4 mb-6 reveal stagger-1">
         <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
           <ArrowLeft className="h-5 w-5" />
           Voltar para cursos
         </Link>
-        <h1 className="text-3xl font-bold text-gray-800 flex-1">
+        <h1 className="text-3xl font-bold text-gray-900 flex-1 tracking-tight">
           {info?.nome || cursoNome?.toUpperCase()}
         </h1>
       </div>
 
-      <Card className="bg-blue-50 border-blue-200">
+      <Card className="bg-gradient-to-br from-[#F0F7F6] to-[#E8F2F0] border-[#5A7C7A]/20 rounded-2xl reveal stagger-2">
         <CardContent className="p-6">
           <div className="flex items-start gap-4">
-            <div className="bg-blue-500 text-white p-3 rounded-full">
+            <div className="bg-gradient-to-br from-[#5A7C7A] to-[#6B9B7A] text-white p-3 rounded-full shadow-lg">
               <Mail className="h-6 w-6" />
             </div>
             <div className="flex-1">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">
                 Para receber o lembrete diário de atividades você deve colocar seu email aqui
               </h2>
               <p className="text-sm text-gray-600 mb-4">
@@ -137,8 +130,8 @@ export default function CursoDetalhesPage() {
               </p>
 
               {emailCadastrado && !mostrarFormulario ? (
-                <Alert className="mb-4">
-                  <CheckCircle className="h-4 w-4" />
+                <Alert className="mb-4 border-[#5A7C7A]/20 bg-[#F0F7F6]">
+                  <CheckCircle className="h-4 w-4 text-[#5A7C7A]" />
                   <AlertDescription>
                     <div className="flex items-center justify-between">
                       <span>
@@ -166,17 +159,17 @@ export default function CursoDetalhesPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="max-w-md"
+                      className="max-w-md rounded-xl border-[#5A7C7A]/20"
                     />
                   </div>
                   </form>
-                )}
+                  )}
 
               {!emailCadastrado && (
                 <Button
                   onClick={handleCadastrarEmail}
                   disabled={loadingEmail || !email.trim()}
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#5A7C7A] to-[#6B9B7A] hover:from-[#4A6B6A] hover:to-[#5B8B7A] text-white border-0 rounded-xl shadow-lg button-hover"
                 >
                   {loadingEmail ? 'Cadastrando...' : 'Cadastrar'}
                   {!loadingEmail && <Send className="ml-2 h-4 w-4" />}
@@ -190,7 +183,7 @@ export default function CursoDetalhesPage() {
                     setEmail(emailCadastrado.email);
                     setMostrarFormulario(true);
                   }}
-                  className="w-full sm:w-auto"
+                  className="w-full sm:w-auto border-[#5A7C7A]/30 rounded-xl hover:bg-[#F0F7F6] button-hover"
                 >
                   Alterar email
                 </Button>
@@ -200,8 +193,8 @@ export default function CursoDetalhesPage() {
         </CardContent>
       </Card>
 
-      <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Selecione o Período</h2>
+      <div className="reveal stagger-3">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">Selecione o Período</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <Link
             to={`/cursos/${cursoNome}/manha`}

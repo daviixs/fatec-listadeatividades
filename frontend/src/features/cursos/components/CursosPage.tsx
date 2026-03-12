@@ -18,22 +18,22 @@ export default function CursosPage() {
     ADS: {
       nome: 'Análise e Desenvolvimento de Sistemas',
       descricao: 'Desenvolvimento de aplicações web, móveis e desktop',
-      color: 'bg-blue-500'
+      color: 'bg-gradient-to-br from-[#5A7C7A] to-[#6B9B7A]'
     },
     DSM: {
       nome: 'Desenvolvimento de Software Multiplataforma',
       descricao: 'Criação de apps para iOS, Android e Web',
-      color: 'bg-purple-500'
+      color: 'bg-gradient-to-br from-[#7B5E8A] to-[#9B7CAA]'
     },
     GPI: {
       nome: 'Gestão da Produção Industrial',
       descricao: 'Planejamento e controle de processos industriais',
-      color: 'bg-orange-500'
+      color: 'bg-gradient-to-br from-[#8A7B5A] to-[#AAA98A]'
     },
     GRH: {
       nome: 'Gestão de Recursos Humanos',
       descricao: 'Administração de pessoas e talentos',
-      color: 'bg-green-500'
+      color: 'bg-gradient-to-br from-[#6B9B7A] to-[#8ABA8A]'
     }
   };
 
@@ -56,22 +56,23 @@ export default function CursosPage() {
 
   return (
     <div className="space-y-6">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">Bem-vindo ao TodoList FATEC</h1>
+      <div className="text-center mb-12 reveal stagger-1">
+        <h1 className="text-5xl font-bold text-gray-900 mb-3 tracking-tight">Bem-vindo ao TodoList FATEC</h1>
         <p className="text-lg text-gray-600">Escolha um curso para ver as atividades</p>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {cursos.map((curso) => {
+        {cursos.map((curso, index) => {
           const info = cursoInfo[curso.nome as keyof typeof cursoInfo];
+          const stagger = (index % 6) + 1;
           return (
             <Card
               key={curso.nome}
-              className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1"
+              className={`cursor-pointer card-hover rounded-2xl border-0 bg-white reveal stagger-${stagger}`}
               onClick={() => navigate(`/cursos/${curso.nome.toLowerCase()}`)}
             >
               <CardHeader className="pb-4">
-                <div className={`h-40 ${info?.color || 'bg-gray-500'} rounded-t-lg flex items-center justify-center mb-4`}>
+                <div className={`h-44 ${info?.color || 'bg-gray-500'} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
                   <GraduationCap className="h-16 w-16 text-white" />
                 </div>
                 <CardTitle className="text-2xl">{curso.nome}</CardTitle>

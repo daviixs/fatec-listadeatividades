@@ -6,6 +6,9 @@ import AuthLayout from '@/layouts/AuthLayout';
 import MainLayout from '@/layouts/MainLayout';
 import PublicLayout from '@/layouts/PublicLayout';
 
+// Components
+import PageTransition from '@/components/PageTransition';
+
 // Auth pages
 import AguardandoAprovacao from '@/features/auth/components/AguardandoAprovacao';
 import LoginPage from '@/features/auth/components/LoginPage';
@@ -54,15 +57,51 @@ export default function AppRoutes() {
       <Routes>
         {/* Rotas públicas */}
         <Route element={<PublicLayout />}>
-          <Route path="/" element={<CursosPage />} />
-          <Route path="/cursos/:cursoNome" element={<CursoDetalhesPage />} />
-          <Route path="/cursos/:cursoNome/:turno" element={<TurnoDetalhesPage />} />
-          <Route path="/cursos/:cursoNome/:turno/:semestre" element={<SemestreDetalhesPage />} />
-          <Route path="/cursos/:cursoNome/:turno/:semestre/materias/:materiaId" element={<MateriaAtividadesPage />} />
-          <Route path="/materias/:materiaId/atividades" element={<AtividadesLista />} />
-          <Route path="/atividades/:id" element={<AtividadeDetalhes />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/aguardando" element={<AguardandoAprovacao />} />
+          <Route path="/" element={
+            <PageTransition>
+              <CursosPage />
+            </PageTransition>
+          } />
+          <Route path="/cursos/:cursoNome" element={
+            <PageTransition>
+              <CursoDetalhesPage />
+            </PageTransition>
+          } />
+          <Route path="/cursos/:cursoNome/:turno" element={
+            <PageTransition>
+              <TurnoDetalhesPage />
+            </PageTransition>
+          } />
+          <Route path="/cursos/:cursoNome/:turno/:semestre" element={
+            <PageTransition>
+              <SemestreDetalhesPage />
+            </PageTransition>
+          } />
+          <Route path="/cursos/:cursoNome/:turno/:semestre/materias/:materiaId" element={
+            <PageTransition>
+              <MateriaAtividadesPage />
+            </PageTransition>
+          } />
+          <Route path="/materias/:materiaId/atividades" element={
+            <PageTransition>
+              <AtividadesLista />
+            </PageTransition>
+          } />
+          <Route path="/atividades/:id" element={
+            <PageTransition>
+              <AtividadeDetalhes />
+            </PageTransition>
+          } />
+          <Route path="/login" element={
+            <PageTransition>
+              <LoginPage />
+            </PageTransition>
+          } />
+          <Route path="/aguardando" element={
+            <PageTransition>
+              <AguardandoAprovacao />
+            </PageTransition>
+          } />
         </Route>
 
         {/* Rotas do Aluno */}
@@ -73,13 +112,33 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         >
-          <Route path="/aluno" element={<AlunoDashboard />} />
-          <Route path="/aluno/atividades" element={<AtividadesLista />} />
-          <Route path="/aluno/votacoes" element={<VotacoesLista />} />
-          <Route path="/atividades/:id" element={<AtividadeDetalhes />} />
+          <Route path="/aluno" element={
+            <PageTransition>
+              <AlunoDashboard />
+            </PageTransition>
+          } />
+          <Route path="/aluno/atividades" element={
+            <PageTransition>
+              <AtividadesLista />
+            </PageTransition>
+          } />
+          <Route path="/aluno/votacoes" element={
+            <PageTransition>
+              <VotacoesLista />
+            </PageTransition>
+          } />
+          <Route path="/atividades/:id" element={
+            <PageTransition>
+              <AtividadeDetalhes />
+            </PageTransition>
+          } />
           <Route
               path="/atividades/:atividadeId/votar"
-              element={<VotacaoPage />}
+              element={
+                <PageTransition>
+                  <VotacaoPage />
+                </PageTransition>
+              }
           />
         </Route>
 
@@ -93,10 +152,26 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         >
-          <Route path="/lider" element={<LiderDashboard />} />
-          <Route path="/lider/alunos" element={<GerenciarAlunos />} />
-          <Route path="/lider/entradas" element={<AprovarEntradas />} />
-          <Route path="/lider/atividades" element={<GerenciarAtividades />} />
+          <Route path="/lider" element={
+            <PageTransition>
+              <LiderDashboard />
+            </PageTransition>
+          } />
+          <Route path="/lider/alunos" element={
+            <PageTransition>
+              <GerenciarAlunos />
+            </PageTransition>
+          } />
+          <Route path="/lider/entradas" element={
+            <PageTransition>
+              <AprovarEntradas />
+            </PageTransition>
+          } />
+          <Route path="/lider/atividades" element={
+            <PageTransition>
+              <GerenciarAtividades />
+            </PageTransition>
+          } />
         </Route>
 
         {/* Fallback */}
