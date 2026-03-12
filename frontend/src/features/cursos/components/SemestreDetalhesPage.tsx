@@ -25,11 +25,11 @@ export default function SemestreDetalhesPage() {
 
   useEffect(() => {
     if (cursoSelecionado && semestre && turno) {
-      const salaEncontrada = cursoSelecionado.semestres.find(s => 
-        s.semestre === `${semestre}°` && 
-        s.nome.toLowerCase().includes(turno.toLowerCase())
+      const salaEncontrada = cursoSelecionado.semestres.find(s =>
+        s.semestre === `${semestre}°` &&
+        s.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(turno.toLowerCase())
       );
-      
+
       if (salaEncontrada) {
         setSalaId(salaEncontrada.id);
         fetchMateriasDaSala(salaEncontrada.id);
