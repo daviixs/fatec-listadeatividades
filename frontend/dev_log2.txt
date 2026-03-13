@@ -1,0 +1,782 @@
+
+> frontend@0.0.0 dev
+> vite 
+
+
+  [32m[1mVITE[22m v7.3.1[39m  [2mready in [0m[1m1424[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m21:46:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:48:34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:50:06[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m21:51:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Atividades.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:55:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:55:58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:56:19[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m21:56:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m21:56:50[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/ui/ActionCard.tsx[22m
+[2m21:57:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:57:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Periodo.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:57:39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Semestre.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:57:56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Materias.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:58:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Atividades.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:59:30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Atividades.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m21:59:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Atividades.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:09:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:09:27[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:28[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[39m   )[33m;[39m
+ [90m 17 |[39m }
+[31m[1m>[22m[39m[90m 18 |[39m [32m``[39m[32m`[39m
+ [90m    |[39m    [31m[1m^[22m[39m
+ [90m 19 |[39m [32m[39m[0m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+[2m22:09:29[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:29[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:30[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:30[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:33[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:33[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:37[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:37[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:37[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\src\components\layout\Layout.tsx: Unterminated template. (18:3)
+
+[0m [90m 16 |[31m   )[33m;[31m
+ [90m 17 |[31m }
+[31m[1m>[22m[31m[90m 18 |[31m [32m``[31m[32m`[31m
+ [90m    |[31m    [31m[1m^[22m[31m
+ [90m 19 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx[39m:18:3
+[33m  16 |    );
+  17 |  }
+  18 |  ```
+     |     ^
+  19 |  [39m
+      at constructor (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6599:19)
+      at Object.unterminated (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5670:20)
+      at readStringContents (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5365:14)
+      at TypeScriptParserMixin.readTemplateToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6519:9)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:6227:14)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4797:11)
+      at TypeScriptParserMixin.getTokenFromCode (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9987:11)
+      at TypeScriptParserMixin.nextToken (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5782:10)
+      at TypeScriptParserMixin.next (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:5692:10)
+      at TypeScriptParserMixin.parseTemplateElement (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11785:10)
+      at TypeScriptParserMixin.parseTemplate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11792:23)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11351:21)
+      at TypeScriptParserMixin.parseExprAtom (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:4764:20)
+      at TypeScriptParserMixin.parseExprSubscripts (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11081:23)
+      at TypeScriptParserMixin.parseUpdate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11066:21)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:11046:23)
+      at TypeScriptParserMixin.parseMaybeUnary (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9837:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10899:61)
+      at TypeScriptParserMixin.parseExprOps (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10904:23)
+      at TypeScriptParserMixin.parseMaybeConditional (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10881:23)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10831:21)
+      at TypeScriptParserMixin.parseMaybeAssign (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9786:20)
+      at TypeScriptParserMixin.parseExpressionBase (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10784:23)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:39
+      at TypeScriptParserMixin.allowInAnd (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12421:16)
+      at TypeScriptParserMixin.parseExpression (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10780:17)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12895:23)
+      at TypeScriptParserMixin.parseStatementContent (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:9508:18)
+      at TypeScriptParserMixin.parseStatementLike (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12767:17)
+      at TypeScriptParserMixin.parseModuleItem (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12744:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13316:36)
+      at TypeScriptParserMixin.parseBlockBody (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:13309:10)
+      at TypeScriptParserMixin.parseProgram (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12622:10)
+      at TypeScriptParserMixin.parseTopLevel (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:12612:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14488:25)
+      at TypeScriptParserMixin.parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:10126:18)
+      at parse (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\parser\lib\index.js:14522:38)
+      at parser (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\parser\index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transformation\index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\@babel\core\lib\transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:261:32)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:273:13
+      at async.call.result.err.err (c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:223:11)
+      at c:\Users\gusta\OneDrive\Área de Trabalho\ListaDeAtividadeFatec\fatec-listadeatividades\frontend\node_modules\gensync\index.js:189:28
+[2m22:09:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Layout.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:11:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Sidebar.tsx[22m
+[2m22:11:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Sidebar.tsx[22m
+[2m22:12:21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Sidebar.tsx[22m
+[2m22:16:32[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m22:16:35[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Sidebar.tsx[22m
+[2m22:22:19[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Periodo.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Semestre.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Materias.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Atividades.tsx[22m
+[2m22:22:19[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Periodo.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Semestre.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Materias.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Atividades.tsx[22m
+[2m22:23:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:23:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Materias.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:25:21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:25:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/ui/ActionCard.tsx[22m
+[2m22:25:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/ui/ActionCard.tsx[22m
+[2m22:27:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Sidebar.tsx[22m
+[2m22:29:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m22:29:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:31:15[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m22:34:15[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/components/layout/Header.tsx[22m
+[2m22:36:39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/pages/Home.tsx, /@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
+[2m22:38:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:/Users/gusta/OneDrive/Área de Trabalho/ListaDeAtividadeFatec/fatec-listadeatividades/frontend/src/index.css[22m
