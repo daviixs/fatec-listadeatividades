@@ -34,6 +34,13 @@ public class EntradaSalaController {
         return ResponseEntity.ok(entradas);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<EntradaSalaResponse> buscarPorId(@PathVariable Integer salaId,
+                                                             @PathVariable Long id) {
+        EntradaSalaResponse entrada = entradaService.buscarPorId(id, salaId);
+        return ResponseEntity.ok(entrada);
+    }
+
     @PatchMapping("/{id}/aprovar")
     public ResponseEntity<Void> aprovar(@PathVariable Integer salaId,
                                                @PathVariable Long id,

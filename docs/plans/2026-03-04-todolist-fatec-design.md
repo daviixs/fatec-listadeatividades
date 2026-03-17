@@ -128,9 +128,11 @@ Apos adicionar, a documentacao interativa fica disponivel em: `http://localhost:
 | `GET` | `/api/salas` | `SalaDeAulaController` |
 | `POST` | `/api/salas` | `SalaDeAulaController` |
 | `POST` | `/api/salas/acessar` | `SalaDeAulaController` |
+| `GET` | `/api/salas/{salaId}/materias` | `SalaDeAulaController` |
 | `GET` | `/api/materias` | `MateriaController` |
 | `GET` | `/api/materias/{id}` | `MateriaController` |
 | `GET` | `/api/materias/sala/{salaId}` | `MateriaController` |
+| `GET` | `/api/materias/{materiaId}/atividades` | `MateriaController` |
 | `POST` | `/api/materias` | `MateriaController` |
 | `PUT` | `/api/materias/{id}` | `MateriaController` |
 | `DELETE` | `/api/materias/{id}` | `MateriaController` |
@@ -148,28 +150,40 @@ Apos adicionar, a documentacao interativa fica disponivel em: `http://localhost:
 | `POST` | `/api/atividades/{atividadeId}/votacao` | `VotacaoController` |
 | `GET` | `/api/atividades/{atividadeId}/votacao` | `VotacaoController` |
 | `POST` | `/api/atividades/{atividadeId}/votacao/votos?alunoId={id}` | `VotacaoController` |
+| `POST` | `/api/admin/salas` | `SalaAdminController` |
+| `PUT` | `/api/admin/salas/{salaId}` | `SalaAdminController` |
+| `DELETE` | `/api/admin/salas/{salaId}` | `SalaAdminController` |
+| `POST` | `/api/admin/salas/{salaId}/materias` | `SalaAdminController` |
+| `PUT` | `/api/admin/materias/{materiaId}` | `MateriaAdminController` |
+| `DELETE` | `/api/admin/materias/{materiaId}` | `MateriaAdminController` |
+| `POST` | `/api/admin/materias/{materiaId}/atividades` | `MateriaAdminController` |
+| `PUT` | `/api/admin/atividades/{atividadeId}` | `AtividadeAdminController` |
+| `DELETE` | `/api/admin/atividades/{atividadeId}` | `AtividadeAdminController` |
 
-### 5.2 Endpoints planejados no design original que ainda faltam (ou estao em rota diferente)
+### 5.2 Endpoints planejados no design original: status atual
 
 | Metodo | Rota do plano (2026-03-04) | Situacao atual |
 |---|---|---|
-| `GET` | `/api/salas/{salaId}/materias` | ❌ Nao implementado nessa rota. Existe equivalente em `/api/materias/sala/{salaId}` |
-| `GET` | `/api/materias/{materiaId}/atividades` | ❌ Ainda nao implementado |
-| `POST` | `/api/admin/salas` | ❌ Nao implementado nessa rota. Hoje existe `POST /api/salas` (sem prefixo `/api/admin`) |
-| `PUT` | `/api/admin/salas/{salaId}` | ❌ Ainda nao implementado |
-| `DELETE` | `/api/admin/salas/{salaId}` | ❌ Ainda nao implementado |
-| `POST` | `/api/admin/salas/{salaId}/materias` | ❌ Nao implementado nessa rota. Hoje existe `POST /api/materias` |
-| `PUT` | `/api/admin/materias/{materiaId}` | ❌ Nao implementado nessa rota. Hoje existe `PUT /api/materias/{id}` |
-| `DELETE` | `/api/admin/materias/{materiaId}` | ❌ Nao implementado nessa rota. Hoje existe `DELETE /api/materias/{id}` |
-| `POST` | `/api/admin/materias/{materiaId}/atividades` | ❌ Nao implementado nessa rota. Hoje existe `POST /api/atividades` |
-| `PUT` | `/api/admin/atividades/{atividadeId}` | ❌ Nao implementado nessa rota. Hoje existe `PUT /api/atividades/{id}` |
-| `DELETE` | `/api/admin/atividades/{atividadeId}` | ❌ Nao implementado nessa rota. Hoje existe `DELETE /api/atividades/{id}` |
+| `POST` | `/api/salas/acessar` | ✅ Implementado |
+| `GET` | `/api/salas` | ✅ Implementado |
+| `GET` | `/api/salas/{salaId}/materias` | ✅ Implementado |
+| `GET` | `/api/materias/{materiaId}/atividades` | ✅ Implementado |
+| `GET` | `/api/atividades/{atividadeId}` | ✅ Implementado |
+| `POST` | `/api/admin/salas` | ✅ Implementado |
+| `PUT` | `/api/admin/salas/{salaId}` | ✅ Implementado |
+| `DELETE` | `/api/admin/salas/{salaId}` | ✅ Implementado |
+| `POST` | `/api/admin/salas/{salaId}/materias` | ✅ Implementado |
+| `PUT` | `/api/admin/materias/{materiaId}` | ✅ Implementado |
+| `DELETE` | `/api/admin/materias/{materiaId}` | ✅ Implementado |
+| `POST` | `/api/admin/materias/{materiaId}/atividades` | ✅ Implementado |
+| `PUT` | `/api/admin/atividades/{atividadeId}` | ✅ Implementado |
+| `DELETE` | `/api/admin/atividades/{atividadeId}` | ✅ Implementado |
 
 ### 5.3 Observacao sobre seguranca (estado atual)
 
-- O design original previa rotas `/api/admin/**` protegidas por Spring Security.
-- No estado atual do codigo, os controllers expostos usam rotas publicas (sem prefixo `/api/admin`).
-- Recomenda-se alinhar novamente rotas e regras de autorizacao antes de publicar em producao.
+- As rotas `/api/admin/**` agora estao implementadas.
+- Atualmente o `SecurityConfig` ainda usa `permitAll()` para `/api/admin/**`.
+- Para aderir 100% ao desenho original, falta aplicar a validacao de segredo/autorizacao nessas rotas.
 
 ---
 

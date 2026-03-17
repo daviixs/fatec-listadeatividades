@@ -1,0 +1,168 @@
+{
+  "nome": "ADS 1",
+  "semestre": "1",
+  "cursoNome": "ADS",
+  "codigoConvite": "ADS1" + $(date +%s%N),
+  "segredoLider": "lider_ads1"
+},
+{
+  "nome": "ADS 2",
+  "semestre": "2",
+  "cursoNome": "ADS",
+  "codigoConvite": "ADS2" + $(date +%s%N),
+  "segredoLider": "lider_ads2"
+},
+{
+  "nome": "ADS 3",
+  "semestre": "3",
+  "cursoNome": "ADS",
+  "codigoConvite": "ADS3" + $(date +%s%N),
+  "segredoLider": "lider_ads3"
+},
+{
+  "nome": "ADS 4",
+  "semestre": "4",
+  "cursoNome": "ADS",
+  "codigoConvite": "ADS4" + $(date +%s%N),
+  "segredoLider": "lider_ads4"
+},
+{
+  "nome": "ADS 5",
+  "semestre": "5",
+  "cursoNome": "ADS",
+  "codigoConvite": "ADS5" + $(date +%s%N),
+  "segredoLider": "lider_ads5"
+},
+{
+  "nome": "ADS 6",
+  "semestre": "6",
+  "cursoNome": "ADS",
+  "codigoConvite": "ADS6" + $(date +%s%N),
+  "segredoLider": "lider_ads6"
+},
+{
+  "nome": "DSM 1",
+  "semestre": "1",
+  "cursoNome": "DSM",
+  "codigoConvite": "DSM1" + $(date +%s%N),
+  "segredoLider": "lider_dsm1"
+},
+{
+  "nome": "DSM 2",
+  "semestre": "2",
+  "cursoNome": "DSM",
+  "codigoConvite": "DSM2" + $(date +%s%N),
+  "segredoLider": "lider_dsm2"
+},
+{
+  "nome": "DSM 3",
+  "semestre": "3",
+  "cursoNome": "DSM",
+  "codigoConvite": "DSM3" + $(date +%s%N),
+  "segredoLider": "lider_dsm3"
+},
+{
+  "nome": "DSM 4",
+  "semestre": "4",
+  "cursoNome": "DSM",
+  "codigoConvite": "DSM4" + $(date +%s%N),
+  "segredoLider": "lider_dsm4"
+},
+{
+  "nome": "DSM 5",
+  "semestre": "5",
+  "cursoNome": "DSM",
+  "codigoConvite": "DSM5" + $(date +%s%N),
+  "segredoLider": "lider_dsm5"
+},
+{
+  "nome": "DSM 6",
+  "semestre": "6",
+  "cursoNome": "DSM",
+  "codigoConvite": "DSM6" + $(date +%s%N),
+  "segredoLider": "lider_dsm6"
+},
+{
+  "nome": "GPI 1",
+  "semestre": "1",
+  "cursoNome": "GPI",
+  "codigoConvite": "GPI1" + $(date +%s%N),
+  "segredoLider": "lider_gpi1"
+},
+{
+  "nome": "GPI 2",
+  "semestre": "2",
+  "cursoNome": "GPI",
+  "codigoConvite": "GPI2" + $(date +%s%N),
+  "segredoLider": "lider_gpi2"
+},
+{
+  "nome": "GPI 3",
+  "semestre": "3",
+  "cursoNome": "GPI",
+  "codigoConvite": "GPI3" + $(date +%s%N),
+  "segredoLider": "lider_gpi3"
+},
+{
+  "nome": "GPI 4",
+  "semestre": "4",
+  "cursoNome": "GPI",
+  "codigoConvite": "GPI4" + $(date +%s%N),
+  "segredoLider": "lider_gpi4"
+},
+{
+  "nome": "GPI 5",
+  "semestre": "5",
+  "cursoNome": "GPI",
+  "codigoConvite": "GPI5" + $(date +%s%N),
+  "segredoLider": "lider_gpi5"
+},
+{
+  "nome": "GPI 6",
+  "semestre": "6",
+  "cursoNome": "GPI",
+  "codigoConvite": "GPI6" + $(date +%s%N),
+  "segredoLider": "lider_gpi6"
+},
+{
+  "nome": "GRH 1",
+  "semestre": "1",
+  "cursoNome": "GRH",
+  "codigoConvite": "GRH1" + $(date +%s%N),
+  "segredoLider": "lider_grh1"
+},
+{
+  "nome": "GRH 2",
+  "semestre": "2",
+  "cursoNome": "GRH",
+  "codigoConvite": "GRH2" + $(date +%s%N),
+  "segredoLider": "lider_grh2"
+},
+{
+  "nome": "GRH 3",
+  "semestre": "3",
+  "cursoNome": "GRH",
+  "codigoConvite": "GRH3" + $(date +%s%N),
+  "segredoLider": "lider_grh3"
+},
+{
+  "nome": "GRH 4",
+  "semestre": "4",
+  "cursoNome": "GRH",
+  "codigoConvite": "GRH4" + $(date +%s%N),
+  "segredoLider": "lider_grh4"
+},
+{
+  "nome": "GRH 5",
+  "semestre": "5",
+  "cursoNome": "GRH",
+  "codigoConvite": "GRH5" + $(date +%s%N),
+  "segredoLider": "lider_grh5"
+},
+{
+  "nome": "GRH 6",
+  "semestre": "6",
+  "cursoNome": "GRH",
+  "codigoConvite": "GRH6" + $(date +%s%N),
+  "segredoLider": "lider_grh6"
+}

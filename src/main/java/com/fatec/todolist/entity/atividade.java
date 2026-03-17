@@ -36,6 +36,17 @@ public class Atividade {
     @Column(nullable = false)
     private StatusAtividade status = StatusAtividade.ATIVA;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoAtividade tipo = TipoAtividade.ATIVIDADE;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusAprovacao statusAprovacao = StatusAprovacao.APROVADA;
+
+    @Column(name = "criado_por_aluno_id")
+    private Long criadoPorAlunoId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "materia_id",

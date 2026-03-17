@@ -1,8 +1,10 @@
 package com.fatec.todolist.controller;
 
+import com.fatec.todolist.dto.AtividadeResponse;
 import com.fatec.todolist.dto.MateriaRequest;
 import com.fatec.todolist.dto.MateriaResponse;
 import com.fatec.todolist.entity.Materia;
+import com.fatec.todolist.service.AtividadeService;
 import com.fatec.todolist.service.MateriaService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -16,9 +18,11 @@ import java.util.List;
 public class MateriaController {
 
     private final MateriaService materiaService;
+    private final AtividadeService atividadeService;
 
-    public MateriaController(MateriaService materiaService) {
+    public MateriaController(MateriaService materiaService, AtividadeService atividadeService) {
         this.materiaService = materiaService;
+        this.atividadeService = atividadeService;
     }
 
     @GetMapping
@@ -43,6 +47,12 @@ public class MateriaController {
                 .map(this::toResponse)
                 .toList();
         return ResponseEntity.ok(materias);
+    }
+
+    @GetMapping("/{materiaId}/atividades")
+    public ResponseEntity<List<AtividadeResponse>> listarAtividadesPorMateria(@PathVariable Long materiaId) {
+        List<AtividadeResponse> atividades = atividadeService.listarPorMateria(materiaId);
+        return ResponseEntity.ok(atividades);
     }
 
     @PostMapping

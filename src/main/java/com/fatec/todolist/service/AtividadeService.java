@@ -33,6 +33,7 @@ public class AtividadeService {
         atividade.setRegras(request.regras());
         atividade.setPrazo(request.prazo());
         atividade.setMateria(materia);
+        atividade.setTipo(request.tipo());
         
         Atividade salva = repository.save(atividade);
         return converterParaResponse(salva);
@@ -78,6 +79,7 @@ public class AtividadeService {
         atividade.setRegras(request.regras());
         atividade.setPrazo(request.prazo());
         atividade.setMateria(materia);
+        atividade.setTipo(request.tipo());
         
         Atividade atualizada = repository.save(atividade);
         return converterParaResponse(atualizada);
@@ -99,7 +101,44 @@ public class AtividadeService {
                 atividade.getLinkEntrega(),
                 atividade.getRegras(),
                 atividade.getPrazo(),
-                atividade.getMateria().getNome()
+                atividade.getMateria().getNome(),
+                atividade.getTipo(),
+                atividade.getStatusAprovacao(),
+                atividade.getCriadoPorAlunoId()
         );
+    }
+
+    public List<AtividadeResponse> listarPorSala(Integer salaId) {
+        return repository.findBySalaId(salaId).stream()
+                .map(this::converterParaResponse)
+                .collect(Collectors.toList());
+    }
+
+    public List<AtividadeResponse> listarPendentes(Integer salaId) {
+        return repository.findBySalaIdAndStatusAprovacao(salaId, com.fatec.todolist.entity.StatusAprovacao.PENDENTE).stream()
+                .map(this::converterParaResponse)
+                .collect(Collectors.toList());
+    }
+
+    public List<AtividadeResponse> listarProvas(Integer salaId) {
+        return repository.findBySalaIdAndTipo(salaId, com.fatec.todolist.entity.TipoAtividade.PROVA).stream()
+                .map(this::converterParaResponse)
+                .collect(Collectors.toList());
+    }
+
+    public AtividadeResponse aprovar(Long atividadeId) {
+        Atividade atividade = repository.findById(atividadeId)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
+        atividade.setStatusAprovacao(com.fatec.todolist.entity.StatusAprovacao.APROVADA);
+        Atividade salva = repository.save(atividade);
+        return converterParaResponse(salva);
+    }
+
+    public AtividadeResponse rejeitar(Long atividadeId) {
+        Atividade atividade = repository.findById(atividadeId)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
+        atividade.setStatusAprovacao(com.fatec.todolist.entity.StatusAprovacao.REJEITADA);
+        Atividade salva = repository.save(atividade);
+        return converterParaResponse(salva);
     }
 }

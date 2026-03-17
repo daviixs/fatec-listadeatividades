@@ -1,0 +1,1687 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.fatec:todolist >-------------------------
+[INFO] Building todolist 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.0.3:run (default-cli) > test-compile @ todolist >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ todolist ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ todolist ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ todolist ---
+[INFO] skip non existing resourceDirectory /Users/davixavier/Desktop/todolist/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ todolist ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] <<< spring-boot:4.0.3:run (default-cli) < test-compile @ todolist <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.3:run (default-cli) @ todolist ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.3)
+
+2026-03-17T18:48:00.395-03:00  INFO 24237 --- [todolist] [  restartedMain] com.fatec.todolist.TodolistApplication   : Starting TodolistApplication using Java 21.0.10 with PID 24237 (/Users/davixavier/Desktop/todolist/target/classes started by davixavier in /Users/davixavier/Desktop/todolist)
+2026-03-17T18:48:00.396-03:00  INFO 24237 --- [todolist] [  restartedMain] com.fatec.todolist.TodolistApplication   : The following 1 profile is active: "dotenv"
+2026-03-17T18:48:00.423-03:00  INFO 24237 --- [todolist] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-17T18:48:00.423-03:00  INFO 24237 --- [todolist] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-17T18:48:00.764-03:00  INFO 24237 --- [todolist] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-17T18:48:00.791-03:00  INFO 24237 --- [todolist] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 11 JPA repository interfaces.
+2026-03-17T18:48:01.012-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-17T18:48:01.018-03:00  INFO 24237 --- [todolist] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-17T18:48:01.018-03:00  INFO 24237 --- [todolist] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-17T18:48:01.034-03:00  INFO 24237 --- [todolist] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 611 ms
+2026-03-17T18:48:01.109-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-17T18:48:01.137-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-17T18:48:01.317-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-17T18:48:01.330-03:00  INFO 24237 --- [todolist] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-17T18:48:01.417-03:00  INFO 24237 --- [todolist] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:todolist_fatec user=SA
+2026-03-17T18:48:01.418-03:00  INFO 24237 --- [todolist] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-17T18:48:01.429-03:00  WARN 24237 --- [todolist] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-17T18:48:01.437-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:todolist_fatec]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: TODOLIST_FATEC/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-17T18:48:01.866-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists aluno cascade 
+Hibernate: drop table if exists atividade cascade 
+Hibernate: drop table if exists entrada_sala cascade 
+Hibernate: drop table if exists lembrete_assinante cascade 
+Hibernate: drop table if exists lembrete_assinante_sala cascade 
+Hibernate: drop table if exists lembrete_envio_item cascade 
+Hibernate: drop table if exists lembrete_envio_job cascade 
+Hibernate: drop table if exists materia cascade 
+Hibernate: drop table if exists sala_de_aula cascade 
+Hibernate: drop table if exists votacao_cancelamento cascade 
+Hibernate: drop table if exists voto cascade 
+Hibernate: create table aluno (sala_id integer not null, id bigint generated by default as identity, nome varchar(255) not null, rm varchar(255) not null unique, primary key (id))
+Hibernate: create table atividade (data date, prazo date, id bigint generated by default as identity, materia_id bigint not null, descricao varchar(255), link_entrega varchar(255), regras varchar(255) not null, titulo varchar(255), status enum ('ATIVA','CANCELADA') not null, tipo_entrega enum ('ENTREGA_MANUAL','LINK_EXTERNO'), primary key (id))
+Hibernate: create table entrada_sala (sala_id integer not null, aluno_id bigint not null, atualizado_em timestamp(6) not null, criado_em timestamp(6) not null, id bigint generated by default as identity, status enum ('APROVADO','PENDENTE','REJEITADO') not null, primary key (id))
+Hibernate: create table lembrete_assinante (ativo boolean not null, data_cadastro timestamp(6) not null, id bigint generated by default as identity, ultimo_envio timestamp(6), email varchar(255) not null unique, primary key (id))
+Hibernate: create table lembrete_assinante_sala (ativo boolean not null, sala_id integer not null, assinante_id bigint not null, data_cadastro timestamp(6) not null, id bigint generated by default as identity, primary key (id))
+Hibernate: create table lembrete_envio_item (tentativas integer not null, assinante_id bigint not null, atualizado_em timestamp(6), criado_em timestamp(6) not null, id bigint generated by default as identity, job_id bigint not null, erro TEXT, provedor_message_id varchar(255), status enum ('FAILED','PENDING','SENT','SKIPPED_NO_PENDING') not null, primary key (id))
+Hibernate: create table lembrete_envio_job (data_fim timestamp(6), data_inicio timestamp(6) not null, id bigint generated by default as identity, slot_fim timestamp(6) not null, slot_inicio timestamp(6) not null unique, erro TEXT, status enum ('DONE','FAILED','PARTIAL','PENDING','RUNNING') not null, primary key (id))
+Hibernate: create table materia (sala_id integer not null, id bigint generated by default as identity, nome varchar(255), professor varchar(255), primary key (id))
+Hibernate: create table sala_de_aula (id integer generated by default as identity, codigo_convite varchar(255) not null unique, nome varchar(255), segredo_lider varchar(255) not null, semestre varchar(255), primary key (id))
+Hibernate: create table votacao_cancelamento (atividade_id bigint not null unique, encerra_em timestamp(6) not null, id bigint generated by default as identity, iniciada_em timestamp(6) not null, status enum ('ABERTA','ENCERRADA') not null, primary key (id))
+Hibernate: create table voto (aluno_id bigint not null, id bigint generated by default as identity, votacao_id bigint not null, votado_em timestamp(6) not null, opcao enum ('NAO','SIM') not null, primary key (id), constraint uk_voto_aluno_votacao unique (votacao_id, aluno_id))
+Hibernate: alter table if exists aluno add constraint fk_aluno_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists atividade add constraint fk_materia foreign key (materia_id) references materia
+Hibernate: alter table if exists entrada_sala add constraint fk_entrada_aluno foreign key (aluno_id) references aluno
+Hibernate: alter table if exists entrada_sala add constraint fk_entrada_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists lembrete_assinante_sala add constraint fk_las_assinante foreign key (assinante_id) references lembrete_assinante
+Hibernate: alter table if exists lembrete_assinante_sala add constraint fk_las_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists lembrete_envio_item add constraint fk_lei_assinante foreign key (assinante_id) references lembrete_assinante
+Hibernate: alter table if exists lembrete_envio_item add constraint fk_lei_job foreign key (job_id) references lembrete_envio_job
+Hibernate: alter table if exists materia add constraint fk_materia_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists votacao_cancelamento add constraint fk_votacao_atividade foreign key (atividade_id) references atividade
+Hibernate: alter table if exists voto add constraint fk_voto_aluno foreign key (aluno_id) references aluno
+Hibernate: alter table if exists voto add constraint fk_voto_votacao foreign key (votacao_id) references votacao_cancelamento
+2026-03-17T18:48:01.900-03:00  INFO 24237 --- [todolist] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-17T18:48:01.933-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-17T18:48:02.414-03:00  WARN 24237 --- [todolist] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-17T18:48:02.447-03:00  WARN 24237 --- [todolist] [  restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 61bb73c8-4555-4423-8d59-48d8d6d759e7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-03-17T18:48:02.451-03:00  INFO 24237 --- [todolist] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-03-17T18:48:02.696-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-17T18:48:02.702-03:00  INFO 24237 --- [todolist] [  restartedMain] com.fatec.todolist.TodolistApplication   : Started TodolistApplication in 2.448 seconds (process running for 2.653)
+Hibernate: select count(*) from sala_de_aula sda1_0
+2026-03-17T18:48:02.757-03:00  INFO 24237 --- [todolist] [  restartedMain] c.fatec.todolist.config.DataInitializer  : Starting database initialization...
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+2026-03-17T18:48:02.932-03:00  INFO 24237 --- [todolist] [  restartedMain] c.fatec.todolist.config.DataInitializer  : Initialization complete. Created 42 classrooms with 307 subjects.
+2026-03-17T18:48:02.933-03:00  WARN 24237 --- [todolist] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-17T18:48:02.933-03:00  WARN 24237 --- [todolist] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+===========================================
+Swagger iniciado com sucesso!
+Acesse: http://localhost:8080/swagger-ui.html
+===========================================
+2026-03-17T18:48:24.128-03:00  INFO 24237 --- [todolist] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-17T18:48:24.128-03:00  INFO 24237 --- [todolist] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-17T18:48:24.138-03:00  INFO 24237 --- [todolist] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+AdminSecret: senhaultrasecreta
+AdminSecret: senhaultrasecreta
+Request path: /api/salas
+AdminSecret: senhaultrasecreta
+Request path: /api/lembretes/assinantes
+Request path: /api/admin/lembretes/disparar-agora
+Admin request detected
+Provided secret: senhaultrasecreta
+Secret accepted
+Hibernate: select lej1_0.id,lej1_0.data_fim,lej1_0.data_inicio,lej1_0.erro,lej1_0.slot_fim,lej1_0.slot_inicio,lej1_0.status from lembrete_envio_job lej1_0 where lej1_0.slot_inicio=?
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0
+Hibernate: insert into lembrete_envio_job (data_fim,data_inicio,erro,slot_fim,slot_inicio,status,id) values (?,?,?,?,?,?,default)
+2026-03-17T18:48:24.187-03:00  INFO 24237 --- [todolist] [nio-8080-exec-2] c.f.t.service.LembreteDispatchService    : Iniciando processamento do job 1 para slot 2026-03-17T18:00
+Hibernate: select la1_0.id,la1_0.ativo,la1_0.data_cadastro,la1_0.email,la1_0.ultimo_envio from lembrete_assinante la1_0 where la1_0.ativo=true
+2026-03-17T18:48:24.194-03:00  INFO 24237 --- [todolist] [nio-8080-exec-2] c.f.t.service.LembreteDispatchService    : Finalizando job 1 com status DONE
+Hibernate: update lembrete_envio_job set data_fim=?,data_inicio=?,erro=?,slot_fim=?,slot_inicio=?,status=? where id=?
+Hibernate: select la1_0.id,la1_0.ativo,la1_0.data_cadastro,la1_0.email,la1_0.ultimo_envio from lembrete_assinante la1_0 where la1_0.email=?
+Hibernate: insert into lembrete_assinante (ativo,data_cadastro,email,ultimo_envio,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id in (?)
+Hibernate: select las1_0.id,las1_0.assinante_id,las1_0.ativo,las1_0.data_cadastro,las1_0.sala_id from lembrete_assinante_sala las1_0 where las1_0.assinante_id=?
+Hibernate: insert into lembrete_assinante_sala (assinante_id,ativo,data_cadastro,sala_id,id) values (?,?,?,?,default)
+Hibernate: select la1_0.id,la1_0.ativo,la1_0.data_cadastro,la1_0.email,la1_0.ultimo_envio from lembrete_assinante la1_0 where la1_0.email=?
+Hibernate: select las1_0.id,las1_0.assinante_id,las1_0.ativo,las1_0.data_cadastro,las1_0.sala_id from lembrete_assinante_sala las1_0 where las1_0.assinante_id=? and las1_0.ativo=true
+AdminSecret: senhaultrasecreta
+Request path: /api/admin/lembretes/disparar-agora
+Admin request detected
+Provided secret: senhaultrasecreta
+Secret accepted
+Hibernate: select lej1_0.id,lej1_0.data_fim,lej1_0.data_inicio,lej1_0.erro,lej1_0.slot_fim,lej1_0.slot_inicio,lej1_0.status from lembrete_envio_job lej1_0 where lej1_0.slot_inicio=?
+2026-03-17T18:49:08.900-03:00  INFO 24237 --- [todolist] [nio-8080-exec-7] c.f.t.service.LembreteDispatchService    : Job 1 ja processado ou em andamento, ignorando
+AdminSecret: senhaultrasecreta
+Request path: /api/atividades/materia/1
+AdminSecret: senhaultrasecreta
+Request path: /api/admin/materias/1/atividades
+Admin request detected
+Provided secret: senhaultrasecreta
+Secret accepted
+2026-03-17T18:50:01.681-03:00  WARN 24237 --- [todolist] [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public org.springframework.http.ResponseEntity<com.fatec.todolist.dto.AtividadeResponse> com.fatec.todolist.controller.MateriaAdminController.criarAtividade(java.lang.Long,com.fatec.todolist.dto.AtividadeRequest) with 2 errors: [Field error in object 'atividadeRequest' on field 'id': rejected value [null]; codes [NotNull.atividadeRequest.id,NotNull.id,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [atividadeRequest.id,id]; arguments []; default message [id]]; default message [não deve ser nulo]] [Field error in object 'atividadeRequest' on field 'materiaId': rejected value [null]; codes [NotNull.atividadeRequest.materiaId,NotNull.materiaId,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [atividadeRequest.materiaId,materiaId]; arguments []; default message [materiaId]]; default message [não deve ser nulo]] ]
+2026-03-17T18:50:45.007-03:00  INFO 24237 --- [todolist] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-03-17T18:50:45.024-03:00  INFO 24237 --- [todolist] [       Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-17T18:50:45.029-03:00  INFO 24237 --- [todolist] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-17T18:50:45.034-03:00  INFO 24237 --- [todolist] [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists aluno cascade 
+Hibernate: drop table if exists atividade cascade 
+Hibernate: drop table if exists entrada_sala cascade 
+Hibernate: drop table if exists lembrete_assinante cascade 
+Hibernate: drop table if exists lembrete_assinante_sala cascade 
+Hibernate: drop table if exists lembrete_envio_item cascade 
+Hibernate: drop table if exists lembrete_envio_job cascade 
+Hibernate: drop table if exists materia cascade 
+Hibernate: drop table if exists sala_de_aula cascade 
+Hibernate: drop table if exists votacao_cancelamento cascade 
+Hibernate: drop table if exists voto cascade 
+2026-03-17T18:50:45.048-03:00  WARN 24237 --- [todolist] [       Thread-1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+2026-03-17T18:50:45.049-03:00  INFO 24237 --- [todolist] [       Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-17T18:50:45.050-03:00  INFO 24237 --- [todolist] [       Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.3)
+
+2026-03-17T18:50:45.119-03:00  INFO 24237 --- [todolist] [  restartedMain] com.fatec.todolist.TodolistApplication   : Starting TodolistApplication using Java 21.0.10 with PID 24237 (/Users/davixavier/Desktop/todolist/target/classes started by davixavier in /Users/davixavier/Desktop/todolist)
+2026-03-17T18:50:45.120-03:00  INFO 24237 --- [todolist] [  restartedMain] com.fatec.todolist.TodolistApplication   : The following 1 profile is active: "dotenv"
+2026-03-17T18:50:45.219-03:00  INFO 24237 --- [todolist] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-17T18:50:45.232-03:00  INFO 24237 --- [todolist] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 11 JPA repository interfaces.
+2026-03-17T18:50:45.288-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-17T18:50:45.289-03:00  INFO 24237 --- [todolist] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-17T18:50:45.289-03:00  INFO 24237 --- [todolist] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-17T18:50:45.294-03:00  INFO 24237 --- [todolist] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 174 ms
+2026-03-17T18:50:45.326-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-17T18:50:45.337-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-17T18:50:45.337-03:00  INFO 24237 --- [todolist] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-03-17T18:50:45.338-03:00  INFO 24237 --- [todolist] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:todolist_fatec user=SA
+2026-03-17T18:50:45.338-03:00  INFO 24237 --- [todolist] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-03-17T18:50:45.338-03:00  WARN 24237 --- [todolist] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-17T18:50:45.339-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:todolist_fatec]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: TODOLIST_FATEC/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-17T18:50:45.404-03:00  INFO 24237 --- [todolist] [  restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists aluno cascade 
+Hibernate: drop table if exists atividade cascade 
+Hibernate: drop table if exists entrada_sala cascade 
+Hibernate: drop table if exists lembrete_assinante cascade 
+Hibernate: drop table if exists lembrete_assinante_sala cascade 
+Hibernate: drop table if exists lembrete_envio_item cascade 
+Hibernate: drop table if exists lembrete_envio_job cascade 
+Hibernate: drop table if exists materia cascade 
+Hibernate: drop table if exists sala_de_aula cascade 
+Hibernate: drop table if exists votacao_cancelamento cascade 
+Hibernate: drop table if exists voto cascade 
+Hibernate: create table aluno (sala_id integer not null, id bigint generated by default as identity, nome varchar(255) not null, rm varchar(255) not null unique, primary key (id))
+Hibernate: create table atividade (data date, prazo date, id bigint generated by default as identity, materia_id bigint not null, descricao varchar(255), link_entrega varchar(255), regras varchar(255) not null, titulo varchar(255), status enum ('ATIVA','CANCELADA') not null, tipo_entrega enum ('ENTREGA_MANUAL','LINK_EXTERNO'), primary key (id))
+Hibernate: create table entrada_sala (sala_id integer not null, aluno_id bigint not null, atualizado_em timestamp(6) not null, criado_em timestamp(6) not null, id bigint generated by default as identity, status enum ('APROVADO','PENDENTE','REJEITADO') not null, primary key (id))
+Hibernate: create table lembrete_assinante (ativo boolean not null, data_cadastro timestamp(6) not null, id bigint generated by default as identity, ultimo_envio timestamp(6), email varchar(255) not null unique, primary key (id))
+Hibernate: create table lembrete_assinante_sala (ativo boolean not null, sala_id integer not null, assinante_id bigint not null, data_cadastro timestamp(6) not null, id bigint generated by default as identity, primary key (id))
+Hibernate: create table lembrete_envio_item (tentativas integer not null, assinante_id bigint not null, atualizado_em timestamp(6), criado_em timestamp(6) not null, id bigint generated by default as identity, job_id bigint not null, erro TEXT, provedor_message_id varchar(255), status enum ('FAILED','PENDING','SENT','SKIPPED_NO_PENDING') not null, primary key (id))
+Hibernate: create table lembrete_envio_job (data_fim timestamp(6), data_inicio timestamp(6) not null, id bigint generated by default as identity, slot_fim timestamp(6) not null, slot_inicio timestamp(6) not null unique, erro TEXT, status enum ('DONE','FAILED','PARTIAL','PENDING','RUNNING') not null, primary key (id))
+Hibernate: create table materia (sala_id integer not null, id bigint generated by default as identity, nome varchar(255), professor varchar(255), primary key (id))
+Hibernate: create table sala_de_aula (id integer generated by default as identity, codigo_convite varchar(255) not null unique, nome varchar(255), segredo_lider varchar(255) not null, semestre varchar(255), primary key (id))
+Hibernate: create table votacao_cancelamento (atividade_id bigint not null unique, encerra_em timestamp(6) not null, id bigint generated by default as identity, iniciada_em timestamp(6) not null, status enum ('ABERTA','ENCERRADA') not null, primary key (id))
+Hibernate: create table voto (aluno_id bigint not null, id bigint generated by default as identity, votacao_id bigint not null, votado_em timestamp(6) not null, opcao enum ('NAO','SIM') not null, primary key (id), constraint uk_voto_aluno_votacao unique (votacao_id, aluno_id))
+Hibernate: alter table if exists aluno add constraint fk_aluno_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists atividade add constraint fk_materia foreign key (materia_id) references materia
+Hibernate: alter table if exists entrada_sala add constraint fk_entrada_aluno foreign key (aluno_id) references aluno
+Hibernate: alter table if exists entrada_sala add constraint fk_entrada_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists lembrete_assinante_sala add constraint fk_las_assinante foreign key (assinante_id) references lembrete_assinante
+Hibernate: alter table if exists lembrete_assinante_sala add constraint fk_las_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists lembrete_envio_item add constraint fk_lei_assinante foreign key (assinante_id) references lembrete_assinante
+Hibernate: alter table if exists lembrete_envio_item add constraint fk_lei_job foreign key (job_id) references lembrete_envio_job
+Hibernate: alter table if exists materia add constraint fk_materia_sala foreign key (sala_id) references sala_de_aula
+Hibernate: alter table if exists votacao_cancelamento add constraint fk_votacao_atividade foreign key (atividade_id) references atividade
+Hibernate: alter table if exists voto add constraint fk_voto_aluno foreign key (aluno_id) references aluno
+Hibernate: alter table if exists voto add constraint fk_voto_votacao foreign key (votacao_id) references votacao_cancelamento
+2026-03-17T18:50:45.412-03:00  INFO 24237 --- [todolist] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-17T18:50:45.513-03:00  WARN 24237 --- [todolist] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-17T18:50:45.527-03:00  WARN 24237 --- [todolist] [  restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 969e1fe7-72be-46e9-98a5-a27b21c41627
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-03-17T18:50:45.527-03:00  INFO 24237 --- [todolist] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-03-17T18:50:45.617-03:00  INFO 24237 --- [todolist] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-17T18:50:45.619-03:00  INFO 24237 --- [todolist] [  restartedMain] com.fatec.todolist.TodolistApplication   : Started TodolistApplication in 0.508 seconds (process running for 165.57)
+Hibernate: select count(*) from sala_de_aula sda1_0
+2026-03-17T18:50:45.622-03:00  INFO 24237 --- [todolist] [  restartedMain] c.fatec.todolist.config.DataInitializer  : Starting database initialization...
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id from sala_de_aula sda1_0 where sda1_0.codigo_convite=? fetch first ? rows only
+Hibernate: insert into sala_de_aula (codigo_convite,nome,segredo_lider,semestre,id) values (?,?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+Hibernate: select sda1_0.id,sda1_0.codigo_convite,sda1_0.nome,sda1_0.segredo_lider,sda1_0.semestre from sala_de_aula sda1_0 where sda1_0.id=?
+Hibernate: insert into materia (nome,professor,sala_id,id) values (?,?,?,default)
+2026-03-17T18:50:45.700-03:00  INFO 24237 --- [todolist] [  restartedMain] c.fatec.todolist.config.DataInitializer  : Initialization complete. Created 42 classrooms with 307 subjects.
+2026-03-17T18:50:45.700-03:00  WARN 24237 --- [todolist] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-17T18:50:45.700-03:00  WARN 24237 --- [todolist] [  restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-17T18:50:45.701-03:00  INFO 24237 --- [todolist] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+===========================================
+Swagger iniciado com sucesso!
+Acesse: http://localhost:8080/swagger-ui.html
+===========================================
+2026-03-17T18:50:50.064-03:00  INFO 24237 --- [todolist] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-17T18:50:50.066-03:00  INFO 24237 --- [todolist] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-17T18:50:50.067-03:00  INFO 24237 --- [todolist] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: drop table if exists aluno cascade 
+Hibernate: drop table if exists atividade cascade 
+Hibernate: drop table if exists entrada_sala cascade 
+Hibernate: drop table if exists lembrete_assinante cascade 
+Hibernate: drop table if exists lembrete_assinante_sala cascade 
+Hibernate: drop table if exists lembrete_envio_item cascade 
+Hibernate: drop table if exists lembrete_envio_job cascade 
+Hibernate: drop table if exists materia cascade 
+Hibernate: drop table if exists sala_de_aula cascade 
+Hibernate: drop table if exists votacao_cancelamento cascade 
+Hibernate: drop table if exists voto cascade 
+2026-03-17T18:50:50.069-03:00  WARN 24237 --- [todolist] [ionShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+2026-03-17T18:50:50.069-03:00  INFO 24237 --- [todolist] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-03-17T18:50:50.070-03:00  INFO 24237 --- [todolist] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
