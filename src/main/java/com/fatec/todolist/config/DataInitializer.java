@@ -31,8 +31,16 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        final String segredoPadrao = "fatec2026";
+
         if (salaDeAulaRepository.count() > 0) {
-            log.info("Database already contains data. Skipping initialization.");
+            int segredosAtualizados = padronizarSegredoLider(segredoPadrao);
+            if (segredosAtualizados > 0) {
+                log.info("Database already contains data. Updated {} classroom leader secrets.",
+                    segredosAtualizados);
+            } else {
+                log.info("Database already contains data. All classroom leader secrets are already standardized.");
+            }
             return;
         }
 
@@ -40,7 +48,6 @@ public class DataInitializer implements CommandLineRunner {
 
         int salasCriadas = 0;
         int materiasCriadas = 0;
-        final String segredoPadrao = "fatec2026";
         final String professorPadrao = "Professor";
 
         for (CursoConfig curso : CursoConfig.values()) {
@@ -81,5 +88,23 @@ public class DataInitializer implements CommandLineRunner {
 
         log.info("Initialization complete. Created {} classrooms with {} subjects.",
             salasCriadas, materiasCriadas);
+    }
+
+    private int padronizarSegredoLider(String segredoPadrao) {
+        var salas = salaDeAulaRepository.findAll();
+        int atualizadas = 0;
+
+        for (var sala : salas) {
+            if (!segredoPadrao.equals(sala.getSegredoLider())) {
+                sala.setSegredoLider(segredoPadrao);
+                atualizadas++;
+            }
+        }
+
+        if (atualizadas > 0) {
+            salaDeAulaRepository.saveAll(salas);
+        }
+
+        return atualizadas;
     }
 }

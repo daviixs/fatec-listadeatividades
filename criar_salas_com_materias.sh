@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE_URL="http://localhost:8080/api"
-SEGREDO_PADRAO="lider123"
+SEGREDO_PADRAO="fatec2026"
 PROFESSOR_PADRAO="Professor"
 
 # Arrays de matérias por curso e semestre

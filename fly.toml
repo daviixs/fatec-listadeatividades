@@ -1,0 +1,48 @@
+app = "SEU_APP_NAME_AQUI"
+primary_region = "gru"
+
+[build]
+  # Buildpack CNB para projetos Java/Maven sem Dockerfile.
+  builder = "paketobuildpacks/builder-jammy-base"
+
+# Secrets esperados no Fly (definir com `fly secrets set ...`):
+# - SPRING_DATASOURCE_URL=jdbc:postgresql://...
+# - SPRING_DATASOURCE_USERNAME=...
+# - SPRING_DATASOURCE_PASSWORD=...
+# - RESEND_API_KEY=...
+# - RESEND_FROM=...
+# - ADMIN_SECRET=...
+
+[env]
+  # Fly Proxy encaminha para a porta interna da app.
+  SERVER_PORT = "8080"
+  SPRING_PROFILES_ACTIVE = "prod"
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME = "org.postgresql.Driver"
+  SPRING_JPA_DATABASE_PLATFORM = "org.hibernate.dialect.PostgreSQLDialect"
+  SPRING_JPA_HIBERNATE_DDL_AUTO = "update"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [services.concurrency]
+    type = "requests"
+    soft_limit = 200
+    hard_limit = 250
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+    force_https = true
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "20s"
+    interval = "15s"
+    timeout = "2s"

@@ -3,7 +3,7 @@
 import requests
 
 BASE_URL = "http://localhost:8080/api/salas"
-SEGREDO_PADRAO = "lider123"
+SEGREDO_PADRAO = "fatec2026"
 
 cursos = {
     "ADS": "Análise e Desenvolvimento de Sistemas",
