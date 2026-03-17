@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { PlusCircle, Calendar, CheckCircle, Loader2, AlertTriangle } from 'lucide-react';
 import { PageTransition } from '@/components/layout/PageTransition';
-import { getSubjectById, getSemesterById, getCourseById } from '@/data/courses';
+import { getCourseById, getSemesterById, getSubjectById } from '@/data/courses';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -23,7 +23,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from 'sonner';
-import studentApi, { type MateriaApiResponse, type SalaApiResponse } from '@/lib/studentApi';
+import studentApi, { type MateriaApiResponse } from '@/lib/studentApi';
+import { normalizeText, resolveCandidateSalasFromRoute } from '@/lib/routeResolver';
 import { TipoAtividade, TipoEntrega, type Atividade } from '@/types/admin';
 
 type ActivityFormState = {
@@ -44,75 +45,61 @@ const initialFormState: ActivityFormState = {
   prazo: '',
 };
 
-function normalizeText(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-zA-Z0-9\s]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toLowerCase();
-}
-
-function escapeRegex(value: string): string {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function resolveSalaFromRoute(
-  salas: SalaApiResponse[],
-  courseId: string,
-  periodId: string,
-  semesterId: string
-): SalaApiResponse | null {
-  const targetCourse = normalizeText(courseId);
-  const periodKeywords =
-    periodId === 'diurno'
-      ? ['manha', 'diurno', 'matutino']
-      : ['noite', 'noturno', 'vespertino'];
-  const semesterRegex = new RegExp(`\\b${escapeRegex(semesterId)}\\b`);
-
-  const matched = salas
-    .filter((sala) => {
-      const salaName = normalizeText(sala.nome);
-      const startsWithCourse = salaName.startsWith(targetCourse);
-      const hasPeriod = periodKeywords.some((keyword) => salaName.includes(keyword));
-      const hasSemester = semesterRegex.test(salaName);
-      return startsWithCourse && hasPeriod && hasSemester;
-    })
-    .sort((a, b) => b.id - a.id);
-
-  return matched[0] || null;
-}
-
-function resolveMateriaFromSala(
-  materias: MateriaApiResponse[],
-  subjectName: string
-): MateriaApiResponse | null {
+function resolveMateriaFromName(materias: MateriaApiResponse[], subjectName: string): MateriaApiResponse | null {
   const normalizedTarget = normalizeText(subjectName);
   return materias.find((materia) => normalizeText(materia.nome) === normalizedTarget) || null;
 }
 
+function resolveMateriaByLegacyIndex(
+  materias: MateriaApiResponse[],
+  legacySubjectId: string,
+  legacySemesterSubjectIds: string[]
+): MateriaApiResponse | null {
+  const subjectIndex = legacySemesterSubjectIds.findIndex((id) => id === legacySubjectId);
+  if (subjectIndex < 0 || subjectIndex >= materias.length) {
+    return null;
+  }
+  return materias[subjectIndex] || null;
+}
+
 export function Atividades() {
   const { courseId, periodId, semesterId, subjectId } = useParams();
+
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [atividades, setAtividades] = useState<Atividade[]>([]);
-  const [sala, setSala] = useState<SalaApiResponse | null>(null);
   const [materia, setMateria] = useState<MateriaApiResponse | null>(null);
+  const [salaNome, setSalaNome] = useState<string>('');
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState<ActivityFormState>(initialFormState);
 
   const course = getCourseById(courseId || '');
   const semester = getSemesterById(courseId || '', semesterId || '');
-  const subject = getSubjectById(courseId || '', semesterId || '', subjectId || '');
+  const legacySubject = getSubjectById(courseId || '', semesterId || '', subjectId || '');
 
-  const formattedSemester = useMemo(() => semester?.name || '', [semester]);
+  const numericMateriaId = useMemo(() => {
+    if (!subjectId) {
+      return null;
+    }
+
+    const parsedId = Number(subjectId);
+    if (!Number.isInteger(parsedId) || parsedId <= 0) {
+      return null;
+    }
+
+    return parsedId;
+  }, [subjectId]);
+
+  const formattedSemester = useMemo(() => semester?.name || `${semesterId}º semestre`, [semester, semesterId]);
   const formattedPeriod = periodId === 'diurno' ? 'Diurno' : 'Noturno';
+
+  const subjectLabel = materia?.nome || legacySubject?.name || 'Matéria';
+  const subtitleLabel = salaNome || `${course?.name || ''} • ${formattedPeriod} • ${formattedSemester}`;
 
   useEffect(() => {
     const loadData = async () => {
-      if (!courseId || !periodId || !semesterId || !subject || !course || !formattedSemester) {
+      if (!courseId || !periodId || !semesterId || !subjectId || !course) {
         setErrorMessage('Informações da rota não encontradas.');
         setLoading(false);
         return;
@@ -122,28 +109,64 @@ export function Atividades() {
       setErrorMessage(null);
 
       try {
+        if (numericMateriaId) {
+          const [materiaData, atividadesData] = await Promise.all([
+            studentApi.getMateriaById(numericMateriaId),
+            studentApi.getAtividadesPorMateria(numericMateriaId),
+          ]);
+
+          setMateria(materiaData);
+          setSalaNome(materiaData.salaNome);
+          setAtividades(atividadesData);
+          return;
+        }
+
+        if (!legacySubject || !semester) {
+          setErrorMessage('Informações da matéria não encontradas para esta rota.');
+          return;
+        }
+
         const salas = await studentApi.getSalas();
-        const resolvedSala = resolveSalaFromRoute(salas, courseId, periodId, semesterId);
-        if (!resolvedSala) {
+        const candidateSalas = resolveCandidateSalasFromRoute(salas, courseId, periodId, semesterId);
+
+        if (candidateSalas.length === 0) {
           setErrorMessage('Não foi possível identificar a sala desta rota.');
-          setLoading(false);
           return;
         }
 
-        const materias = await studentApi.getMateriasPorSala(resolvedSala.id);
-        const resolvedMateria = resolveMateriaFromSala(materias, subject.name);
-        if (!resolvedMateria) {
-          setErrorMessage('Não foi possível relacionar a matéria desta rota com a sala ativa.');
-          setLoading(false);
+        const legacySemesterSubjectIds = semester.subjects.map((subject) => subject.id);
+
+        const candidateSalaMateria = await Promise.all(
+          candidateSalas.map(async (sala) => {
+            const materiasDaSala = await studentApi.getMateriasPorSala(sala.id);
+
+            const materiaFromName = resolveMateriaFromName(materiasDaSala, legacySubject.name);
+            if (materiaFromName) {
+              return { salaNome: sala.nome, materia: materiaFromName };
+            }
+
+            const materiaFromIndex = resolveMateriaByLegacyIndex(
+              materiasDaSala,
+              subjectId,
+              legacySemesterSubjectIds
+            );
+            return { salaNome: sala.nome, materia: materiaFromIndex };
+          })
+        );
+
+        const resolvedPair = candidateSalaMateria.find((item) => item.materia !== null);
+
+        if (!resolvedPair?.materia) {
+          setErrorMessage('Não foi possível localizar a matéria desta rota. Abra novamente pela lista de matérias.');
           return;
         }
 
-        setSala(resolvedSala);
-        setMateria(resolvedMateria);
+        setMateria(resolvedPair.materia);
+        setSalaNome(resolvedPair.salaNome);
 
-        const atividadesData = await studentApi.getAtividadesPorMateria(resolvedMateria.id);
+        const atividadesData = await studentApi.getAtividadesPorMateria(resolvedPair.materia.id);
         setAtividades(atividadesData);
-      } catch (error) {
+      } catch {
         setErrorMessage('Não foi possível carregar os dados desta matéria no momento.');
       } finally {
         setLoading(false);
@@ -151,7 +174,7 @@ export function Atividades() {
     };
 
     loadData();
-  }, [course, courseId, formattedSemester, periodId, semesterId, subject]);
+  }, [course, courseId, legacySubject, numericMateriaId, periodId, semester, semesterId, subjectId]);
 
   const loadAtividades = async (materiaId: number) => {
     const data = await studentApi.getAtividadesPorMateria(materiaId);
@@ -163,6 +186,7 @@ export function Atividades() {
       toast.error('Matéria não resolvida para criação de atividade.');
       return;
     }
+
     setForm(initialFormState);
     setIsCreateDialogOpen(true);
   };
@@ -201,14 +225,14 @@ export function Atividades() {
       await loadAtividades(materia.id);
       setIsCreateDialogOpen(false);
       toast.success('Atividade criada com sucesso.');
-    } catch (error) {
+    } catch {
       toast.error('Não foi possível criar a atividade.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  if (!course || !semester || !subject) {
+  if (!course || !semester) {
     return <div className="p-8 text-center text-slate-500">Informações não encontradas.</div>;
   }
 
@@ -226,7 +250,7 @@ export function Atividades() {
   if (errorMessage) {
     return (
       <PageTransition>
-        <div className="flex flex-col items-center justify-center p-12 mt-10 rounded-3xl bg-white/70 border border-amber-200">
+        <div className="flex flex-col items-center justify-center p-12 mt-10 rounded-3xl bg-white border-2 border-slate-200/70">
           <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mb-5">
             <AlertTriangle className="w-8 h-8" />
           </div>
@@ -246,12 +270,12 @@ export function Atividades() {
           Atividades
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">
-          {subject.name} • {sala?.nome || `${course.name} • ${formattedPeriod} • ${formattedSemester}`}
+          {subjectLabel} • {subtitleLabel}
         </p>
       </div>
 
       {!hasActivities ? (
-        <div className="relative overflow-hidden rounded-3xl border-2 border-slate-200/70 bg-white p-12 mt-10 shadow-sm animate-in-fade">
+        <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200/60 bg-white p-12 mt-10 animate-in-fade">
           <div className="absolute -top-10 -right-8 w-36 h-36 bg-indigo-100/60 rounded-full blur-2xl" />
           <div className="absolute -bottom-12 -left-8 w-40 h-40 bg-rose-100/50 rounded-full blur-2xl" />
 
@@ -259,9 +283,7 @@ export function Atividades() {
             <div className="w-20 h-20 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 text-slate-500 shadow-inner">
               <Calendar className="w-10 h-10" />
             </div>
-            <h2 className="text-2xl font-black text-indigo-950 mb-2">
-              Nenhuma atividade cadastrada
-            </h2>
+            <h2 className="text-2xl font-black text-indigo-950 mb-2">Nenhuma atividade cadastrada</h2>
             <p className="text-slate-600 font-medium max-w-md mb-8">
               Esta matéria ainda não possui tarefas. Cadastre a primeira atividade para manter a turma organizada.
             </p>
@@ -293,7 +315,7 @@ export function Atividades() {
               </Button>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -318,24 +340,30 @@ export function Atividades() {
                       )}
                       {activity.titulo}
                     </td>
-                    <td className="py-4 px-6 text-sm text-slate-600">{new Date(activity.prazo).toLocaleDateString('pt-BR')}</td>
+                    <td className="py-4 px-6 text-sm text-slate-600">
+                      {new Date(activity.prazo).toLocaleDateString('pt-BR')}
+                    </td>
                     <td className="py-4 px-6 text-sm text-slate-600">
                       {activity.tipoEntrega === 'LINK_EXTERNO' ? 'Link Externo' : 'Entrega Manual'}
                     </td>
-                    <td className="py-4 px-6 text-sm text-slate-600">{activity.materiaNome || subject.name}</td>
+                    <td className="py-4 px-6 text-sm text-slate-600">
+                      {activity.materiaNome || materia?.nome || legacySubject?.name || '-'}
+                    </td>
                     <td className="py-4 px-6 text-sm">
-                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                        activity.statusAprovacao === 'APROVADA' 
-                          ? 'bg-emerald-100 text-emerald-700' 
-                          : activity.statusAprovacao === 'PENDENTE'
-                          ? 'bg-amber-100 text-amber-700'
-                          : 'bg-rose-100 text-rose-700'
-                      }`}>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-bold ${
+                          activity.statusAprovacao === 'APROVADA'
+                            ? 'bg-emerald-100 text-emerald-700'
+                            : activity.statusAprovacao === 'PENDENTE'
+                              ? 'bg-amber-100 text-amber-700'
+                              : 'bg-rose-100 text-rose-700'
+                        }`}
+                      >
                         {activity.statusAprovacao === 'APROVADA'
                           ? 'Aprovada'
                           : activity.statusAprovacao === 'PENDENTE'
-                          ? 'Pendente'
-                          : 'Rejeitada'}
+                            ? 'Pendente'
+                            : 'Rejeitada'}
                       </span>
                     </td>
                   </tr>
@@ -349,11 +377,9 @@ export function Atividades() {
       <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
         <DialogContent className="sm:max-w-xl p-0 overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <DialogHeader className="px-6 pt-6 pb-2">
-            <DialogTitle className="text-2xl font-extrabold text-slate-900">
-              Nova Atividade
-            </DialogTitle>
+            <DialogTitle className="text-2xl font-extrabold text-slate-900">Nova Atividade</DialogTitle>
             <DialogDescription className="text-slate-600">
-              Preencha os dados para cadastrar uma nova atividade em {materia?.nome || subject.name}.
+              Preencha os dados para cadastrar uma nova atividade em {subjectLabel}.
             </DialogDescription>
           </DialogHeader>
 

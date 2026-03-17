@@ -38,6 +38,11 @@ export const studentApi = {
     return response.data;
   },
 
+  getMateriaById: async (materiaId: number): Promise<MateriaApiResponse> => {
+    const response = await api.get<MateriaApiResponse>(`/materias/${materiaId}`);
+    return response.data;
+  },
+
   getAtividadesPorMateria: async (materiaId: number): Promise<Atividade[]> => {
     const response = await api.get<Atividade[]>(`/materias/${materiaId}/atividades`);
     return response.data;
