@@ -14,6 +14,7 @@ public record VotacaoCancelamentoResponse(
         long votosNao,
         long totalAlunos,
         long metaCancelamento,
-        boolean cancelado
+        boolean cancelado,
+        boolean jaVotou
 ) {
 }

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PlusCircle, Calendar, CheckCircle, Loader2, AlertTriangle } from 'lucide-react';
+import { PlusCircle, Calendar, CheckCircle, Loader2, AlertTriangle, ThumbsUp, ThumbsDown, ShieldCheck, XCircle } from 'lucide-react';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { getCourseById, getSemesterById, getSubjectById } from '@/data/courses';
 import { Button } from '@/components/ui/button';
@@ -26,6 +26,8 @@ import { toast } from 'sonner';
 import studentApi, { type MateriaApiResponse } from '@/lib/studentApi';
 import { normalizeText, resolveCandidateSalasFromRoute } from '@/lib/routeResolver';
 import { TipoAtividade, TipoEntrega, type Atividade } from '@/types/admin';
+import type { VotacaoCancelamento } from '@/types';
+import { Progress } from '@/components/ui/progress';
 
 type ActivityFormState = {
   titulo: string;
@@ -73,6 +75,9 @@ export function Atividades() {
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState<ActivityFormState>(initialFormState);
+  const [votacoes, setVotacoes] = useState<Record<number, VotacaoCancelamento | null>>({});
+  const [votandoId, setVotandoId] = useState<number | null>(null);
+  const [jaVotou, setJaVotou] = useState<Record<number, boolean>>({});
 
   const course = getCourseById(courseId || '');
   const semester = getSemesterById(courseId || '', semesterId || '');
@@ -118,6 +123,7 @@ export function Atividades() {
           setMateria(materiaData);
           setSalaNome(materiaData.salaNome);
           setAtividades(atividadesData);
+          await carregarVotacoes(atividadesData);
           return;
         }
 
@@ -166,6 +172,7 @@ export function Atividades() {
 
         const atividadesData = await studentApi.getAtividadesPorMateria(resolvedPair.materia.id);
         setAtividades(atividadesData);
+        await carregarVotacoes(atividadesData);
       } catch {
         setErrorMessage('Não foi possível carregar os dados desta matéria no momento.');
       } finally {
@@ -179,6 +186,61 @@ export function Atividades() {
   const loadAtividades = async (materiaId: number) => {
     const data = await studentApi.getAtividadesPorMateria(materiaId);
     setAtividades(data);
+    await carregarVotacoes(data);
+  };
+
+  const carregarVotacoes = async (lista: Atividade[]) => {
+    const entries = await Promise.all(
+      lista.map(async (atividade) => {
+        try {
+          const data = await studentApi.getVotacaoPorAtividade(atividade.id);
+          return [atividade.id, data] as const;
+        } catch {
+          return [atividade.id, null] as const;
+        }
+      })
+    );
+    const novoMapa: Record<number, VotacaoCancelamento | null> = {};
+    const marcou: Record<number, boolean> = {};
+    entries.forEach(([id, votacao]) => {
+      novoMapa[id] = votacao;
+      if (votacao?.jaVotou) {
+        marcou[id] = true;
+      }
+    });
+    setVotacoes(novoMapa);
+    if (Object.keys(marcou).length) {
+      setJaVotou((prev) => ({ ...prev, ...marcou }));
+    }
+  };
+
+  const atualizarVotacao = async (atividadeId: number) => {
+    try {
+      const data = await studentApi.getVotacaoPorAtividade(atividadeId);
+      setVotacoes((prev) => ({ ...prev, [atividadeId]: data }));
+      if (data?.jaVotou) {
+        setJaVotou((prev) => ({ ...prev, [atividadeId]: true }));
+      }
+    } catch {
+      setVotacoes((prev) => ({ ...prev, [atividadeId]: null }));
+    }
+  };
+
+  const enviarVoto = async (atividadeId: number, opcao: 'SIM' | 'NAO') => {
+    setVotandoId(atividadeId);
+    try {
+      await studentApi.registrarVoto(atividadeId, { opcao });
+      toast.success('Voto registrado. Obrigado por participar.');
+    } catch (error) {
+      // erro já tratado globalmente; tenta exibir parciais mesmo assim
+    } finally {
+      await atualizarVotacao(atividadeId);
+      if (materia) {
+        await loadAtividades(materia.id);
+      }
+      setVotandoId(null);
+      setJaVotou((prev) => ({ ...prev, [atividadeId]: true }));
+    }
   };
 
   const openCreateDialog = () => {
@@ -262,11 +324,14 @@ export function Atividades() {
   }
 
   const hasActivities = atividades.length > 0;
+  const votacoesAbertas = atividades
+    .map((atividade) => ({ atividade, votacao: votacoes[atividade.id] }))
+    .filter(({ atividade, votacao }) => atividade.status === 'ATIVA' && votacao && votacao.status === 'ABERTA');
 
   return (
     <PageTransition>
       <div className="mb-10 animate-in-fade">
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary-700 mb-3">
           Atividades
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">
@@ -371,13 +436,126 @@ export function Atividades() {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-indigo-600" />
+              <h3 className="text-lg font-bold text-slate-800">Votações abertas</h3>
+            </div>
+
+            {votacoesAbertas.length === 0 ? (
+              <div className="p-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-600">
+                Nenhuma votação ativa nesta matéria no momento.
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {votacoesAbertas.map(({ atividade, votacao }) => {
+                  if (!votacao) return null;
+                  const total = votacao.votosSim + votacao.votosNao;
+                  const percentSim = total > 0 ? Math.round((votacao.votosSim / total) * 100) : 0;
+                  const percentNao = total > 0 ? Math.round((votacao.votosNao / total) * 100) : 0;
+                  const encerraEm = new Date(votacao.encerraEm).toLocaleString('pt-BR', {
+                    dateStyle: 'short',
+                    timeStyle: 'short',
+                  });
+                  const bloqueado = jaVotou[atividade.id] || votacao.jaVotou;
+                  const cancelada = votacao.cancelado || atividade.status === 'CANCELADA';
+
+                  return (
+                    <div
+                      key={atividade.id}
+                      className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 shadow-sm flex flex-col gap-3"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.08em] text-slate-500 font-semibold">
+                            {atividade.materiaNome || materia?.nome || '-'}
+                          </p>
+                          <h4 className="text-lg font-bold text-slate-900 leading-tight">{atividade.titulo}</h4>
+                          <p className="text-sm text-slate-600">
+                            Prazo: {new Date(atividade.prazo).toLocaleDateString('pt-BR')}
+                          </p>
+                        </div>
+                        {cancelada && (
+                          <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold">
+                            <XCircle className="w-4 h-4" />
+                            Cancelada
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="text-xs text-slate-500">
+                        Fecha em {encerraEm} • Meta de cancelamento: {votacao.metaCancelamento} votos SIM
+                      </div>
+
+                      {!bloqueado ? (
+                        <div className="flex flex-wrap gap-3">
+                          <Button
+                            className="rounded-xl gap-2"
+                            disabled={votandoId === atividade.id}
+                            onClick={() => enviarVoto(atividade.id, 'SIM')}
+                          >
+                            {votandoId === atividade.id ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <ThumbsUp className="w-4 h-4" />
+                            )}
+                            Confirmar que o professor passou
+                          </Button>
+                          <Button
+                            variant="outline"
+                            className="rounded-xl gap-2"
+                            disabled={votandoId === atividade.id}
+                            onClick={() => enviarVoto(atividade.id, 'NAO')}
+                          >
+                            {votandoId === atividade.id ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <ThumbsDown className="w-4 h-4" />
+                            )}
+                            Não passou
+                          </Button>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          <div>
+                            <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-1">
+                              <span className="flex items-center gap-1 text-emerald-700">
+                                <ThumbsUp className="w-4 h-4" />
+                                Sim ({votacao.votosSim})
+                              </span>
+                              <span>{percentSim}%</span>
+                            </div>
+                            <Progress value={percentSim} className="h-2 bg-emerald-100" />
+                          </div>
+                          <div>
+                            <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-1">
+                              <span className="flex items-center gap-1 text-rose-700">
+                                <ThumbsDown className="w-4 h-4" />
+                                Não ({votacao.votosNao})
+                              </span>
+                              <span>{percentNao}%</span>
+                            </div>
+                            <Progress value={percentNao} className="h-2 bg-rose-100" />
+                          </div>
+                          <p className="text-xs text-slate-600">
+                            Total de votos: {total}. Você já votou e pode acompanhar o resultado.
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
       )}
 
       <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
         <DialogContent className="sm:max-w-xl p-0 overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <DialogHeader className="px-6 pt-6 pb-2">
-            <DialogTitle className="text-2xl font-extrabold text-slate-900">Nova Atividade</DialogTitle>
+            <DialogTitle className="text-2xl font-extrabold text-primary-700">Nova Atividade</DialogTitle>
             <DialogDescription className="text-slate-600">
               Preencha os dados para cadastrar uma nova atividade em {subjectLabel}.
             </DialogDescription>

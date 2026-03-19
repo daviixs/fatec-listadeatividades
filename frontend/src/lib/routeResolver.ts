@@ -47,3 +47,24 @@ export function resolveSalaFromRoute(
   const [resolvedSala] = resolveCandidateSalasFromRoute(salas, courseId, periodId, semesterId);
   return resolvedSala || null;
 }
+
+export function resolveSalaFromCourseAndPeriod(
+  salas: SalaApiResponse[],
+  courseId: string,
+  periodId: string
+): SalaApiResponse | null {
+  const targetCourse = normalizeText(courseId);
+  const periodKeywords =
+    periodId === 'diurno'
+      ? ['manha', 'diurno', 'matutino']
+      : ['noite', 'noturno', 'vespertino'];
+
+  const candidates = salas.filter((sala) => {
+    const salaName = normalizeText(sala.nome);
+    const startsWithCourse = salaName.startsWith(targetCourse);
+    const hasPeriod = periodKeywords.some((keyword) => salaName.includes(keyword));
+    return startsWithCourse && hasPeriod;
+  }).sort((a, b) => b.id - a.id);
+
+  return candidates[0] || null;
+}

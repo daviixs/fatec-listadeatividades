@@ -54,34 +54,46 @@ public class VotacaoService {
         votacao.setStatus(StatusVotacao.ABERTA);
 
         VotacaoCancelamento salva = votacaoRepository.save(votacao);
-        return converterParaResponse(salva);
+        return converterParaResponse(salva, null);
     }
 
-    public Optional<VotacaoCancelamentoResponse> buscarVotacao(Long atividadeId) {
+    public Optional<VotacaoCancelamentoResponse> buscarVotacao(Long atividadeId, String ip) {
         return votacaoRepository.findByAtividadeId(atividadeId)
-                .map(this::converterParaResponse);
+                .map(v -> converterParaResponse(v, ip));
     }
 
     @Transactional
-    public VotoResponse registrarVoto(Long atividadeId, Long alunoId, VotoRequest request) {
+    public VotoResponse registrarVoto(Long atividadeId, Long alunoId, VotoRequest request, String ip) {
         VotacaoCancelamento votacao = votacaoRepository.findByAtividadeIdAndStatus(atividadeId, StatusVotacao.ABERTA)
                 .orElseThrow(() -> new IllegalArgumentException("Votação não está aberta"));
 
-        Aluno aluno = alunoRepository.findById(alunoId)
-                .orElseThrow(() -> new RecursoNaoEncontradoException("Aluno não encontrado"));
-
-        Optional<EntradaSala> entradaOpt = entradaRepository.findByAlunoIdAndSalaId(alunoId, votacao.getAtividade().getMateria().getSala().getId());
-        if (entradaOpt.isEmpty() || entradaOpt.get().getStatus() != StatusEntrada.APROVADO) {
-            throw new IllegalArgumentException("Aluno não está aprovado nesta sala");
+        if (ip == null || ip.isBlank()) {
+            throw new IllegalArgumentException("IP do solicitante é obrigatório");
         }
 
-        if (votoRepository.existsByVotacaoIdAndAlunoId(votacao.getId(), alunoId)) {
-            throw new IllegalArgumentException("Aluno já votou nesta votação");
+        if (votoRepository.existsByVotacaoIdAndIp(votacao.getId(), ip.trim())) {
+            throw new IllegalArgumentException("IP já votou nesta votação");
+        }
+
+        Aluno aluno = null;
+        if (alunoId != null) {
+            aluno = alunoRepository.findById(alunoId)
+                    .orElseThrow(() -> new RecursoNaoEncontradoException("Aluno não encontrado"));
+
+            Optional<EntradaSala> entradaOpt = entradaRepository.findByAlunoIdAndSalaId(alunoId, votacao.getAtividade().getMateria().getSala().getId());
+            if (entradaOpt.isEmpty() || entradaOpt.get().getStatus() != StatusEntrada.APROVADO) {
+                throw new IllegalArgumentException("Aluno não está aprovado nesta sala");
+            }
+
+            if (votoRepository.existsByVotacaoIdAndAlunoId(votacao.getId(), alunoId)) {
+                throw new IllegalArgumentException("Aluno já votou nesta votação");
+            }
         }
 
         Voto voto = new Voto();
         voto.setVotacao(votacao);
         voto.setAluno(aluno);
+        voto.setIp(ip.trim());
         voto.setOpcao(request.opcao());
         voto.setVotadoEm(LocalDateTime.now());
 
@@ -118,11 +130,12 @@ public class VotacaoService {
         votacaoRepository.save(votacao);
     }
 
-    private VotacaoCancelamentoResponse converterParaResponse(VotacaoCancelamento votacao) {
+    private VotacaoCancelamentoResponse converterParaResponse(VotacaoCancelamento votacao, String ip) {
         long votosSim = votoRepository.countByVotacaoIdAndOpcao(votacao.getId(), OpcaoVoto.SIM);
         long votosNao = votoRepository.countByVotacaoIdAndOpcao(votacao.getId(), OpcaoVoto.NAO);
         long totalAlunos = alunoRepository.countBySalaId(votacao.getAtividade().getMateria().getSala().getId());
         long meta = (long) Math.ceil(totalAlunos * 0.8);
+        boolean jaVotou = ip != null && votoRepository.existsByVotacaoIdAndIp(votacao.getId(), ip.trim());
 
         return new VotacaoCancelamentoResponse(
                 votacao.getId(),
@@ -136,15 +149,18 @@ public class VotacaoService {
                 votosNao,
                 totalAlunos,
                 meta,
-                votacao.getAtividade().getStatus() == StatusAtividade.CANCELADA
+                votacao.getAtividade().getStatus() == StatusAtividade.CANCELADA,
+                jaVotou
         );
     }
 
     private VotoResponse converterParaVotoResponse(Voto voto) {
+        Long alunoId = voto.getAluno() != null ? voto.getAluno().getId() : null;
+        String alunoNome = voto.getAluno() != null ? voto.getAluno().getNome() : null;
         return new VotoResponse(
                 voto.getId(),
-                voto.getAluno().getId(),
-                voto.getAluno().getNome(),
+                alunoId,
+                alunoNome,
                 voto.getOpcao().name(),
                 voto.getVotadoEm()
         );

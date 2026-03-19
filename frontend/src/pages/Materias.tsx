@@ -87,7 +87,7 @@ export function Materias() {
   return (
     <PageTransition>
       <div className="mb-10 text-center md:text-left animate-in-fade">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+        <h1 className="text-4xl font-extrabold tracking-tight text-primary-700 mb-3">
           Matérias do {formattedSemester}
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400">

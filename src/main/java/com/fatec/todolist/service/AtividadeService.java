@@ -101,6 +101,7 @@ public class AtividadeService {
                 atividade.getLinkEntrega(),
                 atividade.getRegras(),
                 atividade.getPrazo(),
+                atividade.getStatus(),
                 atividade.getMateria().getNome(),
                 atividade.getTipo(),
                 atividade.getStatusAprovacao(),

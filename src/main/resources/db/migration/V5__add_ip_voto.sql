@@ -1,0 +1,3 @@
+ALTER TABLE voto ADD COLUMN IF NOT EXISTS ip VARCHAR(64);
+ALTER TABLE voto ALTER COLUMN aluno_id DROP NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS ux_voto_votacao_ip ON voto (votacao_id, ip);

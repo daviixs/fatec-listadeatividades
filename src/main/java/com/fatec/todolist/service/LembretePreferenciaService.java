@@ -22,19 +22,27 @@ public class LembretePreferenciaService {
     private final LembreteAssinanteRepository assinanteRepository;
     private final LembreteAssinanteSalaRepository assinanteSalaRepository;
     private final SalaDeAulaRepository salaRepository;
+    private final LembreteBoasVindasTemplateRenderer boasVindasTemplateRenderer;
+    private final ResendClient resendClient;
 
     public LembretePreferenciaService(
             LembreteAssinanteRepository assinanteRepository,
             LembreteAssinanteSalaRepository assinanteSalaRepository,
-            SalaDeAulaRepository salaRepository
+            SalaDeAulaRepository salaRepository,
+            LembreteBoasVindasTemplateRenderer boasVindasTemplateRenderer,
+            ResendClient resendClient
     ) {
         this.assinanteRepository = assinanteRepository;
         this.assinanteSalaRepository = assinanteSalaRepository;
         this.salaRepository = salaRepository;
+        this.boasVindasTemplateRenderer = boasVindasTemplateRenderer;
+        this.resendClient = resendClient;
     }
 
     @Transactional
     public LembretePreferenciasResponse salvar(LembretePreferenciasRequest request) {
+        boolean novoAssinante = !assinanteRepository.existsByEmail(request.email());
+
         LembreteAssinante assinante = assinanteRepository.findByEmail(request.email())
                 .orElseGet(() -> {
                     LembreteAssinante novo = new LembreteAssinante();
@@ -58,6 +66,15 @@ public class LembretePreferenciaService {
             pref.setSala(sala);
             pref.setAtivo(true);
             assinanteSalaRepository.save(pref);
+        }
+
+        if (novoAssinante && !salas.isEmpty()) {
+            String html = boasVindasTemplateRenderer.render(salas);
+            resendClient.enviar(
+                    assinante.getEmail(),
+                    "Bem-vindo(a)! Você está cadastrado para receber avisos",
+                    html
+            );
         }
 
         return buscarPorEmail(assinante.getEmail());
@@ -87,5 +104,19 @@ public class LembretePreferenciaService {
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Assinante nao encontrado"));
         assinante.setAtivo(false);
         assinanteRepository.save(assinante);
+    }
+
+    public void enviarEmailBoasVindas(String email, List<Integer> salaIds) {
+        List<SalaDeAula> salas = salaRepository.findAllById(salaIds);
+        if (salas.isEmpty()) {
+            throw new RecursoNaoEncontradoException("Nenhuma sala encontrada para os IDs informados");
+        }
+
+        String html = boasVindasTemplateRenderer.render(salas);
+        resendClient.enviar(
+                email,
+                "Bem-vindo(a)! Você está cadastrado para receber avisos",
+                html
+        );
     }
 }

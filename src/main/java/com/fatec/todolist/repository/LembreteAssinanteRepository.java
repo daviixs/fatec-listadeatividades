@@ -8,5 +8,6 @@ import java.util.Optional;
 
 public interface LembreteAssinanteRepository extends JpaRepository<LembreteAssinante, Long> {
     Optional<LembreteAssinante> findByEmail(String email);
+    boolean existsByEmail(String email);
     List<LembreteAssinante> findByAtivoTrue();
 }

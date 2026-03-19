@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bem-vindo(a)!</title>
+  <style>
+    body { font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif; background:#f7f7f9; color:#1f2933; padding:32px; }
+    .card { max-width: 720px; margin:0 auto; background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,0.06); overflow:hidden; }
+    header { padding:24px 28px; background:linear-gradient(135deg,#0f172a,#1e293b); color:#f8fafc; }
+    header h1 { margin:0; font-size:22px; letter-spacing:-0.01em; }
+    header p { margin:4px 0 0; color:#cbd5e1; }
+    .content { padding:28px; }
+    .intro { margin:0 0 20px; line-height:1.6; }
+    .info-box { background:linear-gradient(135deg,#f0fdf4,#dcfce7); border:1px solid #bbf7d0; border-radius:12px; padding:16px 20px; margin-bottom:20px; }
+    .info-box-title { font-weight:700; color:#166534; margin:0 0 6px; font-size:16px; }
+    .info-box-content { color:#15803d; margin:0; font-size:14px; line-height:1.5; }
+    .sala-info { border:1px solid #e5e7eb; border-radius:12px; padding:16px 18px; margin-bottom:14px; background:linear-gradient(180deg,#fff,#f9fafb); }
+    .sala-info h3 { margin:0 0 4px; font-size:17px; color:#0f172a; }
+    .sala-info p { margin:0; font-size:13px; color:#475569; }
+    footer { padding:20px 28px; background:#f8fafc; color:#475569; font-size:13px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <h1>Bem-vindo(a)!</h1>
+      <p>Você agora está conectado(a) às suas salas.</p>
+    </header>
+    <div class="content">
+      <p class="intro">Obrigado por se cadastrar para receber avisos das atividades. A partir de agora, você receberá notificações sobre novas tarefas, prazos e atualizações importantes das salas que você escolheu.</p>
+
+      <div class="info-box">
+        <h2 class="info-box-title">📚 Como funciona?</h2>
+        <p class="info-box-content">Nós enviamos um resumo das atividades pendentes duas vezes por dia: às 09:00 e às 21:00 (horário de São Paulo). Assim, você nunca perde um prazo!</p>
+      </div>
+
+      <section class="sala-info">
+        <h3>Salas cadastradas:</h3>
+        <p>{{SALAS}}</p>
+      </section>
+
+      <p class="intro">Se quiser alterar suas preferências ou cancelar a inscrição, basta acessar o sistema novamente.</p>
+    </div>
+    <footer>Mensagem automática – não responda este email.</footer>
+  </div>
+</body>
+</html>

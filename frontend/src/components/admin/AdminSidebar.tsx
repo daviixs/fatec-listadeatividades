@@ -46,7 +46,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre }: AdminSidebarProps) 
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h2 className="font-bold text-slate-900 dark:text-white text-lg leading-tight">
+            <h2 className="font-bold text-primary-700 text-lg leading-tight">
               Painel Admin
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -56,7 +56,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre }: AdminSidebarProps) 
         </div>
         <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-4">
           <p className="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Semestre</p>
-          <p className="text-sm font-bold text-slate-900 dark:text-white">{semestre}</p>
+          <p className="text-sm font-bold text-primary-700">{semestre}</p>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import api from '@/lib/api';
 import type { Atividade, TipoAtividade, TipoEntrega } from '@/types/admin';
+import type { VotacaoCancelamento, VotoRequest } from '@/types';
 
 export interface SalaApiResponse {
   id: number;
@@ -13,6 +14,19 @@ export interface MateriaApiResponse {
   nome: string;
   professor: string;
   salaNome: string;
+}
+
+export interface LembreteRequest {
+  email: string;
+  salaIds: number[];
+}
+
+export interface LembreteResponse {
+  assinanteId: number;
+  email: string;
+  ativo: boolean;
+  salaIds: number[];
+  ultimoEnvio: string | null;
 }
 
 export interface CriarAtividadeRequest {
@@ -48,8 +62,22 @@ export const studentApi = {
     return response.data;
   },
 
+  getVotacaoPorAtividade: async (atividadeId: number): Promise<VotacaoCancelamento> => {
+    const response = await api.get<VotacaoCancelamento>(`/atividades/${atividadeId}/votacao`);
+    return response.data;
+  },
+
+  registrarVoto: async (atividadeId: number, payload: VotoRequest): Promise<void> => {
+    await api.post(`/atividades/${atividadeId}/votacao/votos`, payload);
+  },
+
   criarAtividade: async (payload: CriarAtividadeRequest): Promise<Atividade> => {
     const response = await api.post<Atividade>('/atividades', payload);
+    return response.data;
+  },
+
+  cadastrarLembrete: async (payload: LembreteRequest): Promise<LembreteResponse> => {
+    const response = await api.post<LembreteResponse>('/lembretes/assinantes', payload);
     return response.data;
   },
 };

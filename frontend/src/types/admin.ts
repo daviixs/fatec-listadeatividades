@@ -35,6 +35,7 @@ export interface Atividade {
   linkEntrega?: string;
   regras: string;
   prazo: string;
+  status: 'ATIVA' | 'CANCELADA';
   materiaNome: string;
   tipo: TipoAtividade;
   statusAprovacao: StatusAprovacao;

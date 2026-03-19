@@ -23,6 +23,8 @@ public class LembreteDispatchService {
     private final LembreteEnvioItemRepository itemRepository;
     private final AtividadeRepository atividadeRepository;
     private final ResendClient resendClient;
+    private final LembreteTemplateRenderer templateRenderer;
+    private final SalaDeAulaRepository salaRepository;
 
     public LembreteDispatchService(
             LembreteAssinanteRepository assinanteRepository,
@@ -30,7 +32,9 @@ public class LembreteDispatchService {
             LembreteEnvioJobRepository jobRepository,
             LembreteEnvioItemRepository itemRepository,
             AtividadeRepository atividadeRepository,
-            ResendClient resendClient
+            ResendClient resendClient,
+            LembreteTemplateRenderer templateRenderer,
+            SalaDeAulaRepository salaRepository
     ) {
         this.assinanteRepository = assinanteRepository;
         this.assinanteSalaRepository = assinanteSalaRepository;
@@ -38,6 +42,8 @@ public class LembreteDispatchService {
         this.itemRepository = itemRepository;
         this.atividadeRepository = atividadeRepository;
         this.resendClient = resendClient;
+        this.templateRenderer = templateRenderer;
+        this.salaRepository = salaRepository;
     }
 
     @Transactional
@@ -123,7 +129,10 @@ public class LembreteDispatchService {
             return;
         }
 
-        String html = montarHtmlConsolidado(pendentes);
+        Map<String, List<Atividade>> porSala = pendentes.stream()
+                .collect(Collectors.groupingBy(a -> a.getMateria().getSala().getNome()));
+
+        String html = templateRenderer.render(porSala);
         String subject = "Resumo de atividades pendentes";
         String messageId = resendClient.enviar(assinante.getEmail(), subject, html);
 
@@ -138,29 +147,39 @@ public class LembreteDispatchService {
         log.info("Email enviado para assinante {} com messageId {}", assinante.getEmail(), messageId);
     }
 
-    private String montarHtmlConsolidado(List<Atividade> pendentes) {
+    @Transactional
+    public void enviarResumoDireto(String email, List<Integer> salaIdsParam) {
+        List<Integer> salaIds;
+        if (salaIdsParam == null || salaIdsParam.isEmpty()) {
+            salaIds = salaRepository.findAll().stream()
+                    .map(SalaDeAula::getId)
+                    .toList();
+        } else {
+            salaIds = salaIdsParam;
+        }
+
+        if (salaIds.isEmpty()) {
+            throw new IllegalArgumentException("Nenhuma sala informada ou cadastrada para envio");
+        }
+
+        List<Atividade> pendentes = atividadeRepository.findPendentesBySalaIds(
+                salaIds,
+                StatusAtividade.ATIVA,
+                LocalDate.now(ZoneId.of("America/Sao_Paulo"))
+        );
+
+        if (pendentes.isEmpty()) {
+            throw new IllegalArgumentException("Não há atividades pendentes para as salas informadas");
+        }
+
         Map<String, List<Atividade>> porSala = pendentes.stream()
                 .collect(Collectors.groupingBy(a -> a.getMateria().getSala().getNome()));
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("<h2>Atividades pendentes</h2>");
-        sb.append("<p>Resumo consolidado das suas salas selecionadas.</p>");
+        String html = templateRenderer.render(porSala);
+        String subject = "Resumo de atividades pendentes";
+        resendClient.enviar(email, subject, html);
 
-        for (Map.Entry<String, List<Atividade>> entry : porSala.entrySet()) {
-            sb.append("<h3>").append(entry.getKey()).append("</h3><ul>");
-            for (Atividade a : entry.getValue()) {
-                sb.append("<li>")
-                        .append(a.getMateria().getNome())
-                        .append(" - ")
-                        .append(a.getTitulo())
-                        .append(" (prazo: ")
-                        .append(a.getPrazo())
-                        .append(")")
-                        .append("</li>");
-            }
-            sb.append("</ul>");
-        }
-
-        return sb.toString();
+        log.info("Email ad-hoc enviado para {} com {} salas", email, porSala.size());
     }
+
 }

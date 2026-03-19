@@ -23,13 +23,16 @@ public class Voto {
     @Column(nullable = false)
     private LocalDateTime votadoEm = LocalDateTime.now();
 
+    @Column(length = 64)
+    private String ip;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "votacao_id", nullable = false,
             foreignKey = @ForeignKey(name = "fk_voto_votacao"))
     private VotacaoCancelamento votacao;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "aluno_id", nullable = false,
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "aluno_id",
             foreignKey = @ForeignKey(name = "fk_voto_aluno"))
     private Aluno aluno;
 }

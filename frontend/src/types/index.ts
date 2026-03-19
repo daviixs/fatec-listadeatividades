@@ -57,6 +57,8 @@ export interface VotacaoCancelamento {
   votosNao: number;
   totalAlunos: number;
   metaCancelamento: number;
+  cancelado?: boolean;
+  jaVotou?: boolean;
 }
 
 export interface Voto {

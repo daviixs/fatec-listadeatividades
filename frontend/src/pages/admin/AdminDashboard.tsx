@@ -49,7 +49,7 @@ export function AdminDashboard() {
     <PageTransition>
       <div className="animate-in-fade-in">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+          <h1 className="text-3xl font-bold text-primary-700 mb-2">
             Dashboard
           </h1>
           <p className="text-slate-600 dark:text-slate-400">
@@ -102,20 +102,20 @@ export function AdminDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Card className="border-slate-200 dark:border-slate-800">
             <CardContent className="p-6">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
+              <h3 className="text-lg font-bold text-primary-700 mb-4">
                 Ações Rápidas
               </h3>
               <div className="space-y-3">
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/atividades`)}
-                  className="w-full h-12 justify-start bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700"
+                  className="w-full h-12 justify-start bg-slate-100 text-primary-700 hover:bg-slate-200"
                 >
                   <FileText className="w-5 h-5 mr-2" />
                   Gerenciar Atividades
                 </Button>
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/provas`)}
-                  className="w-full h-12 justify-start bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700"
+                  className="w-full h-12 justify-start bg-slate-100 text-primary-700 hover:bg-slate-200"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Gerenciar Provas

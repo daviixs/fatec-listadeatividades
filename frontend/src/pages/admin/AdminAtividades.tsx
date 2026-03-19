@@ -120,7 +120,7 @@ export function AdminAtividades() {
       <div className="animate-in-fade-in space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+            <h1 className="text-3xl font-bold text-primary-700 mb-2">
               Atividades
             </h1>
             <p className="text-slate-600 dark:text-slate-400">
@@ -158,7 +158,7 @@ export function AdminAtividades() {
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                          <h3 className="text-lg font-semibold text-primary-700">
                             {atividade.titulo}
                           </h3>
                           {getStatusBadge(atividade.statusAprovacao)}

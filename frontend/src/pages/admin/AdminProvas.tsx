@@ -51,7 +51,7 @@ export function AdminProvas() {
     <PageTransition>
       <div className="animate-in-fade-in space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+          <h1 className="text-3xl font-bold text-primary-700 mb-2">
             Provas
           </h1>
           <p className="text-slate-600 dark:text-slate-400">
@@ -95,7 +95,7 @@ export function AdminProvas() {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 line-clamp-2">
+                  <h3 className="text-lg font-bold text-primary-700 mb-2 line-clamp-2">
                     {prova.titulo}
                   </h3>
 
