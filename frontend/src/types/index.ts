@@ -68,6 +68,14 @@ export interface Voto {
   votacaoId: number;
 }
 
+export interface LembreteEmail {
+  id: number;
+  email: string;
+  cursoNome: string;
+  ativo?: boolean;
+  createdAt?: string;
+}
+
 // Request types
 export interface EntradaSalaRequest {
   codigo: string;
