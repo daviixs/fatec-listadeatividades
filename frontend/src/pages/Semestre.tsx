@@ -34,9 +34,13 @@ export function Semestre() {
     const loadSala = async () => {
       if (!courseId || !periodId) return;
 
+      setLoadingSala(true);
       try {
+        console.log('Buscando salas...', { courseId, periodId });
         const salas = await studentApi.getSalas();
+        console.log('Salas encontradas:', salas);
         const resolvedSala = resolveSalaFromCourseAndPeriod(salas, courseId, periodId);
+        console.log('Sala resolvida:', resolvedSala);
         setSala(resolvedSala);
       } catch (error) {
         console.error('Erro ao carregar sala:', error);
@@ -90,7 +94,7 @@ export function Semestre() {
               Curso <span className="font-medium text-slate-800 dark:text-slate-200">{course.name}</span> • Período <span className="font-medium text-slate-800 dark:text-slate-200">{periodText}</span>
             </p>
           </div>
-          {!loadingSala && sala && (
+          {!loadingSala && sala ? (
             <Button
               variant="outline"
               className="gap-2 border-primary-500/30 text-primary-700 hover:bg-primary-50 hover:border-primary-500"
@@ -99,6 +103,12 @@ export function Semestre() {
               <Bell className="w-4 h-4" />
               Receber Avisos
             </Button>
+          ) : (
+            !loadingSala && (
+              <div className="text-sm text-slate-500 italic">
+                Sala não encontrada para este curso/período
+              </div>
+            )
           )}
         </div>
       </div>
