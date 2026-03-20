@@ -20,6 +20,7 @@ public class AtividadeService {
     
     private final AtividadeRepository repository;
     private final MateriaRepository materiaRepository;
+    private final VotacaoService votacaoService;
     
     public AtividadeResponse criar(AtividadeRequest request) {
         Materia materia = materiaRepository.findById(request.materiaId())
@@ -36,6 +37,17 @@ public class AtividadeService {
         atividade.setTipo(request.tipo());
         
         Atividade salva = repository.save(atividade);
+        
+        if (salva.getStatus() == com.fatec.todolist.entity.StatusAtividade.ATIVA) {
+            try {
+                votacaoService.abrirVotacao(salva.getId());
+            } catch (IllegalArgumentException e) {
+                if (!e.getMessage().contains("Já existe votação aberta")) {
+                    throw e;
+                }
+            }
+        }
+        
         return converterParaResponse(salva);
     }
     

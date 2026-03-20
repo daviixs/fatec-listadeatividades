@@ -42,7 +42,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre }: AdminSidebarProps) 
     <aside className="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 min-h-screen p-6 flex flex-col">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-gradient-to-br from-[#5A7C7A] to-[#6B9B7A] rounded-xl flex items-center justify-center shadow-lg">
             <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -71,7 +71,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre }: AdminSidebarProps) 
                 "w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all",
                 "hover:bg-slate-100 dark:hover:bg-slate-800",
                 isActive
-                  ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg"
+                  ? "bg-gradient-to-r from-[#5A7C7A] to-[#6B9B7A] text-white shadow-lg"
                   : "text-slate-700 dark:text-slate-300"
               )}
             >

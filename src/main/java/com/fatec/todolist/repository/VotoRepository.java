@@ -12,4 +12,6 @@ public interface VotoRepository extends JpaRepository<Voto, Long> {
     boolean existsByVotacaoIdAndIp(Long votacaoId, String ip);
 
     long countByVotacaoIdAndOpcao(Long votacaoId, OpcaoVoto opcao);
+
+    void deleteByVotacaoId(Long votacaoId);
 }

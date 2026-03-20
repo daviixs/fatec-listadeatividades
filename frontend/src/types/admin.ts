@@ -60,3 +60,49 @@ export interface AdminSession {
   semestre: string;
   senha: string;
 }
+
+export interface MasterAdminSession {
+  token: string;
+  username: string;
+}
+
+export interface MasterAdminLoginRequest {
+  username: string;
+  password: string;
+}
+
+export interface MasterAdminLoginResponse {
+  token: string;
+  username: string;
+  expiresIn: number;
+}
+
+export interface EmailAssinanteResponse {
+  id: number;
+  email: string;
+  ativo: boolean;
+  dataCadastro: string;
+  ultimoEnvio: string | null;
+}
+
+export interface AtividadeAdminResponse {
+  id: number;
+  titulo: string;
+  descricao: string;
+  tipoEntrega: string | null;
+  linkEntrega: string | null;
+  prazo: string;
+  status: string | null;
+  materiaNome: string | null;
+  tipo: string | null;
+  statusAprovacao: string | null;
+  materiaId: number | null;
+  salaId: number | null;
+}
+
+export interface SalaAdminResponse {
+  id: number;
+  nome: string;
+  semestre: string;
+  codigoConvite: string;
+}

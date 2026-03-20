@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, KeyRound } from 'lucide-react';
-import { adminApi, adminStorage } from '@/lib/adminApi';
+import { Lock, ShieldCheck } from 'lucide-react';
+import { masterAdminApi, masterAdminStorage } from '@/lib/masterAdminApi';
+import type { MasterAdminLoginRequest } from '@/types/admin';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { PageTransition } from '@/components/layout/PageTransition';
 
-export function AdminLogin() {
+export function MasterAdminLogin() {
   const navigate = useNavigate();
-  const [codigoSala, setCodigoSala] = useState('');
-  const [senha, setSenha] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -19,23 +20,12 @@ export function AdminLogin() {
     setIsLoading(true);
 
     try {
-      const response = await adminApi.login({ codigoSala, senha });
-
-      if (response.autenticado) {
-        adminStorage.saveSession({
-          salaId: response.salaId,
-          nomeSala: response.nomeSala,
-          semestre: response.semestre,
-          senha: senha,
-        });
-
-        toast.success(`Bem-vindo ao painel de ${response.nomeSala}!`);
-        navigate(`/admin/${response.salaId}`);
-      } else {
-        toast.error('Senha inválida');
-      }
-    } catch (error) {
-      toast.error('Erro ao fazer login. Verifique código da sala e senha.');
+      const response = await masterAdminApi.login({ username, password });
+      masterAdminStorage.saveSession({ token: response.token, username: response.username });
+      toast.success('Bem-vindo ao painel Super Admin!');
+      navigate('/master-admin/dashboard');
+    } catch (error: any) {
+      toast.error(error.response?.data?.message || 'Erro ao fazer login. Verifique suas credenciais.');
     } finally {
       setIsLoading(false);
     }
@@ -47,30 +37,30 @@ export function AdminLogin() {
         <div className="w-full max-w-md animate-in-fade-in-up">
           <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-8 border border-slate-200 dark:border-slate-800">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#5A7C7A] to-[#6B9B7A] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Lock className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 bg-gradient-to-br from-[#5A7C7A] to-[#8FA7A5] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <ShieldCheck className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-3xl font-bold text-primary-700 mb-2">
-                Painel Admin
+                Painel Super Admin
               </h1>
               <p className="text-slate-600 dark:text-slate-400">
-                Acesse o painel de administração da sua sala
+                Acesso administrativo global ao sistema
               </p>
             </div>
 
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="codigoSala" className="text-slate-700 dark:text-slate-300 font-semibold">
-                  Código da Sala
+                <Label htmlFor="username" className="text-slate-700 dark:text-slate-300 font-semibold">
+                  Usuário
                 </Label>
                 <div className="relative">
-                  <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                   <Input
-                    id="codigoSala"
+                    id="username"
                     type="text"
-                    placeholder="Digite o código da sala"
-                    value={codigoSala}
-                    onChange={(e) => setCodigoSala(e.target.value)}
+                    placeholder="Digite o usuário"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     className="pl-10 h-12 rounded-xl border-slate-200 dark:border-slate-700 focus:border-[#5A7C7A]"
                     required
                   />
@@ -78,17 +68,17 @@ export function AdminLogin() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="senha" className="text-slate-700 dark:text-slate-300 font-semibold">
-                  Senha do Líder
+                <Label htmlFor="password" className="text-slate-700 dark:text-slate-300 font-semibold">
+                  Senha
                 </Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                   <Input
-                    id="senha"
+                    id="password"
                     type="password"
-                    placeholder="Digite a senha da sala"
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
+                    placeholder="Digite a senha"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="pl-10 h-12 rounded-xl border-slate-200 dark:border-slate-700 focus:border-[#5A7C7A]"
                     required
                   />
@@ -106,7 +96,7 @@ export function AdminLogin() {
 
             <div className="mt-6 text-center">
               <p className="text-sm text-slate-500 dark:text-slate-400">
-                Precisa de ajuda? Entre em contato com o suporte.
+                Acesso restrito a administradores autorizados.
               </p>
             </div>
           </div>

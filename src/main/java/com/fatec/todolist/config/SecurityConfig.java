@@ -39,6 +39,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/votacao/**").permitAll()
                         // Endpoints do lider (protegidos futuramente)
                         .requestMatchers("/api/admin/**").permitAll()
+                        // Endpoints do master admin
+                        .requestMatchers("/api/master-admin/**").permitAll()
                         // Qualquer outra rota precisa estar autenticada
                         .anyRequest().authenticated()
                 );

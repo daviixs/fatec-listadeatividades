@@ -17,6 +17,10 @@ import { AdminDashboard } from '@/pages/admin/AdminDashboard';
 import { AdminAtividades } from '@/pages/admin/AdminAtividades';
 import { AdminProvas } from '@/pages/admin/AdminProvas';
 
+// Master Admin Pages
+import { MasterAdminLogin } from '@/pages/master/MasterAdminLogin';
+import { MasterAdminDashboard } from '@/pages/master/MasterAdminDashboard';
+
 export default function AppRoutes() {
   return (
     <BrowserRouter>
@@ -37,6 +41,10 @@ export default function AppRoutes() {
           <Route path="atividades" element={<AdminAtividades />} />
           <Route path="provas" element={<AdminProvas />} />
         </Route>
+
+        {/* Rotas Master Admin */}
+        <Route path="/master-admin/login" element={<MasterAdminLogin />} />
+        <Route path="/master-admin/dashboard" element={<MasterAdminDashboard />} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

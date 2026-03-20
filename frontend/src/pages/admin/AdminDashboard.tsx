@@ -58,7 +58,7 @@ export function AdminDashboard() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0 shadow-lg hover:shadow-xl transition-all">
+          <Card className="bg-gradient-to-br from-[#5A7C7A] to-[#6B9B7A] text-white border-0 shadow-lg hover:shadow-xl transition-all">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <FileText className="w-8 h-8 opacity-90" />
@@ -68,7 +68,7 @@ export function AdminDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-amber-500 to-amber-600 text-white border-0 shadow-lg hover:shadow-xl transition-all">
+          <Card className="bg-gradient-to-br from-[#8FA7A5] to-[#B0C5C3] text-white border-0 shadow-lg hover:shadow-xl transition-all">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <Clock className="w-8 h-8 opacity-90" />
@@ -78,7 +78,7 @@ export function AdminDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-0 shadow-lg hover:shadow-xl transition-all">
+          <Card className="bg-gradient-to-br from-[#6B9B7A] to-[#8AB89A] text-white border-0 shadow-lg hover:shadow-xl transition-all">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <CheckCircle className="w-8 h-8 opacity-90" />
@@ -88,7 +88,7 @@ export function AdminDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white border-0 shadow-lg hover:shadow-xl transition-all">
+          <Card className="bg-gradient-to-br from-[#7B9B99] to-[#9BBDBA] text-white border-0 shadow-lg hover:shadow-xl transition-all">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <Calendar className="w-8 h-8 opacity-90" />
@@ -108,14 +108,14 @@ export function AdminDashboard() {
               <div className="space-y-3">
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/atividades`)}
-                  className="w-full h-12 justify-start bg-slate-100 text-primary-700 hover:bg-slate-200"
+                  className="w-full h-12 justify-start bg-slate-100 dark:bg-slate-800 text-primary-700 dark:text-primary-500 hover:bg-slate-200 dark:hover:bg-slate-700"
                 >
                   <FileText className="w-5 h-5 mr-2" />
                   Gerenciar Atividades
                 </Button>
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/provas`)}
-                  className="w-full h-12 justify-start bg-slate-100 text-primary-700 hover:bg-slate-200"
+                  className="w-full h-12 justify-start bg-slate-100 dark:bg-slate-800 text-primary-700 dark:text-primary-500 hover:bg-slate-200 dark:hover:bg-slate-700"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Gerenciar Provas
@@ -135,7 +135,7 @@ export function AdminDashboard() {
                 </p>
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/atividades`)}
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+                  className="w-full bg-gradient-to-r from-[#8FA7A5] to-[#B0C5C3] hover:from-[#7B9B99] hover:to-[#9BBDBA] text-white"
                 >
                   Revisar Pendentes
                 </Button>
