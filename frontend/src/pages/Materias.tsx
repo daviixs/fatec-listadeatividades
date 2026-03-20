@@ -57,7 +57,9 @@ export function Materias() {
         const materiasData = await studentApi.getMateriasPorSala(resolvedSala.id);
         setSala(resolvedSala);
         setMaterias(materiasData);
-      } catch {
+      } catch (err) {
+        // Log detalhado para depuração (apenas console)
+        console.error('Erro ao carregar matérias:', err);
         setErrorMessage('Não foi possível carregar as matérias desta sala no momento.');
       } finally {
         setLoading(false);
