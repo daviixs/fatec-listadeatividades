@@ -15,16 +15,16 @@ export function Periodo() {
 
   return (
     <PageTransition>
-      <div className="mb-10 text-center md:text-left animate-in-fade">
-        <h1 className="text-4xl font-extrabold tracking-tight text-primary-700 mb-3">
+      <div className="mb-6 sm:mb-8 lg:mb-10 text-center md:text-left animate-in-fade">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
           Qual o seu período?
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400">
-          Você está navegando em <span className="font-semibold text-primary-600 dark:text-primary-400">{course.name}</span>.
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
+          Você está navegando em <span className="font-semibold text-slate-900 dark:text-slate-200">{course.name}</span>.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <ActionCard
           title="Diurno"
           icon={<Sun className="w-8 h-8 text-amber-500" />}
@@ -34,7 +34,7 @@ export function Periodo() {
 
         <ActionCard
           title="Noturno"
-          icon={<Moon className="w-8 h-8 text-indigo-500" />}
+          icon={<Moon className="w-8 h-8 text-slate-600" />}
           delay={0.2}
           onClick={() => navigate(`/${course.id}/noturno/semestres`)}
         />

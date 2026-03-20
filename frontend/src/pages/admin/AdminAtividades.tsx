@@ -97,9 +97,9 @@ export function AdminAtividades() {
   const getTipoBadge = (tipo: string) => {
     switch (tipo) {
       case 'PROVA':
-        return <Badge variant="outline" className="border-purple-500 text-purple-700 dark:text-purple-300">Prova</Badge>;
+        return <Badge variant="outline" className="border-slate-400 text-slate-700 dark:text-slate-300">Prova</Badge>;
       case 'TRABALHO':
-        return <Badge variant="outline" className="border-blue-500 text-blue-700 dark:text-blue-300">Trabalho</Badge>;
+        return <Badge variant="outline" className="border-slate-400 text-slate-700 dark:text-slate-300">Trabalho</Badge>;
       default:
         return <Badge variant="outline">Atividade</Badge>;
     }
@@ -108,7 +108,7 @@ export function AdminAtividades() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+        <div className="animate-spin rounded-full h-10 w-10 border-2 border-slate-600 border-t-transparent"></div>
       </div>
     );
   }
@@ -117,57 +117,57 @@ export function AdminAtividades() {
 
   return (
     <PageTransition>
-      <div className="animate-in-fade-in space-y-6">
+      <div className="animate-in-fade-in space-y-4 sm:space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-primary-700 mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
               Atividades
             </h1>
-            <p className="text-slate-600 dark:text-slate-400">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
               Gerencie todas as atividades da sala
             </p>
           </div>
           <Button
             onClick={() => navigate(`/admin/${salaId}/atividades/nova`)}
-            className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white shadow-lg"
+            className="w-full sm:w-auto bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white shadow-lg"
           >
-            <PlusCircle className="w-5 h-5 mr-2" />
-            Nova Atividade
+            <PlusCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            <span className="text-sm sm:text-base">Nova Atividade</span>
           </Button>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-          <TabsList className="bg-slate-100 dark:bg-slate-800">
-            <TabsTrigger value="todas">Todas ({atividades.length})</TabsTrigger>
-            <TabsTrigger value="pendentes">Pendentes ({pendentes.length})</TabsTrigger>
-            <TabsTrigger value="aprovadas">Aprovadas</TabsTrigger>
-            <TabsTrigger value="rejeitadas">Rejeitadas</TabsTrigger>
+          <TabsList className="bg-slate-100 dark:bg-slate-800 w-full sm:w-auto overflow-x-auto">
+            <TabsTrigger value="todas" className="text-sm">Todas ({atividades.length})</TabsTrigger>
+            <TabsTrigger value="pendentes" className="text-sm">Pendentes ({pendentes.length})</TabsTrigger>
+            <TabsTrigger value="aprovadas" className="text-sm">Aprovadas</TabsTrigger>
+            <TabsTrigger value="rejeitadas" className="text-sm">Rejeitadas</TabsTrigger>
           </TabsList>
 
           {filtered.length === 0 ? (
             <Card>
-              <CardContent className="p-12 text-center">
-                <p className="text-slate-500 dark:text-slate-400">Nenhuma atividade encontrada</p>
+              <CardContent className="p-8 sm:p-12 text-center">
+                <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base">Nenhuma atividade encontrada</p>
               </CardContent>
             </Card>
           ) : (
             <div className="space-y-4">
               {filtered.map((atividade) => (
                 <Card key={atividade.id} className="border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h3 className="text-lg font-semibold text-primary-700">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <h3 className="text-base sm:text-lg font-semibold text-slate-900 line-clamp-1">
                             {atividade.titulo}
                           </h3>
                           {getStatusBadge(atividade.statusAprovacao)}
                           {getTipoBadge(atividade.tipo)}
                         </div>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-2 line-clamp-2">
                           {atividade.descricao}
                         </p>
-                        <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
                           <span>📚 {atividade.materiaNome}</span>
                           <span>📅 Prazo: {new Date(atividade.prazo).toLocaleDateString('pt-BR')}</span>
                         </div>
@@ -178,14 +178,14 @@ export function AdminAtividades() {
                             <Button
                               size="sm"
                               onClick={() => handleAprovar(atividade.id)}
-                              className="bg-emerald-500 hover:bg-emerald-600 text-white"
+                              className="bg-emerald-500 hover:bg-emerald-600 text-white h-9 w-9 sm:w-auto sm:px-3"
                             >
                               <Check className="w-4 h-4" />
                             </Button>
                             <Button
                               size="sm"
                               onClick={() => handleRejeitar(atividade.id)}
-                              className="bg-red-500 hover:bg-red-600 text-white"
+                              className="bg-red-500 hover:bg-red-600 text-white h-9 w-9 sm:w-auto sm:px-3"
                             >
                               <X className="w-4 h-4" />
                             </Button>
@@ -195,6 +195,7 @@ export function AdminAtividades() {
                           size="sm"
                           variant="outline"
                           onClick={() => navigate(`/admin/${salaId}/atividades/${atividade.id}/editar`)}
+                          className="h-9 w-9 sm:w-auto sm:px-3"
                         >
                           <Edit className="w-4 h-4" />
                         </Button>
@@ -202,6 +203,7 @@ export function AdminAtividades() {
                           size="sm"
                           variant="outline"
                           onClick={() => handleExcluir(atividade.id)}
+                          className="h-9 w-9 sm:w-auto sm:px-3"
                         >
                           <Trash2 className="w-4 h-4 text-red-500" />
                         </Button>

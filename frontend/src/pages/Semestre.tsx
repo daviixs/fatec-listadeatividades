@@ -16,28 +16,28 @@ export function Semestre() {
 
   return (
     <PageTransition>
-      <div className="mb-10 text-center md:text-left animate-in-fade">
-        <h1 className="text-4xl font-extrabold tracking-tight text-primary-700 mb-3">
+      <div className="mb-6 sm:mb-8 lg:mb-10 text-center md:text-left animate-in-fade">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
           Selecione o Semestre
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400">
+        <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400">
           Curso <span className="font-medium text-slate-800 dark:text-slate-200">{course.name}</span> • Período <span className="font-medium text-slate-800 dark:text-slate-200">{periodText}</span>
         </p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
         {course.semesters.map((semester, index) => {
           const semNum = semester.name.match(/\d+/)?.[0] || String(index + 1);
 
           return (
             <ActionCard
               key={semester.id}
-              title={`${semNum}º Semestre`}
+              title={`${semNum}º`}
               delay={index * 0.05}
               onClick={() => navigate(`/${course.id}/${periodId}/${semester.id}/materias`)}
             >
-              <span className="text-indigo-500 bg-indigo-50 px-2 py-1 rounded-md text-xs">
-                {semester.subjects.length} Lessons
+              <span className="text-slate-600 bg-slate-100 px-2 py-1 rounded-md text-xs">
+                {semester.subjects.length} matéria{semester.subjects.length !== 1 ? 's' : ''}
               </span>
             </ActionCard>
           );

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PlusCircle, Calendar, CheckCircle, Loader2, AlertTriangle, ThumbsUp, ThumbsDown, ShieldCheck, XCircle } from 'lucide-react';
+import { PlusCircle, Calendar, CheckCircle, Loader2, AlertTriangle, ThumbsUp, ThumbsDown, ShieldCheck, XCircle, User, FileText, Clock } from 'lucide-react';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { getCourseById, getSemesterById, getSubjectById } from '@/data/courses';
 import { Button } from '@/components/ui/button';
@@ -28,6 +28,7 @@ import { normalizeText, resolveCandidateSalasFromRoute } from '@/lib/routeResolv
 import { TipoAtividade, TipoEntrega, type Atividade } from '@/types/admin';
 import type { VotacaoCancelamento } from '@/types';
 import { Progress } from '@/components/ui/progress';
+import { Badge } from '@/components/ui/badge';
 
 type ActivityFormState = {
   titulo: string;
@@ -301,9 +302,9 @@ export function Atividades() {
   if (loading) {
     return (
       <PageTransition>
-        <div className="flex flex-col items-center justify-center py-24">
-          <Loader2 className="w-8 h-8 animate-spin text-indigo-500 mb-4" />
-          <p className="text-slate-600 font-medium">Carregando atividades...</p>
+        <div className="flex flex-col items-center justify-center py-16 sm:py-24">
+          <Loader2 className="w-8 h-8 sm:w-10 sm:h-10 animate-spin text-slate-600 mb-4" />
+          <p className="text-slate-600 font-medium text-sm sm:text-base">Carregando atividades...</p>
         </div>
       </PageTransition>
     );
@@ -312,12 +313,12 @@ export function Atividades() {
   if (errorMessage) {
     return (
       <PageTransition>
-        <div className="flex flex-col items-center justify-center p-12 mt-10 rounded-3xl bg-white border-2 border-slate-200/70">
-          <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mb-5">
-            <AlertTriangle className="w-8 h-8" />
+        <div className="flex flex-col items-center justify-center p-8 sm:p-12 mt-6 sm:mt-10 rounded-3xl bg-white border-2 border-slate-200/70">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mb-4 sm:mb-5">
+            <AlertTriangle className="w-7 h-7 sm:w-8 sm:h-8" />
           </div>
-          <h2 className="text-xl font-extrabold text-slate-800 mb-2">Não foi possível abrir esta página</h2>
-          <p className="text-slate-600 text-center max-w-lg">{errorMessage}</p>
+          <h2 className="text-lg sm:text-xl font-extrabold text-slate-800 mb-2">Não foi possível abrir esta página</h2>
+          <p className="text-slate-600 text-center max-w-lg text-sm sm:text-base">{errorMessage}</p>
         </div>
       </PageTransition>
     );
@@ -330,31 +331,33 @@ export function Atividades() {
 
   return (
     <PageTransition>
-      <div className="mb-10 animate-in-fade">
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary-700 mb-3">
+      <div className="mb-6 sm:mb-10 animate-in-fade">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
           Atividades
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">
-          {subjectLabel} • {subtitleLabel}
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-medium">
+          <span className="font-semibold text-slate-800">{subjectLabel}</span>
+          <span className="mx-1.5 sm:mx-2">•</span>
+          <span className="text-sm sm:text-base">{subtitleLabel}</span>
         </p>
       </div>
 
       {!hasActivities ? (
-        <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200/60 bg-white p-12 mt-10 animate-in-fade">
-          <div className="absolute -top-10 -right-8 w-36 h-36 bg-indigo-100/60 rounded-full blur-2xl" />
-          <div className="absolute -bottom-12 -left-8 w-40 h-40 bg-rose-100/50 rounded-full blur-2xl" />
+        <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200/60 bg-white p-8 sm:p-12 mt-6 sm:mt-10 animate-in-fade">
+          <div className="absolute -top-10 -right-8 w-36 h-36 bg-slate-100/60 rounded-full blur-2xl" />
+          <div className="absolute -bottom-12 -left-8 w-40 h-40 bg-slate-100/50 rounded-full blur-2xl" />
 
           <div className="relative flex flex-col items-center justify-center text-center">
-            <div className="w-20 h-20 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 text-slate-500 shadow-inner">
-              <Calendar className="w-10 h-10" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-100 flex items-center justify-center mb-4 sm:mb-6 text-slate-500 shadow-inner">
+              <Calendar className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <h2 className="text-2xl font-black text-indigo-950 mb-2">Nenhuma atividade cadastrada</h2>
-            <p className="text-slate-600 font-medium max-w-md mb-8">
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">Nenhuma atividade cadastrada</h2>
+            <p className="text-slate-600 font-medium max-w-md mb-6 sm:mb-8 text-sm sm:text-base">
               Esta matéria ainda não possui tarefas. Cadastre a primeira atividade para manter a turma organizada.
             </p>
             <Button
               size="lg"
-              className="rounded-xl shadow-sm hover:shadow-md transition-all font-bold px-8 h-12 gap-2 cursor-pointer"
+              className="rounded-xl shadow-sm hover:shadow-md transition-all font-bold px-6 sm:px-8 h-12 gap-2 cursor-pointer w-full sm:w-auto"
               onClick={openCreateDialog}
             >
               <PlusCircle className="w-5 h-5" />
@@ -364,25 +367,23 @@ export function Atividades() {
         </div>
       ) : (
         <div className="space-y-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
-            <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <h2 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-200">
               Acompanhe as atividades da matéria em tempo real.
             </h2>
-            <div className="flex gap-3">
-              <Button
-                size="sm"
-                variant="default"
-                className="rounded-xl gap-1.5 h-10 font-bold shadow-sm"
-                onClick={openCreateDialog}
-              >
-                <PlusCircle className="w-4 h-4" />
-                Nova Atividade
-              </Button>
-            </div>
+            <Button
+              size="lg"
+              variant="default"
+              className="rounded-xl gap-2 h-12 font-bold shadow-sm w-full sm:w-auto"
+              onClick={openCreateDialog}
+            >
+              <PlusCircle className="w-5 h-5" />
+              Nova Atividade
+            </Button>
           </div>
 
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            <table className="w-full text-left border-collapse">
+            <table className="hidden lg:table w-full text-left border-collapse">
               <thead>
                 <tr className="bg-slate-50 border-b border-slate-200">
                   <th className="py-4 px-6 font-bold text-slate-800 text-sm">Título</th>
@@ -395,7 +396,7 @@ export function Atividades() {
               <tbody className="divide-y divide-slate-100">
                 {atividades.map((activity) => (
                   <tr key={activity.id} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="py-4 px-6 text-sm font-semibold text-indigo-900 flex items-center gap-3">
+                    <td className="py-4 px-6 text-sm font-semibold text-slate-900 flex items-center gap-3">
                       {activity.statusAprovacao === 'APROVADA' ? (
                         <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                           <CheckCircle className="w-4 h-4" />
@@ -435,11 +436,61 @@ export function Atividades() {
                 ))}
               </tbody>
             </table>
+
+            <div className="lg:hidden divide-y divide-slate-100">
+              {atividades.map((activity) => {
+                const statusColor = activity.statusAprovacao === 'APROVADA'
+                  ? 'bg-emerald-100 text-emerald-700'
+                  : activity.statusAprovacao === 'PENDENTE'
+                    ? 'bg-amber-100 text-amber-700'
+                    : 'bg-rose-100 text-rose-700';
+                const statusText = activity.statusAprovacao === 'APROVADA'
+                  ? 'Aprovada'
+                  : activity.statusAprovacao === 'PENDENTE'
+                    ? 'Pendente'
+                    : 'Rejeitada';
+
+                return (
+                  <div key={activity.id} className="p-4 sm:p-6 hover:bg-slate-50/50 transition-colors">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className="flex items-start gap-3 flex-1 min-w-0">
+                        {activity.statusAprovacao === 'APROVADA' ? (
+                          <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <CheckCircle className="w-4 h-4" />
+                          </div>
+                        ) : (
+                          <span className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center shrink-0 mt-0.5"></span>
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-bold text-slate-900 text-base truncate">{activity.titulo}</h3>
+                          <p className="text-sm text-slate-600 mt-1 truncate">
+                            {activity.materiaNome || materia?.nome || legacySubject?.name || '-'}
+                          </p>
+                        </div>
+                      </div>
+                      <span className={`px-2.5 py-1 rounded-full text-xs font-bold shrink-0 ${statusColor}`}>
+                        {statusText}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-3 sm:gap-6">
+                      <div className="flex items-center gap-2 text-sm text-slate-600">
+                        <Clock className="w-4 h-4 shrink-0" />
+                        <span>{new Date(activity.prazo).toLocaleDateString('pt-BR')}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-slate-600">
+                        <FileText className="w-4 h-4 shrink-0" />
+                        <span>{activity.tipoEntrega === 'LINK_EXTERNO' ? 'Link' : 'Manual'}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="mt-8 space-y-4">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-indigo-600" />
+              <ShieldCheck className="w-5 h-5 text-slate-600" />
               <h3 className="text-lg font-bold text-slate-800">Votações abertas</h3>
             </div>
 
@@ -464,34 +515,34 @@ export function Atividades() {
                   return (
                     <div
                       key={atividade.id}
-                      className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 shadow-sm flex flex-col gap-3"
+                      className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5 shadow-sm flex flex-col gap-3"
                     >
                       <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.08em] text-slate-500 font-semibold">
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs uppercase tracking-[0.08em] text-slate-500 font-semibold mb-1">
                             {atividade.materiaNome || materia?.nome || '-'}
                           </p>
-                          <h4 className="text-lg font-bold text-slate-900 leading-tight">{atividade.titulo}</h4>
-                          <p className="text-sm text-slate-600">
+                          <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">{atividade.titulo}</h4>
+                          <p className="text-xs sm:text-sm text-slate-600">
                             Prazo: {new Date(atividade.prazo).toLocaleDateString('pt-BR')}
                           </p>
                         </div>
                         {cancelada && (
-                          <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold">
-                            <XCircle className="w-4 h-4" />
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold shrink-0">
+                            <XCircle className="w-3.5 h-3.5" />
                             Cancelada
                           </span>
                         )}
                       </div>
 
                       <div className="text-xs text-slate-500">
-                        Fecha em {encerraEm} • Meta de cancelamento: {votacao.metaCancelamento} votos SIM
+                        Fecha em {encerraEm} • Meta: {votacao.metaCancelamento} votos SIM
                       </div>
 
                       {!bloqueado ? (
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-col sm:flex-row gap-3">
                           <Button
-                            className="rounded-xl gap-2"
+                            className="rounded-xl gap-2 h-12 justify-center"
                             disabled={votandoId === atividade.id}
                             onClick={() => enviarVoto(atividade.id, 'SIM')}
                           >
@@ -500,11 +551,11 @@ export function Atividades() {
                             ) : (
                               <ThumbsUp className="w-4 h-4" />
                             )}
-                            Confirmar que o professor passou
+                            Professor passou
                           </Button>
                           <Button
                             variant="outline"
-                            className="rounded-xl gap-2"
+                            className="rounded-xl gap-2 h-12 justify-center"
                             disabled={votandoId === atividade.id}
                             onClick={() => enviarVoto(atividade.id, 'NAO')}
                           >
@@ -526,7 +577,7 @@ export function Atividades() {
                               </span>
                               <span>{percentSim}%</span>
                             </div>
-                            <Progress value={percentSim} className="h-2 bg-emerald-100" />
+                            <Progress value={percentSim} className="h-2.5 bg-emerald-100" />
                           </div>
                           <div>
                             <div className="flex items-center justify-between text-sm font-semibold text-slate-700 mb-1">
@@ -536,10 +587,10 @@ export function Atividades() {
                               </span>
                               <span>{percentNao}%</span>
                             </div>
-                            <Progress value={percentNao} className="h-2 bg-rose-100" />
+                            <Progress value={percentNao} className="h-2.5 bg-rose-100" />
                           </div>
                           <p className="text-xs text-slate-600">
-                            Total de votos: {total}. Você já votou e pode acompanhar o resultado.
+                            Total: {total} votos • Você já votou
                           </p>
                         </div>
                       )}
@@ -553,49 +604,49 @@ export function Atividades() {
       )}
 
       <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-        <DialogContent className="sm:max-w-xl p-0 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <DialogHeader className="px-6 pt-6 pb-2">
-            <DialogTitle className="text-2xl font-extrabold text-primary-700">Nova Atividade</DialogTitle>
-            <DialogDescription className="text-slate-600">
+        <DialogContent className="sm:max-w-xl p-0 overflow-hidden rounded-2xl border border-slate-200 bg-white max-h-[90vh] overflow-y-auto">
+          <DialogHeader className="px-4 sm:px-6 pt-6 pb-2">
+            <DialogTitle className="text-xl sm:text-2xl font-extrabold text-slate-900">Nova Atividade</DialogTitle>
+            <DialogDescription className="text-slate-600 text-sm sm:text-base">
               Preencha os dados para cadastrar uma nova atividade em {subjectLabel}.
             </DialogDescription>
           </DialogHeader>
 
-          <form onSubmit={handleCreateActivity} className="px-6 pb-6 space-y-4">
+          <form onSubmit={handleCreateActivity} className="px-4 sm:px-6 pb-6 space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="titulo">Título *</Label>
+              <Label htmlFor="titulo" className="text-sm">Título *</Label>
               <Input
                 id="titulo"
                 value={form.titulo}
                 onChange={(event) => setForm((prev) => ({ ...prev, titulo: event.target.value }))}
                 placeholder="Ex: Lista de exercícios 03"
-                className="h-10"
+                className="h-11 sm:h-10 text-base"
                 required
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="descricao">Descrição *</Label>
+              <Label htmlFor="descricao" className="text-sm">Descrição *</Label>
               <Textarea
                 id="descricao"
                 value={form.descricao}
                 onChange={(event) => setForm((prev) => ({ ...prev, descricao: event.target.value }))}
                 placeholder="Descreva o objetivo da atividade"
-                className="min-h-24"
+                className="min-h-24 text-base resize-none"
                 required
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label>Tipo de Entrega *</Label>
+                <Label className="text-sm">Tipo de Entrega *</Label>
                 <Select
                   value={form.tipoEntrega}
                   onValueChange={(value) =>
                     setForm((prev) => ({ ...prev, tipoEntrega: value as TipoEntrega }))
                   }
                 >
-                  <SelectTrigger className="h-10 w-full">
+                  <SelectTrigger className="h-11 sm:h-10 w-full text-base">
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
                   <SelectContent>
@@ -606,13 +657,13 @@ export function Atividades() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="prazo">Prazo *</Label>
+                <Label htmlFor="prazo" className="text-sm">Prazo *</Label>
                 <Input
                   id="prazo"
                   type="date"
                   value={form.prazo}
                   onChange={(event) => setForm((prev) => ({ ...prev, prazo: event.target.value }))}
-                  className="h-10"
+                  className="h-11 sm:h-10 text-base"
                   required
                 />
               </div>
@@ -620,42 +671,42 @@ export function Atividades() {
 
             {form.tipoEntrega === TipoEntrega.LINK_EXTERNO && (
               <div className="space-y-2">
-                <Label htmlFor="linkEntrega">Link de Entrega *</Label>
+                <Label htmlFor="linkEntrega" className="text-sm">Link de Entrega *</Label>
                 <Input
                   id="linkEntrega"
                   type="url"
                   value={form.linkEntrega}
                   onChange={(event) => setForm((prev) => ({ ...prev, linkEntrega: event.target.value }))}
                   placeholder="https://..."
-                  className="h-10"
+                  className="h-11 sm:h-10 text-base"
                   required
                 />
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="regras">Regras *</Label>
+              <Label htmlFor="regras" className="text-sm">Regras *</Label>
               <Textarea
                 id="regras"
                 value={form.regras}
                 onChange={(event) => setForm((prev) => ({ ...prev, regras: event.target.value }))}
                 placeholder="Ex: atividade individual, sem consulta, enviar em PDF"
-                className="min-h-20"
+                className="min-h-20 text-base resize-none"
                 required
               />
             </div>
 
-            <DialogFooter className="mt-2 -mx-6 -mb-6 px-6 py-4 bg-slate-50 border-t border-slate-200 flex-col-reverse sm:flex-row">
+            <DialogFooter className="mt-4 sm:mt-2 -mx-4 sm:-mx-6 -mb-6 px-4 sm:px-6 py-4 bg-slate-50 border-t border-slate-200 flex-col-reverse sm:flex-row gap-2">
               <Button
                 type="button"
                 variant="outline"
                 onClick={() => setIsCreateDialogOpen(false)}
-                className="h-10 rounded-xl"
+                className="h-11 sm:h-10 rounded-xl w-full sm:w-auto text-base"
                 disabled={isSubmitting}
               >
                 Cancelar
               </Button>
-              <Button type="submit" className="h-10 rounded-xl font-semibold" disabled={isSubmitting}>
+              <Button type="submit" className="h-11 sm:h-10 rounded-xl font-semibold w-full sm:w-auto text-base" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
