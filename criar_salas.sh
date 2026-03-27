@@ -12,15 +12,22 @@ declare -A cursos=(
 )
 
 # Turnos
-turnos=("Manhã" "Noite")
+turnos=("Matutino" "Noturno")
 
 # Semestres
 semestres=("1°" "2°" "3°" "4°" "5°" "6°")
 
 echo "Criando salas..."
 
+total_salas=0
+
 for sigla in "${!cursos[@]}"; do
     for turno in "${turnos[@]}"; do
+        # DSM somente Noturno
+        if [[ "$sigla" == "DSM" && "$turno" == "Matutino" ]]; then
+            continue
+        fi
+
         for semestre in "${semestres[@]}"; do
             nome="${sigla} ${semestre} ${turno}"
 
@@ -34,9 +41,10 @@ for sigla in "${!cursos[@]}"; do
                 -w "\nStatus: %{http_code}\n" \
                 -s
 
+            total_salas=$((total_salas + 1))
             echo "Criado: $nome"
         done
     done
 done
 
-echo "Total de salas criadas: $((${#cursos[@]} * ${#turnos[@]} * ${#semestres[@]}))"
+echo "Total de salas criadas: $total_salas"

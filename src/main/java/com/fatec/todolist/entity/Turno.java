@@ -2,8 +2,8 @@ package com.fatec.todolist.entity;
 
 public enum Turno {
 
-    MANHA("Manhã"),
-    NOITE("Noite");
+    MANHA("Matutino"),
+    NOITE("Noturno");
 
     private final String displayName;
 

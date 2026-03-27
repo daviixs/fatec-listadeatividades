@@ -77,60 +77,60 @@ criar_materias_ads() {
 
     case $semestre in
         1)
-            criar_materia "$sala_id" "Arquitetura de Computadores"
-            criar_materia "$sala_id" "Desenvolvimento de Interface Web"
-            criar_materia "$sala_id" "Engenharia de Requisitos"
-            criar_materia "$sala_id" "Estrutura de Dados"
-            criar_materia "$sala_id" "Lógica de Programação"
-            criar_materia "$sala_id" "Matemática Aplicada"
-            criar_materia "$sala_id" "Programação Modular"
-            ;;
-        2)
-            criar_materia "$sala_id" "Algoritmos e Estruturas de Dados"
-            criar_materia "$sala_id" "Banco de Dados I"
-            criar_materia "$sala_id" "Design de Software"
-            criar_materia "$sala_id" "Engenharia de Software"
-            criar_materia "$sala_id" "Interação Humano-Computador"
-            criar_materia "$sala_id" "Marketing Digital"
-            criar_materia "$sala_id" "Paradigmas de Programação"
-            criar_materia "$sala_id" "Tópicos em Computação"
-            ;;
-        3)
-            criar_materia "$sala_id" "Banco de Dados II"
-            criar_materia "$sala_id" "Desenvolvimento de Aplicações Corporativas"
-            criar_materia "$sala_id" "Empreendedorismo"
-            criar_materia "$sala_id" "Gestão de Projetos de Software"
-            criar_materia "$sala_id" "Linguagens de Programação"
-            criar_materia "$sala_id" "Modelagem de Sistemas"
+            criar_materia "$sala_id" "Inglês I"
+            criar_materia "$sala_id" "Algoritmos e Lógica de Programação"
+            criar_materia "$sala_id" "Engenharia de Software I"
+            criar_materia "$sala_id" "Comunicação e Expressão"
+            criar_materia "$sala_id" "Arquitetura e Organização de Computadores"
+            criar_materia "$sala_id" "Projeto Integrador I"
             criar_materia "$sala_id" "Sistemas Operacionais"
             ;;
+        2)
+            criar_materia "$sala_id" "Interação Humano Computador"
+            criar_materia "$sala_id" "Linguagem de Programação"
+            criar_materia "$sala_id" "Gestão Financeira Empresarial com Tecnologia"
+            criar_materia "$sala_id" "Cálculo"
+            criar_materia "$sala_id" "Engenharia de Software II"
+            criar_materia "$sala_id" "Banco de Dados Relacional"
+            criar_materia "$sala_id" "Comunicação e Expressão II"
+            criar_materia "$sala_id" "Inglês II"
+            ;;
+        3)
+            criar_materia "$sala_id" "Programação Orientada a Objetos"
+            criar_materia "$sala_id" "Gestão de Negócios"
+            criar_materia "$sala_id" "Estrutura de Dados"
+            criar_materia "$sala_id" "Gestão de Projetos Ágeis"
+            criar_materia "$sala_id" "Laboratório de Banco de Dados"
+            criar_materia "$sala_id" "Experiência do Usuário"
+            criar_materia "$sala_id" "Inglês III"
+            ;;
         4)
-            criar_materia "$sala_id" "Computação em Nuvem"
-            criar_materia "$sala_id" "Desenvolvimento Móvel"
-            criar_materia "$sala_id" "Gestão de TI"
-            criar_materia "$sala_id" "Programação para Web"
-            criar_materia "$sala_id" "Qualidade de Software"
-            criar_materia "$sala_id" "Segurança da Informação"
-            criar_materia "$sala_id" "Tópicos Especiais"
+            criar_materia "$sala_id" "Inglês IV"
+            criar_materia "$sala_id" "Programação Orientada a Objetos"
+            criar_materia "$sala_id" "Engenharia de Software III"
+            criar_materia "$sala_id" "Sistemas Operacionais II"
+            criar_materia "$sala_id" "Banco de Dados"
+            criar_materia "$sala_id" "Metodologia de Pesquisa Científica e Tecnológica"
+            criar_materia "$sala_id" "Programação Web"
             ;;
         5)
-            criar_materia "$sala_id" "Arquitetura de Software"
-            criar_materia "$sala_id" "Banco de Dados III"
-            criar_materia "$sala_id" "Data Science"
-            criar_materia "$sala_id" "DevOps"
-            criar_materia "$sala_id" "Integração de Sistemas"
-            criar_materia "$sala_id" "Processos de Software"
-            criar_materia "$sala_id" "Tópicos Avançados"
+            criar_materia "$sala_id" "Redes de Computadores I"
+            criar_materia "$sala_id" "Programação Linear"
+            criar_materia "$sala_id" "Inglês V"
+            criar_materia "$sala_id" "Laboratório de Engenharia de Software"
+            criar_materia "$sala_id" "Segurança da Informação"
+            criar_materia "$sala_id" "Programação Script"
+            criar_materia "$sala_id" "Laboratório de Banco de Dados"
             ;;
         6)
-            criar_materia "$sala_id" "Business Intelligence"
-            criar_materia "$sala_id" "Computação Gráfica"
-            criar_materia "$sala_id" "Desenvolvimento de Jogos"
-            criar_materia "$sala_id" "Internet das Coisas"
-            criar_materia "$sala_id" "Machine Learning"
-            criar_materia "$sala_id" "Redes de Computadores"
-            criar_materia "$sala_id" "Sistemas Distribuídos"
-            criar_materia "$sala_id" "TCC I e II"
+            criar_materia "$sala_id" "Inteligência Artificial"
+            criar_materia "$sala_id" "Tópicos Especiais"
+            criar_materia "$sala_id" "Gestão de Equipes"
+            criar_materia "$sala_id" "Gestão de Projetos"
+            criar_materia "$sala_id" "Gestão e Governança de TI"
+            criar_materia "$sala_id" "Empreendedorismo"
+            criar_materia "$sala_id" "Ética"
+            criar_materia "$sala_id" "Inglês VI"
             ;;
     esac
 }
@@ -142,55 +142,56 @@ criar_materias_dsm() {
 
     case $semestre in
         1)
-            criar_materia "$sala_id" "Análise e Projeto de Sistemas"
-            criar_materia "$sala_id" "Arquitetura de Computadores"
-            criar_materia "$sala_id" "Desenvolvimento de Interface Web"
-            criar_materia "$sala_id" "Estrutura de Dados"
-            criar_materia "$sala_id" "Lógica de Programação"
-            criar_materia "$sala_id" "Matemática Aplicada"
-            criar_materia "$sala_id" "Programação Modular"
+            criar_materia "$sala_id" "Desenvolvimento Web I"
+            criar_materia "$sala_id" "Engenharia de Software I"
+            criar_materia "$sala_id" "Algoritmos e Lógica de Programação"
+            criar_materia "$sala_id" "Design Digital"
+            criar_materia "$sala_id" "Sistemas Operacionais e Redes de Computadores"
+            criar_materia "$sala_id" "Modelagem de Banco de Dados"
             ;;
         2)
-            criar_materia "$sala_id" "Algoritmos e Estruturas de Dados"
-            criar_materia "$sala_id" "Banco de Dados I"
-            criar_materia "$sala_id" "Design de Software"
-            criar_materia "$sala_id" "Engenharia de Software"
-            criar_materia "$sala_id" "Interação Humano-Computador"
-            criar_materia "$sala_id" "Paradigmas de Programação"
-            criar_materia "$sala_id" "Tópicos em Computação"
+            criar_materia "$sala_id" "Engenharia de Software II"
+            criar_materia "$sala_id" "Estrutura de Dados"
+            criar_materia "$sala_id" "Desenvolvimento Web II"
+            criar_materia "$sala_id" "Técnicas de Programação I"
+            criar_materia "$sala_id" "Matemática para Computação"
+            criar_materia "$sala_id" "Banco de Dados Relacional"
             ;;
         3)
-            criar_materia "$sala_id" "Banco de Dados II"
-            criar_materia "$sala_id" "Desenvolvimento de Aplicações Corporativas"
-            criar_materia "$sala_id" "Empreendedorismo"
-            criar_materia "$sala_id" "Gestão de Projetos de Software"
-            criar_materia "$sala_id" "Linguagens de Programação"
-            criar_materia "$sala_id" "Modelagem de Sistemas"
-            criar_materia "$sala_id" "Sistemas Operacionais"
+            criar_materia "$sala_id" "Banco de Dados Não Relacional"
+            criar_materia "$sala_id" "Inglês I"
+            criar_materia "$sala_id" "Gestão Ágil de Projetos de Software"
+            criar_materia "$sala_id" "Interação Humano-Computador"
+            criar_materia "$sala_id" "Álgebra Linear"
+            criar_materia "$sala_id" "Técnicas de Programação II"
+            criar_materia "$sala_id" "Desenvolvimento Web III"
             ;;
         4)
-            criar_materia "$sala_id" "Computação em Nuvem"
-            criar_materia "$sala_id" "Desenvolvimento Móvel"
-            criar_materia "$sala_id" "Gestão de TI"
-            criar_materia "$sala_id" "Programação para Web"
-            criar_materia "$sala_id" "Qualidade de Software"
-            criar_materia "$sala_id" "Segurança da Informação"
-            criar_materia "$sala_id" "Tópicos Especiais"
+            criar_materia "$sala_id" "Programação para Dispositivos Móveis I"
+            criar_materia "$sala_id" "Experiência do Usuário"
+            criar_materia "$sala_id" "Estatística Aplicada"
+            criar_materia "$sala_id" "Integração e Entrega"
+            criar_materia "$sala_id" "Internet das Coisas"
+            criar_materia "$sala_id" "Laboratório de Desenvolvimento Web"
+            criar_materia "$sala_id" "Inglês II"
             ;;
         5)
-            criar_materia "$sala_id" "DevOps"
-            criar_materia "$sala_id" "Integração de Sistemas"
-            criar_materia "$sala_id" "Processos de Software"
-            criar_materia "$sala_id" "Segurança Avançada"
-            criar_materia "$sala_id" "Tópicos Avançados"
+            criar_materia "$sala_id" "Redação"
+            criar_materia "$sala_id" "Computação em Nuvem I"
+            criar_materia "$sala_id" "Programação para Dispositivos Móveis II"
+            criar_materia "$sala_id" "Aprendizagem de Máquinas"
+            criar_materia "$sala_id" "Laboratório de Dispositivos Móveis"
+            criar_materia "$sala_id" "Segurança no Desenvolvimento de Aplicações"
+            criar_materia "$sala_id" "Inglês III"
             ;;
         6)
-            criar_materia "$sala_id" "Business Intelligence"
-            criar_materia "$sala_id" "Data Science"
-            criar_materia "$sala_id" "Internet das Coisas"
-            criar_materia "$sala_id" "Machine Learning"
-            criar_materia "$sala_id" "Redes de Computadores"
-            criar_materia "$sala_id" "TCC I e II"
+            criar_materia "$sala_id" "Qualidade e Testes de Software"
+            criar_materia "$sala_id" "Mineração de Dados"
+            criar_materia "$sala_id" "Processamento de Linguagem Natural"
+            criar_materia "$sala_id" "Computação em Nuvem II"
+            criar_materia "$sala_id" "Ética Profissional e Patente"
+            criar_materia "$sala_id" "Laboratório de Desenvolvimento Multiplataforma"
+            criar_materia "$sala_id" "Inglês IV"
             ;;
     esac
 }
@@ -202,127 +203,131 @@ criar_materias_grh() {
 
     case $semestre in
         1)
-            criar_materia "$sala_id" "Administração de Recursos Humanos"
-            criar_materia "$sala_id" "Análise Organizacional"
-            criar_materia "$sala_id" "Contabilidade Básica"
-            criar_materia "$sala_id" "Direito do Trabalho"
-            criar_materia "$sala_id" "Ética e Responsabilidade Social"
-            criar_materia "$sala_id" "Fundamentos de Administração"
-            criar_materia "$sala_id" "Psicologia Organizacional"
+            criar_materia "$sala_id" "Inglês I"
+            criar_materia "$sala_id" "Matemática Elementar"
+            criar_materia "$sala_id" "Comportamento Organizacional"
+            criar_materia "$sala_id" "Projeto Integrador I"
+            criar_materia "$sala_id" "Administração Geral"
+            criar_materia "$sala_id" "Gestão das Relações Interpessoais"
+            criar_materia "$sala_id" "Leitura e Produção de Texto"
             ;;
         2)
-            criar_materia "$sala_id" "Cálculo Financeiro"
-            criar_materia "$sala_id" "Gestão da Qualidade"
-            criar_materia "$sala_id" "Gestão de Custos"
-            criar_materia "$sala_id" "Gestão Estratégica de Pessoas"
-            criar_materia "$sala_id" "Legislação Trabalhista"
-            criar_materia "$sala_id" "Planejamento Estratégico"
-            criar_materia "$sala_id" "Relações Trabalhistas"
-            criar_materia "$sala_id" "Treinamento e Desenvolvimento"
+            criar_materia "$sala_id" "Comunicação Empresarial"
+            criar_materia "$sala_id" "Gestão de Pessoas na Administração Pública"
+            criar_materia "$sala_id" "Projeto Integrador II"
+            criar_materia "$sala_id" "Espanhol I"
+            criar_materia "$sala_id" "Métodos para Produção do Conhecimento"
+            criar_materia "$sala_id" "Captação e Seleção de Talentos"
+            criar_materia "$sala_id" "Estatística"
+            criar_materia "$sala_id" "Inglês II"
             ;;
         3)
-            criar_materia "$sala_id" "Gestão de Benefícios"
-            criar_materia "$sala_id" "Gestão de Carreiras"
-            criar_materia "$sala_id" "Gestão de Desempenho"
-            criar_materia "$sala_id" "Gestão do Clima Organizacional"
-            criar_materia "$sala_id" "Gestão por Competências"
-            criar_materia "$sala_id" "Psicologia Social"
-            criar_materia "$sala_id" "Saúde e Segurança do Trabalho"
+            criar_materia "$sala_id" "Fundamentos de Economia"
+            criar_materia "$sala_id" "Educação Corporativa"
+            criar_materia "$sala_id" "Legislação Trabalhista e Previdenciária"
+            criar_materia "$sala_id" "Informática Aplicada à Gestão de Pessoas"
+            criar_materia "$sala_id" "Projeto Integrador III"
+            criar_materia "$sala_id" "Espanhol II"
+            criar_materia "$sala_id" "Gestão das Rotinas de Pessoal"
+            criar_materia "$sala_id" "Inglês III"
             ;;
         4)
-            criar_materia "$sala_id" "Comunicação Empresarial"
-            criar_materia "$sala_id" "Gestão de Talentos"
-            criar_materia "$sala_id" "Marketing Pessoal"
-            criar_materia "$sala_id" "Negociação e Mediação"
-            criar_materia "$sala_id" "Planejamento de Carreira"
-            criar_materia "$sala_id" "Processos de Recrutamento e Seleção"
-            criar_materia "$sala_id" "Teoria das Organizações"
-            criar_materia "$sala_id" "Trabalho em Equipe"
+            criar_materia "$sala_id" "Gestão da Inclusão Social"
+            criar_materia "$sala_id" "Gestão do Clima Organizacional"
+            criar_materia "$sala_id" "Gestão das Rotinas de Pessoal II"
+            criar_materia "$sala_id" "Gestão de Carreiras e Benefícios"
+            criar_materia "$sala_id" "Projeto Integrador IV"
+            criar_materia "$sala_id" "Informática Aplicada à Gestão de Pessoas II"
+            criar_materia "$sala_id" "Gestão Financeira"
+            criar_materia "$sala_id" "Inglês IV"
             ;;
         5)
-            criar_materia "$sala_id" "Auditoria de RH"
-            criar_materia "$sala_id" "Consultoria em RH"
-            criar_materia "$sala_id" "Gestão de Crises"
-            criar_materia "$sala_id" "Gestão da Mudança Organizacional"
-            criar_materia "$sala_id" "Liderança"
-            criar_materia "$sala_id" "Planejamento de RH"
-            criar_materia "$sala_id" "Tecnologias em RH"
-            criar_materia "$sala_id" "Terceirização"
+            criar_materia "$sala_id" "Inglês V"
+            criar_materia "$sala_id" "Empreendedorismo"
+            criar_materia "$sala_id" "Endomarketing"
+            criar_materia "$sala_id" "Gestão de Conflitos e Negociação"
+            criar_materia "$sala_id" "Saúde e Segurança Ocupacional"
+            criar_materia "$sala_id" "Remuneração Estratégica"
+            criar_materia "$sala_id" "Projeto de Recursos Humanos I"
+            criar_materia "$sala_id" "Gestão por Competências"
             ;;
         6)
-            criar_materia "$sala_id" "Comportamento Organizacional"
-            criar_materia "$sala_id" "Cultura Organizacional"
+            criar_materia "$sala_id" "Projeto de Recursos Humanos II"
             criar_materia "$sala_id" "Gestão do Conhecimento"
-            criar_materia "$sala_id" "Inteligência Emocional"
-            criar_materia "$sala_id" "Tendências em RH"
-            criar_materia "$sala_id" "TCC I e II"
-            criar_materia "$sala_id" "Trabalho Remoto"
+            criar_materia "$sala_id" "Consultoria em Gestão de Pessoas"
+            criar_materia "$sala_id" "Gestão de Talentos Humanos"
+            criar_materia "$sala_id" "Tópicos Especiais em Gestão de Talentos"
+            criar_materia "$sala_id" "Inglês VI"
+            criar_materia "$sala_id" "Auditoria e Gestão da Qualidade de Vida no Trabalho"
+            criar_materia "$sala_id" "Planejamento Estratégico em RH"
+            criar_materia "$sala_id" "Ética e Responsabilidade Social Empresarial"
             ;;
     esac
 }
 
-# GPI - Gestão de Projetos e Inovação
+# GPI - Gestão da Produção Industrial
 criar_materias_gpi() {
     local sala_id=$1
     local semestre=$2
 
     case $semestre in
         1)
-            criar_materia "$sala_id" "Administração de Projetos"
-            criar_materia "$sala_id" "Análise de Viabilidade"
-            criar_materia "$sala_id" "Engenharia de Requisitos"
-            criar_materia "$sala_id" "Fundamentos de PMO"
-            criar_materia "$sala_id" "Gerenciamento de Riscos"
-            criar_materia "$sala_id" "Metodologias de Projetos"
-            criar_materia "$sala_id" "Planejamento de Projetos"
-            criar_materia "$sala_id" "Programação de Projetos"
+            criar_materia "$sala_id" "Informática"
+            criar_materia "$sala_id" "Comunicação Empresarial"
+            criar_materia "$sala_id" "Metodologia de Pesquisa"
+            criar_materia "$sala_id" "Tecnologia de Produção"
+            criar_materia "$sala_id" "Administração"
+            criar_materia "$sala_id" "Inglês I"
+            criar_materia "$sala_id" "Cálculo"
+            criar_materia "$sala_id" "Projeto GPI I"
             ;;
         2)
-            criar_materia "$sala_id" "Análise de Cenários"
-            criar_materia "$sala_id" "Compras e Contratos"
-            criar_materia "$sala_id" "Gestão da Comunicação"
-            criar_materia "$sala_id" "Gestão de Escopo"
-            criar_materia "$sala_id" "Gestão de Tempo"
-            criar_materia "$sala_id" "MS Project"
-            criar_materia "$sala_id" "Planejamento Estratégico de Projetos"
-            criar_materia "$sala_id" "PMBOK Aplicado"
+            criar_materia "$sala_id" "Desenho Técnico"
+            criar_materia "$sala_id" "Fundamentos de Matemática Financeira"
+            criar_materia "$sala_id" "Inglês II"
+            criar_materia "$sala_id" "Matemática"
+            criar_materia "$sala_id" "Estatística"
+            criar_materia "$sala_id" "Projeto GPI II"
+            criar_materia "$sala_id" "Economia"
+            criar_materia "$sala_id" "Introdução à Contabilidade"
             ;;
         3)
-            criar_materia "$sala_id" "Agile e Scrum"
-            criar_materia "$sala_id" "Gestão da Qualidade"
-            criar_materia "$sala_id" "Gestão de Custos"
-            criar_materia "$sala_id" "Gestão de Integração"
-            criar_materia "$sala_id" "Gestão de Stakeholders"
-            criar_materia "$sala_id" "Kaizen"
-            criar_materia "$sala_id" "Lean Six Sigma"
+            criar_materia "$sala_id" "Projeto GPI III"
+            criar_materia "$sala_id" "Economia"
+            criar_materia "$sala_id" "Design de Produto"
+            criar_materia "$sala_id" "Gestão da Produção Aplicada"
+            criar_materia "$sala_id" "Custos Industriais"
+            criar_materia "$sala_id" "Projeto de Produto I"
+            criar_materia "$sala_id" "Inglês III"
+            criar_materia "$sala_id" "Materiais e Ensaios"
+            criar_materia "$sala_id" "Estrutura de Operações"
             ;;
         4)
-            criar_materia "$sala_id" "Escritório de Projetos"
-            criar_materia "$sala_id" "Gestão de Mudanças"
-            criar_materia "$sala_id" "Gestão de Portfólios"
-            criar_materia "$sala_id" "Governança de TI"
-            criar_materia "$sala_id" "Indicadores de Desempenho"
-            criar_materia "$sala_id" "Maturidade em Projetos"
-            criar_materia "$sala_id" "Office 365"
-            criar_materia "$sala_id" "Project Server"
+            criar_materia "$sala_id" "Projeto de Produto II"
+            criar_materia "$sala_id" "Gestão da Qualidade"
+            criar_materia "$sala_id" "PPCP"
+            criar_materia "$sala_id" "Higiene e Segurança do Trabalho"
+            criar_materia "$sala_id" "Processo de Produção"
+            criar_materia "$sala_id" "Fundamentos de Automação Industrial"
+            criar_materia "$sala_id" "Inglês IV"
             ;;
         5)
-            criar_materia "$sala_id" "Analytics em Projetos"
-            criar_materia "$sala_id" "Business Intelligence"
-            criar_materia "$sala_id" "Design Thinking"
-            criar_materia "$sala_id" "Inovação"
-            criar_materia "$sala_id" "Metodologias Híbridas"
-            criar_materia "$sala_id" "TCC I e II"
-            criar_materia "$sala_id" "Técnicas de Negociação"
+            criar_materia "$sala_id" "Projeto de Fábrica"
+            criar_materia "$sala_id" "Gestão da Cadeia de Suprimentos"
+            criar_materia "$sala_id" "Gestão Ambiental"
+            criar_materia "$sala_id" "Gestão Financeira"
+            criar_materia "$sala_id" "Ética e Direito Empresarial"
+            criar_materia "$sala_id" "Gestão de Projetos"
+            criar_materia "$sala_id" "Projeto de Graduação I"
             ;;
         6)
-            criar_materia "$sala_id" "Consultoria em Projetos"
-            criar_materia "$sala_id" "Gestão Ágil de Portfólios"
-            criar_materia "$sala_id" "Gestão de Programas"
-            criar_materia "$sala_id" "Modelagem de Processos"
-            criar_materia "$sala_id" "PMO Digital"
-            criar_materia "$sala_id" "Transformação Digital"
-            criar_materia "$sala_id" "TCC I e II"
+            criar_materia "$sala_id" "Comércio Exterior"
+            criar_materia "$sala_id" "Tecnologia da Informação"
+            criar_materia "$sala_id" "Gestão de Pessoas"
+            criar_materia "$sala_id" "Marketing"
+            criar_materia "$sala_id" "Espanhol II"
+            criar_materia "$sala_id" "SAP"
+            criar_materia "$sala_id" "Projeto de Graduação II"
             ;;
     esac
 }
@@ -334,8 +339,8 @@ processar_curso() {
 
     echo -e "\n${YELLOW}=== Processando curso: $curso_sigla ===${NC}\n"
 
-    for turno in "Manhã" "Noite"; do
-        if [ "$curso_sigla" = "DSM" ] && [ "$turno" = "Manhã" ]; then
+    for turno in "Matutino" "Noturno"; do
+        if [ "$curso_sigla" = "DSM" ] && [ "$turno" = "Matutino" ]; then
             continue
         fi
         for semestre in 1 2 3 4 5 6; do

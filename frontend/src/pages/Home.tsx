@@ -16,28 +16,31 @@ export function Home() {
 
   return (
     <PageTransition>
-      <div className="mb-6 sm:mb-8 lg:mb-10 text-center md:text-left animate-in-fade">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
-          Olá, Discente! 👋
+      <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
+        <div className="faixa-label">FATEC / Lista de Atividades / 2026</div>
+        <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.05]">
+          Painel do Discente — escolha o curso e avance.
         </h1>
-        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400">
-          Selecione o seu curso para visualizar as atividades.
+        <div className="divider-strong" />
+        <p className="text-sm sm:text-base font-mono text-ink/80">
+          Mobile-first. Atualizado diariamente. Acesso rápido a períodos, semestres e calendários.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         {courses.map((course, index) => (
           <ActionCard
             key={course.id}
             title={course.name}
+            badge={`0${index + 1}`}
             icon={iconMap[course.id] || <BookOpen className="w-8 h-8 text-slate-600" />}
             delay={index * 0.1}
             onClick={() => navigate(`/${course.id}/periodo`)}
           >
             <div className="flex flex-col gap-1 mt-1">
-              <span className="text-slate-700 text-sm font-bold leading-tight line-clamp-2">{course.fullName}</span>
+              <span className="text-ink text-sm font-extrabold leading-tight line-clamp-2">{course.fullName}</span>
               {course.description && (
-                <p className="text-xs text-slate-500 font-medium leading-relaxed mt-1 line-clamp-2">
+                <p className="text-[11px] sm:text-xs text-ink/70 font-mono leading-relaxed mt-1 line-clamp-2">
                   {course.description}
                 </p>
               )}

@@ -7,234 +7,239 @@ public enum CursoConfig {
 
     ADS("ADS", "Análise e Desenvolvimento de Sistemas", Map.of(
         1, List.of(
-            "Arquitetura de Computadores",
-            "Desenvolvimento de Interface Web",
-            "Engenharia de Requisitos",
-            "Estrutura de Dados",
-            "Lógica de Programação",
-            "Matemática Aplicada",
-            "Programação Modular"
-        ),
-        2, List.of(
-            "Algoritmos e Estruturas de Dados",
-            "Banco de Dados I",
-            "Design de Software",
-            "Engenharia de Software",
-            "Interação Humano-Computador",
-            "Marketing Digital",
-            "Paradigmas de Programação",
-            "Tópicos em Computação"
-        ),
-        3, List.of(
-            "Banco de Dados II",
-            "Desenvolvimento de Aplicações Corporativas",
-            "Empreendedorismo",
-            "Gestão de Projetos de Software",
-            "Linguagens de Programação",
-            "Modelagem de Sistemas",
+            "Inglês I",
+            "Algoritmos e Lógica de Programação",
+            "Engenharia de Software I",
+            "Comunicação e Expressão",
+            "Arquitetura e Organização de Computadores",
+            "Projeto Integrador I",
             "Sistemas Operacionais"
         ),
+        2, List.of(
+            "Interação Humano Computador",
+            "Linguagem de Programação",
+            "Gestão Financeira Empresarial com Tecnologia",
+            "Cálculo",
+            "Engenharia de Software II",
+            "Banco de Dados Relacional",
+            "Comunicação e Expressão II",
+            "Inglês II"
+        ),
+        3, List.of(
+            "Programação Orientada a Objetos",
+            "Gestão de Negócios",
+            "Estrutura de Dados",
+            "Gestão de Projetos Ágeis",
+            "Laboratório de Banco de Dados",
+            "Experiência do Usuário",
+            "Inglês III"
+        ),
         4, List.of(
-            "Computação em Nuvem",
-            "Desenvolvimento Móvel",
-            "Gestão de TI",
-            "Programação para Web",
-            "Qualidade de Software",
-            "Segurança da Informação",
-            "Tópicos Especiais"
+            "Inglês IV",
+            "Programação Orientada a Objetos",
+            "Engenharia de Software III",
+            "Sistemas Operacionais II",
+            "Banco de Dados",
+            "Metodologia de Pesquisa Científica e Tecnológica",
+            "Programação Web"
         ),
         5, List.of(
-            "Arquitetura de Software",
-            "Banco de Dados III",
-            "Data Science",
-            "DevOps",
-            "Integração de Sistemas",
-            "Processos de Software",
-            "Tópicos Avançados"
+            "Redes de Computadores I",
+            "Programação Linear",
+            "Inglês V",
+            "Laboratório de Engenharia de Software",
+            "Segurança da Informação",
+            "Programação Script",
+            "Laboratório de Banco de Dados"
         ),
         6, List.of(
-            "Business Intelligence",
-            "Computação Gráfica",
-            "Desenvolvimento de Jogos",
-            "Internet das Coisas",
-            "Machine Learning",
-            "Redes de Computadores",
-            "Sistemas Distribuídos",
-            "TCC I e II"
+            "Inteligência Artificial",
+            "Tópicos Especiais",
+            "Gestão de Equipes",
+            "Gestão de Projetos",
+            "Gestão e Governança de TI",
+            "Empreendedorismo",
+            "Ética",
+            "Inglês VI"
         )
     )),
 
     DSM("DSM", "Desenvolvimento de Software Multiplataforma", Map.of(
         1, List.of(
-            "Análise e Projeto de Sistemas",
-            "Arquitetura de Computadores",
-            "Desenvolvimento de Interface Web",
-            "Estrutura de Dados",
-            "Lógica de Programação",
-            "Matemática Aplicada",
-            "Programação Modular"
+            "Desenvolvimento Web I",
+            "Engenharia de Software I",
+            "Algoritmos e Lógica de Programação",
+            "Design Digital",
+            "Sistemas Operacionais e Redes de Computadores",
+            "Modelagem de Banco de Dados"
         ),
         2, List.of(
-            "Algoritmos e Estruturas de Dados",
-            "Banco de Dados I",
-            "Design de Software",
-            "Engenharia de Software",
-            "Interação Humano-Computador",
-            "Paradigmas de Programação",
-            "Tópicos em Computação"
+            "Engenharia de Software II",
+            "Estrutura de Dados",
+            "Desenvolvimento Web II",
+            "Técnicas de Programação I",
+            "Matemática para Computação",
+            "Banco de Dados Relacional"
         ),
         3, List.of(
-            "Banco de Dados II",
-            "Desenvolvimento de Aplicações Corporativas",
-            "Empreendedorismo",
-            "Gestão de Projetos de Software",
-            "Linguagens de Programação",
-            "Modelagem de Sistemas",
-            "Sistemas Operacionais"
+            "Banco de Dados Não Relacional",
+            "Inglês I",
+            "Gestão Ágil de Projetos de Software",
+            "Interação Humano-Computador",
+            "Álgebra Linear",
+            "Técnicas de Programação II",
+            "Desenvolvimento Web III"
         ),
         4, List.of(
-            "Computação em Nuvem",
-            "Desenvolvimento Móvel",
-            "Gestão de TI",
-            "Programação para Web",
-            "Qualidade de Software",
-            "Segurança da Informação",
-            "Tópicos Especiais"
+            "Programação para Dispositivos Móveis I",
+            "Experiência do Usuário",
+            "Estatística Aplicada",
+            "Integração e Entrega",
+            "Internet das Coisas",
+            "Laboratório de Desenvolvimento Web",
+            "Inglês II"
         ),
         5, List.of(
-            "DevOps",
-            "Integração de Sistemas",
-            "Processos de Software",
-            "Segurança Avançada",
-            "Tópicos Avançados"
+            "Redação",
+            "Computação em Nuvem I",
+            "Programação para Dispositivos Móveis II",
+            "Aprendizagem de Máquinas",
+            "Laboratório de Dispositivos Móveis",
+            "Segurança no Desenvolvimento de Aplicações",
+            "Inglês III"
         ),
         6, List.of(
-            "Business Intelligence",
-            "Data Science",
-            "Internet das Coisas",
-            "Machine Learning",
-            "Redes de Computadores",
-            "TCC I e II"
+            "Qualidade e Testes de Software",
+            "Mineração de Dados",
+            "Processamento de Linguagem Natural",
+            "Computação em Nuvem II",
+            "Ética Profissional e Patente",
+            "Laboratório de Desenvolvimento Multiplataforma",
+            "Inglês IV"
         )
     )),
 
     GRH("GRH", "Gestão de Recursos Humanos", Map.of(
         1, List.of(
-            "Administração de Recursos Humanos",
-            "Análise Organizacional",
-            "Contabilidade Básica",
-            "Direito do Trabalho",
-            "Ética e Responsabilidade Social",
-            "Fundamentos de Administração",
-            "Psicologia Organizacional"
+            "Inglês I",
+            "Matemática Elementar",
+            "Comportamento Organizacional",
+            "Projeto Integrador I",
+            "Administração Geral",
+            "Gestão das Relações Interpessoais",
+            "Leitura e Produção de Texto"
         ),
         2, List.of(
-            "Cálculo Financeiro",
-            "Gestão da Qualidade",
-            "Gestão de Custos",
-            "Gestão Estratégica de Pessoas",
-            "Legislação Trabalhista",
-            "Planejamento Estratégico",
-            "Relações Trabalhistas",
-            "Treinamento e Desenvolvimento"
+            "Comunicação Empresarial",
+            "Gestão de Pessoas na Administração Pública",
+            "Projeto Integrador II",
+            "Espanhol I",
+            "Métodos para Produção do Conhecimento",
+            "Captação e Seleção de Talentos",
+            "Estatística",
+            "Inglês II"
         ),
         3, List.of(
-            "Gestão de Benefícios",
-            "Gestão de Carreiras",
-            "Gestão de Desempenho",
-            "Gestão do Clima Organizacional",
-            "Gestão por Competências",
-            "Psicologia Social",
-            "Saúde e Segurança do Trabalho"
+            "Fundamentos de Economia",
+            "Educação Corporativa",
+            "Legislação Trabalhista e Previdenciária",
+            "Informática Aplicada à Gestão de Pessoas",
+            "Projeto Integrador III",
+            "Espanhol II",
+            "Gestão das Rotinas de Pessoal",
+            "Inglês III"
         ),
         4, List.of(
-            "Comunicação Empresarial",
-            "Gestão de Talentos",
-            "Marketing Pessoal",
-            "Negociação e Mediação",
-            "Planejamento de Carreira",
-            "Processos de Recrutamento e Seleção",
-            "Teoria das Organizações",
-            "Trabalho em Equipe"
+            "Gestão da Inclusão Social",
+            "Gestão do Clima Organizacional",
+            "Gestão das Rotinas de Pessoal II",
+            "Gestão de Carreiras e Benefícios",
+            "Projeto Integrador IV",
+            "Informática Aplicada à Gestão de Pessoas II",
+            "Gestão Financeira",
+            "Inglês IV"
         ),
         5, List.of(
-            "Auditoria de RH",
-            "Consultoria em RH",
-            "Gestão de Crises",
-            "Gestão da Mudança Organizacional",
-            "Liderança",
-            "Planejamento de RH",
-            "Tecnologias em RH",
-            "Terceirização"
+            "Inglês V",
+            "Empreendedorismo",
+            "Endomarketing",
+            "Gestão de Conflitos e Negociação",
+            "Saúde e Segurança Ocupacional",
+            "Remuneração Estratégica",
+            "Projeto de Recursos Humanos I",
+            "Gestão por Competências"
         ),
         6, List.of(
-            "Comportamento Organizacional",
-            "Cultura Organizacional",
+            "Projeto de Recursos Humanos II",
             "Gestão do Conhecimento",
-            "Inteligência Emocional",
-            "Tendências em RH",
-            "TCC I e II",
-            "Trabalho Remoto"
+            "Consultoria em Gestão de Pessoas",
+            "Gestão de Talentos Humanos",
+            "Tópicos Especiais em Gestão de Talentos",
+            "Inglês VI",
+            "Auditoria e Gestão da Qualidade de Vida no Trabalho",
+            "Planejamento Estratégico em RH",
+            "Ética e Responsabilidade Social Empresarial"
         )
     )),
 
-    GPI("GPI", "Gestão de Projetos e Inovação", Map.of(
+    GPI("GPI", "Gestão da Produção Industrial", Map.of(
         1, List.of(
-            "Administração de Projetos",
-            "Análise de Viabilidade",
-            "Engenharia de Requisitos",
-            "Fundamentos de PMO",
-            "Gerenciamento de Riscos",
-            "Metodologias de Projetos",
-            "Planejamento de Projetos",
-            "Programação de Projetos"
+            "Informática",
+            "Comunicação Empresarial",
+            "Metodologia de Pesquisa",
+            "Tecnologia de Produção",
+            "Administração",
+            "Inglês I",
+            "Cálculo",
+            "Projeto GPI I"
         ),
         2, List.of(
-            "Análise de Cenários",
-            "Compras e Contratos",
-            "Gestão da Comunicação",
-            "Gestão de Escopo",
-            "Gestão de Tempo",
-            "MS Project",
-            "Planejamento Estratégico de Projetos",
-            "PMBOK Aplicado"
+            "Desenho Técnico",
+            "Fundamentos de Matemática Financeira",
+            "Inglês II",
+            "Matemática",
+            "Estatística",
+            "Projeto GPI II",
+            "Economia",
+            "Introdução à Contabilidade"
         ),
         3, List.of(
-            "Agile e Scrum",
-            "Gestão da Qualidade",
-            "Gestão de Custos",
-            "Gestão de Integração",
-            "Gestão de Stakeholders",
-            "Kaizen",
-            "Lean Six Sigma"
+            "Projeto GPI III",
+            "Economia",
+            "Design de Produto",
+            "Gestão da Produção Aplicada",
+            "Custos Industriais",
+            "Projeto de Produto I",
+            "Inglês III",
+            "Materiais e Ensaios",
+            "Estrutura de Operações"
         ),
         4, List.of(
-            "Escritório de Projetos",
-            "Gestão de Mudanças",
-            "Gestão de Portfólios",
-            "Governança de TI",
-            "Indicadores de Desempenho",
-            "Maturidade em Projetos",
-            "Office 365",
-            "Project Server"
+            "Projeto de Produto II",
+            "Gestão da Qualidade",
+            "PPCP",
+            "Higiene e Segurança do Trabalho",
+            "Processo de Produção",
+            "Fundamentos de Automação Industrial",
+            "Inglês IV"
         ),
         5, List.of(
-            "Analytics em Projetos",
-            "Business Intelligence",
-            "Design Thinking",
-            "Inovação",
-            "Metodologias Híbridas",
-            "TCC I e II",
-            "Técnicas de Negociação"
+            "Projeto de Fábrica",
+            "Gestão da Cadeia de Suprimentos",
+            "Gestão Ambiental",
+            "Gestão Financeira",
+            "Ética e Direito Empresarial",
+            "Gestão de Projetos",
+            "Projeto de Graduação I"
         ),
         6, List.of(
-            "Consultoria em Projetos",
-            "Gestão Ágil de Portfólios",
-            "Gestão de Programas",
-            "Modelagem de Processos",
-            "PMO Digital",
-            "Transformação Digital",
-            "TCC I e II"
+            "Comércio Exterior",
+            "Tecnologia da Informação",
+            "Gestão de Pessoas",
+            "Marketing",
+            "Espanhol II",
+            "SAP",
+            "Projeto de Graduação II"
         )
     ));
 

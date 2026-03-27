@@ -2,7 +2,12 @@ import { NavLink } from 'react-router-dom';
 import { Home, BookOpen, Calendar, Mail, ShoppingBag, User, LogOut, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export function Sidebar() {
+interface SidebarProps {
+  onClose?: () => void;
+  isOpen?: boolean;
+}
+
+export function Sidebar({ onClose }: SidebarProps) {
   const navItems = [
     { icon: <Home className="w-5 h-5" />, label: 'Início', path: '/' },
     { icon: <BookOpen className="w-5 h-5" />, label: 'Aulas', path: '/lessons' },
@@ -13,49 +18,48 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className="w-64 bg-white border-r border-slate-200 h-screen flex flex-col relative">
+    <aside className="w-72 bg-ink text-paper h-screen flex flex-col border-r-[3px] border-ink shadow-brutal relative">
       <Button
-        variant="ghost"
+        variant="outline"
         size="icon"
-        className="absolute top-4 right-4 lg:hidden h-8 w-8"
-        onClick={() => {
-          const layoutState = (window as any).__sidebarOpen;
-          if (layoutState?.setSidebarOpen) {
-            layoutState.setSidebarOpen(false);
-          }
-        }}
+        className="absolute top-4 right-4 lg:hidden bg-paper text-ink border-[3px] border-[var(--paper)] shadow-brutal"
+        onClick={onClose}
+        aria-label="Fechar menu"
       >
         <X className="w-4 h-4" />
       </Button>
 
       {/* Logo */}
-      <div className="p-6 flex items-center justify-center pt-10 lg:pt-6">
-        <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-none text-center relative z-10 w-full whitespace-nowrap">
-          <span className="block -mb-1">Lista de Atividades</span>
-          <span className="block">FATEC</span>
-        </h1>
+      <div className="p-6 pt-12 lg:pt-8">
+        <div className="border-[3px] border-[var(--paper)] bg-paper text-ink rounded-sm shadow-brutal p-4 text-center">
+          <p className="text-xs font-mono tracking-[0.1em] uppercase mb-1">Lista de Atividades</p>
+          <h1 className="text-2xl font-extrabold leading-none">FATEC</h1>
+          <div className="divider-strong mt-3" />
+          <p className="text-xs font-mono mt-2">2026 / Acadêmico</p>
+        </div>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 mt-4 space-y-1 overflow-y-auto">
-        {navItems.map((item) => (
+      <nav className="flex-1 px-4 pb-6 space-y-2 overflow-y-auto">
+        {navItems.map((item, index) => (
           <NavLink
             key={item.label}
             to={item.path}
             className={({ isActive }) =>
-              `flex items-center gap-4 px-4 py-3 rounded-xl transition-colors font-bold text-sm ${
-                isActive && item.path !== '/#schedule'
-                  ? 'bg-amber-100/50 text-slate-900 border border-amber-200'
-                  : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+              `group flex items-center gap-3 px-4 py-3 border-[3px] rounded-sm font-mono text-sm uppercase tracking-[0.08em] transition-all ${
+                isActive
+                  ? 'bg-paper text-ink border-[var(--paper)] shadow-brutal -translate-y-[2px]'
+                  : 'bg-ink text-paper border-[color:rgba(247,243,235,0.4)] hover:bg-paper hover:text-ink hover:border-[var(--paper)] hover:-translate-y-[2px]'
               }`
             }
           >
+            <span className="text-xs brutal-num">{String(index + 1).padStart(2, '0')}</span>
             {item.icon}
-            {item.label}
+            <span className="flex-1">{item.label}</span>
           </NavLink>
         ))}
 
-        <button className="flex items-center gap-4 px-4 py-3 mt-4 rounded-xl text-slate-500 hover:bg-slate-50 hover:text-slate-900 w-full font-bold text-sm transition-colors text-left">
+        <button className="w-full flex items-center gap-3 px-4 py-3 border-[3px] rounded-sm bg-alert text-paper border-[color:rgba(247,243,235,0.6)] hover:-translate-y-[2px] shadow-brutal transition-all font-mono uppercase tracking-[0.08em]">
           <LogOut className="w-5 h-5" />
           Sair
         </button>

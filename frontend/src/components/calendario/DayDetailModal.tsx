@@ -188,21 +188,15 @@ export function DayDetailModal({
                       </div>
                       {atividade.tipoEntrega === "LINK_EXTERNO" && atividade.linkEntrega && (
                         <div className="mt-3">
-                          <Button
-                            asChild
-                            size="sm"
-                            variant="outline"
-                            className="w-full gap-2"
+                          <a
+                            href={atividade.linkEntrega}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50 transition-colors"
                           >
-                            <a
-                              href={atividade.linkEntrega}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                              Acessar link de entrega
-                            </a>
-                          </Button>
+                            <ExternalLink className="w-4 h-4" />
+                            Acessar link de entrega
+                          </a>
                         </div>
                       )}
                       {atividade.descricao && (

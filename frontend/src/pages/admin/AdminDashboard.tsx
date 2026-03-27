@@ -47,97 +47,89 @@ export function AdminDashboard() {
 
   return (
     <PageTransition>
-      <div className="animate-in-fade-in space-y-6">
-        <div className="mb-2 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-            Dashboard
-          </h1>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-            Visão geral do painel de administração
-          </p>
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <div className="faixa-label">Painel Admin / Sala {salaId}</div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">Status e ações imediatas</h1>
+          <div className="divider-strong" />
+          <p className="text-sm font-mono text-ink/80">Controle de atividades, provas e pendências.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          <Card className="bg-gradient-to-br from-[#5A7C7A] to-[#6B9B7A] text-white border-0 shadow-lg hover:shadow-xl transition-all">
-            <CardContent className="p-4 sm:p-6">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <FileText className="w-6 h-6 sm:w-8 sm:h-8 opacity-90" />
-                <span className="text-2xl sm:text-3xl font-bold">{stats.total}</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <Card className="bg-ink text-paper">
+            <CardContent className="p-4 sm:p-5">
+              <div className="flex items-center justify-between mb-3">
+                <FileText className="w-7 h-7" />
+                <span className="text-3xl font-extrabold brutal-num">{stats.total}</span>
               </div>
-              <p className="text-xs sm:text-sm font-medium opacity-90">Total de Atividades</p>
+              <p className="text-xs uppercase tracking-[0.1em] font-mono">Total de atividades</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-[#8FA7A5] to-[#B0C5C3] text-white border-0 shadow-lg hover:shadow-xl transition-all">
-            <CardContent className="p-4 sm:p-6">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <Clock className="w-6 h-6 sm:w-8 sm:h-8 opacity-90" />
-                <span className="text-2xl sm:text-3xl font-bold">{stats.pendentes}</span>
+          <Card className="bg-accent text-ink">
+            <CardContent className="p-4 sm:p-5">
+              <div className="flex items-center justify-between mb-3">
+                <Clock className="w-7 h-7" />
+                <span className="text-3xl font-extrabold brutal-num">{stats.pendentes}</span>
               </div>
-              <p className="text-xs sm:text-sm font-medium opacity-90">Pendentes de Aprovação</p>
+              <p className="text-xs uppercase tracking-[0.1em] font-mono">Pendentes</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-[#6B9B7A] to-[#8AB89A] text-white border-0 shadow-lg hover:shadow-xl transition-all">
-            <CardContent className="p-4 sm:p-6">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 opacity-90" />
-                <span className="text-2xl sm:text-3xl font-bold">{stats.aprovadas}</span>
+          <Card>
+            <CardContent className="p-4 sm:p-5">
+              <div className="flex items-center justify-between mb-3">
+                <CheckCircle className="w-7 h-7" />
+                <span className="text-3xl font-extrabold brutal-num">{stats.aprovadas}</span>
               </div>
-              <p className="text-xs sm:text-sm font-medium opacity-90">Atividades Aprovadas</p>
+              <p className="text-xs uppercase tracking-[0.1em] font-mono">Aprovadas</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-[#7B9B99] to-[#9BBDBA] text-white border-0 shadow-lg hover:shadow-xl transition-all">
-            <CardContent className="p-4 sm:p-6">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <Calendar className="w-6 h-6 sm:w-8 sm:h-8 opacity-90" />
-                <span className="text-2xl sm:text-3xl font-bold">{stats.provas}</span>
+          <Card>
+            <CardContent className="p-4 sm:p-5">
+              <div className="flex items-center justify-between mb-3">
+                <Calendar className="w-7 h-7" />
+                <span className="text-3xl font-extrabold brutal-num">{stats.provas}</span>
               </div>
-              <p className="text-xs sm:text-sm font-medium opacity-90">Provas Cadastradas</p>
+              <p className="text-xs uppercase tracking-[0.1em] font-mono">Provas</p>
             </CardContent>
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          <Card className="border-slate-200 dark:border-slate-800">
-            <CardContent className="p-4 sm:p-6">
-              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4">
-                Ações Rápidas
-              </h3>
-              <div className="space-y-3">
-                <Button
-                  onClick={() => navigate(`/admin/${salaId}/atividades`)}
-                  className="w-full h-11 sm:h-12 justify-start bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm sm:text-base"
-                >
-                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Gerenciar Atividades
-                </Button>
-                <Button
-                  onClick={() => navigate(`/admin/${salaId}/provas`)}
-                  className="w-full h-11 sm:h-12 justify-start bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm sm:text-base"
-                >
-                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Gerenciar Provas
-                </Button>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+          <Card>
+            <CardContent className="p-4 sm:p-5 space-y-3">
+              <h3 className="text-lg font-extrabold">Ações rápidas</h3>
+              <Button
+                onClick={() => navigate(`/admin/${salaId}/atividades`)}
+                className="w-full justify-between"
+              >
+                Gerenciar Atividades <FileText className="w-4 h-4" />
+              </Button>
+              <Button
+                onClick={() => navigate(`/admin/${salaId}/provas`)}
+                variant="secondary"
+                className="w-full justify-between"
+              >
+                Gerenciar Provas <Calendar className="w-4 h-4" />
+              </Button>
             </CardContent>
           </Card>
 
           {stats.pendentes > 0 && (
-            <Card className="border-amber-200 dark:border-amber-900 bg-amber-50 dark:bg-amber-950/20">
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-amber-900 dark:text-amber-100 mb-4">
-                  ⚠️ {stats.pendentes} atividade(s) pendente(s)
-                </h3>
-                <p className="text-sm text-amber-700 dark:text-amber-300 mb-4">
-                  Você tem atividades aguardando aprovação. Revise-as o mais breve possível.
+            <Card className="bg-alert text-paper">
+              <CardContent className="p-4 sm:p-5 space-y-3">
+                <h3 className="text-lg font-extrabold">Atenção: pendências</h3>
+                <p className="text-sm font-mono">
+                  {stats.pendentes} atividade(s) aguardando aprovação. Trate agora para manter o calendário limpo.
                 </p>
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/atividades`)}
-                  className="w-full bg-gradient-to-r from-[#8FA7A5] to-[#B0C5C3] hover:from-[#7B9B99] hover:to-[#9BBDBA] text-white h-11 sm:h-12 text-sm sm:text-base"
+                  variant="outline"
+                  className="bg-paper text-ink"
                 >
-                  Revisar Pendentes
+                  Revisar pendentes
                 </Button>
               </CardContent>
             </Card>

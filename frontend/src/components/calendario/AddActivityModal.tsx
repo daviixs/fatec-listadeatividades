@@ -29,7 +29,7 @@ import studentApi from "@/lib/studentApi"
 
 interface AddActivityModalProps {
   materias: MateriaApiResponse[]
-  materiaSelecionada: number | null
+  materiaSelecionada: string | null
   open: boolean
   onOpenChange: (open: boolean) => void
   onSuccess: () => void
@@ -43,6 +43,7 @@ interface ActivityFormState {
   tipo: TipoAtividade
   prazo: string
   regras: string
+  materiaId: number | null
 }
 
 const initialFormState: ActivityFormState = {
@@ -53,6 +54,7 @@ const initialFormState: ActivityFormState = {
   tipo: TipoAtividade.ATIVIDADE,
   prazo: "",
   regras: "",
+  materiaId: null,
 }
 
 export function AddActivityModal({
@@ -68,14 +70,20 @@ export function AddActivityModal({
   useEffect(() => {
     if (!open) {
       setForm(initialFormState)
+    } else if (materiaSelecionada) {
+      // Encontrar o ID da matéria pelo nome
+      const materia = materias.find((m) => m.nome === materiaSelecionada)
+      if (materia) {
+        setForm((prev) => ({ ...prev, materiaId: materia.id }))
+      }
     }
-  }, [open])
+  }, [open, materiaSelecionada, materias])
 
   const handleCreateActivity = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    if (!materiaSelecionada) {
-      toast.error("Selecione uma matéria primeiro.")
+    if (!form.materiaId) {
+      toast.error("Selecione uma matéria.")
       return
     }
 
@@ -98,7 +106,7 @@ export function AddActivityModal({
         linkEntrega: form.tipoEntrega === TipoEntrega.LINK_EXTERNO ? form.linkEntrega.trim() : null,
         regras: form.regras.trim(),
         prazo: form.prazo,
-        materiaId: materiaSelecionada,
+        materiaId: form.materiaId,
         tipo: form.tipo,
       })
 
@@ -213,10 +221,12 @@ export function AddActivityModal({
                 Matéria *
               </Label>
               <Select
-                value={materiaSelecionada?.toString() || ""}
-                disabled
+                value={form.materiaId?.toString() || ""}
+                onValueChange={(value) =>
+                  setForm((prev) => ({ ...prev, materiaId: Number(value) }))
+                }
               >
-                <SelectTrigger className="h-11 sm:h-10 w-full text-base bg-muted">
+                <SelectTrigger className="h-11 sm:h-10 w-full text-base">
                   <SelectValue placeholder="Selecione uma matéria" />
                 </SelectTrigger>
                 <SelectContent>

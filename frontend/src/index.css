@@ -1,87 +1,127 @@
 @import "tailwindcss";
+@import "@fontsource/ibm-plex-serif/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/700.css";
+@import "./styles/brutalismo.css";
 
 @theme {
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  
-  --color-secondary-50: #fff1f2;
-  --color-secondary-100: #ffe4e6;
-  --color-secondary-200: #fecdd3;
-  --color-secondary-300: #fda4af;
-  --color-secondary-400: #fb7185;
-  --color-secondary-500: #f43f5e;
-  --color-secondary-600: #e11d48;
-  --color-secondary-700: #be123c;
-  --color-secondary-800: #9f1239;
-  --color-secondary-900: #881337;
+  /* Ink (primary) */
+  --color-primary-50: #f2f2f2;
+  --color-primary-100: #d9d9d9;
+  --color-primary-200: #bfbfbf;
+  --color-primary-300: #8c8c8c;
+  --color-primary-400: #595959;
+  --color-primary-500: #333333;
+  --color-primary-600: #1f1f1f;
+  --color-primary-700: #141414;
+  --color-primary-800: #0f0f0f;
+  --color-primary-900: #0b0b0b;
+
+  /* Accent amarelo */
+  --color-secondary-50: #fffee8;
+  --color-secondary-100: #fffac2;
+  --color-secondary-200: #fff58f;
+  --color-secondary-300: #ffef4d;
+  --color-secondary-400: #fbe620;
+  --color-secondary-500: #f4e409;
+  --color-secondary-600: #d2c408;
+  --color-secondary-700: #a69b06;
+  --color-secondary-800: #7a7305;
+  --color-secondary-900: #4f4a03;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --paper: #f7f3eb;
+    --ink: #0b0b0b;
+    --accent: #f4e409;
+    --graphite: #222222;
+    --alert: #d92a2a;
+    --muted: #b8b1a3;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --background: 40 26% 95%;
+    --foreground: 0 0% 6%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: 40 26% 95%;
+    --card-foreground: 0 0% 6%;
 
-    --primary: 243 75% 59%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 40 26% 95%;
+    --popover-foreground: 0 0% 6%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 4%; /* ink */
+    --primary-foreground: 40 26% 95%; /* paper */
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 54 92% 50%; /* accent */
+    --secondary-foreground: 0 0% 6%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted-foreground: 40 12% 45%;
+    --accent-foreground: 0 0% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 356 71% 51%; /* alert */
+    --destructive-foreground: 40 26% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 243 75% 59%;
+    --border: 0 0% 6%;
+    --input: 0 0% 6%;
+    --ring: 54 92% 50%;
 
-    --radius: 0.5rem;
+    --radius: 6px;
+  }
+
+  * {
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    @apply antialiased font-sans min-h-screen;
-    font-weight: 500;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "IBM Plex Serif", "Times New Roman", serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: rgba(244, 228, 9, 0.4);
+    color: var(--ink);
   }
 }
 
 @layer utilities {
-  .animate-in-fade {
-    animation: fadeIn 0.4s ease-out forwards;
+  .shadow-brutal {
+    box-shadow: 0 6px 0 var(--ink);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(4px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .shadow-brutal-lg {
+    box-shadow: 0 10px 0 var(--ink);
+  }
+  .border-thick {
+    border: 3px solid var(--ink);
+  }
+  .bg-paper { background: var(--paper); }
+  .bg-ink { background: var(--ink); }
+  .bg-accent { background: var(--accent); }
+  .bg-alert { background: var(--alert); }
+  .text-ink { color: var(--ink); }
+  .text-paper { color: var(--paper); }
+  .text-accent { color: var(--accent); }
+  .text-alert { color: var(--alert); }
+
+  .animate-in-fade {
+    animation: fadeIn 0.28s ease-out forwards;
   }
 
-  .border-flat {
-    @apply border-2 border-slate-200/60 shadow-none;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }

@@ -3,10 +3,25 @@
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { getWeeksOfMonth, formatMonthYear } from "@/lib/calendarUtils"
-import { type Atividade } from "@/types/admin"
-import { TipoAtividade } from "@/types/admin"
+import { type Atividade, TipoAtividade } from "@/types/admin"
 import { CalendarDay } from "./CalendarDay"
 import { DayTooltip } from "./DayTooltip"
+
+const WEEKDAY_NAMES = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"]
+
+interface TooltipState {
+  visible: boolean
+  date: Date | null
+  position: { x: number; y: number }
+}
+
+interface CalendarGridProps {
+  mesAtual: Date
+  atividades: Atividade[]
+  tiposFiltro: Set<TipoAtividade>
+  onDiaClick: (date: Date) => void
+  onDiaHover: (date: Date | null) => void
+}
 
 export function CalendarGrid({
   mesAtual,
@@ -23,7 +38,7 @@ export function CalendarGrid({
 
   const year = mesAtual.getFullYear()
   const month = mesAtual.getMonth()
-        const weeks = getWeeksOfMonth(year, month)
+  const weeks = getWeeksOfMonth(year, month)
 
   const handleDayHover = (date: Date | null, event?: React.MouseEvent) => {
     if (date && event) {
@@ -39,6 +54,7 @@ export function CalendarGrid({
     } else {
       setTooltip({ visible: false, date: null, position: { x: 0, y: 0 } })
     }
+    onDiaHover(date)
   }
 
   const handleDayClick = (date: Date) => {
@@ -48,25 +64,9 @@ export function CalendarGrid({
 
   const getActivitiesForDay = (date: Date | null): Atividade[] => {
     if (!date) return []
-    const dayDate = new Date(date)
     return atividades.filter((atividade) => {
       const atividadeDate = new Date(atividade.prazo)
-      return atividadeDate.toDateString() === dayDate.toDateString()
-    })
-  }
-  }
-
-  const handleDayClick = (date: Date) => {
-    setTooltip({ visible: false, date: null, position: { x: 0, y: 0 } })
-    onDiaClick(date)
-  }
-
-  const getActivitiesForDay = (date: Date | null): Atividade[] => {
-    if (!date) return []
-    const dayDate = new Date(date)
-    return atividades.filter((atividade) => {
-      const atividadeDate = new Date(atividade.prazo)
-      return atividadeDate.toDateString() === dayDate.toDateString()
+      return atividadeDate.toDateString() === date.toDateString()
     })
   }
 
@@ -145,44 +145,6 @@ export function CalendarGrid({
               >
                 <CalendarDay
                   date={day}
-                  isCurrentMonth={isSameMonth(day)}
-                  atividades={getActivitiesForDay(day)}
-                  tiposFiltro={tiposFiltro}
-                  onClick={handleDayClick}
-                  onHover={handleDayHover}
-                  currentDate={mesAtual}
-                />
-              </div>
-            ))
-          )}
-        </div>
-      </div>
-
-      <div className="rounded-lg border border-slate-200 bg-white">
-        <div className="grid grid-cols-7 border-b border-slate-200 bg-slate-50">
-          {WEEKDAY_NAMES.map((day) => (
-            <div
-              key={day}
-              className="py-2 text-center text-xs font-semibold text-slate-700"
-            >
-              {day}
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-7">
-          {weeks.map((week, weekIndex) =>
-            week.map((day, dayIndex) => (
-              <div
-                key={`${weekIndex}-${dayIndex}`}
-                className={cn(
-                  "border-b border-r border-slate-100 last:border-r-0",
-                  dayIndex % 7 === 6 && "border-r-0",
-                  weekIndex === weeks.length - 1 && "border-b-0"
-                )}
-              >
-                <CalendarDay
-                  date={day}
                   isCurrentMonth={day !== null && day.getMonth() === month}
                   atividades={getActivitiesForDay(day)}
                   tiposFiltro={tiposFiltro}
@@ -207,8 +169,5 @@ export function CalendarGrid({
         />
       )}
     </div>
-   )
+  )
 }
-
-export { CalendarGrid }
-

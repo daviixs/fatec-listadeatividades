@@ -17,8 +17,8 @@ import { TipoAtividade } from "@/types/admin"
 
 interface FilterSidebarProps {
   materias: MateriaApiResponse[]
-  materiaSelecionada: number | null
-  onMateriaChange: (materiaId: number | null) => void
+  materiaSelecionada: string | null
+  onMateriaChange: (materiaNome: string | null) => void
   tiposFiltro: Set<TipoAtividade>
   onTipoToggle: (tipo: TipoAtividade) => void
   onAdicionarTarefa: () => void
@@ -87,9 +87,9 @@ export function FilterSidebar({
                   Matéria
                 </label>
                 <Select
-                  value={materiaSelecionada?.toString() || "all"}
+                  value={materiaSelecionada || "all"}
                   onValueChange={(value) =>
-                    onMateriaChange(value === "all" ? null : Number(value))
+                    onMateriaChange(value === "all" ? null : value)
                   }
                 >
                   <SelectTrigger className="h-9 text-sm">
@@ -98,7 +98,7 @@ export function FilterSidebar({
                   <SelectContent>
                     <SelectItem value="all">Todas as matérias</SelectItem>
                     {materias.map((materia) => (
-                      <SelectItem key={materia.id} value={materia.id.toString()}>
+                      <SelectItem key={materia.id} value={materia.nome}>
                         {materia.nome}
                       </SelectItem>
                     ))}

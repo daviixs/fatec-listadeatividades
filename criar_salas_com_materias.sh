@@ -6,39 +6,39 @@ PROFESSOR_PADRAO="Professor"
 
 # Arrays de matérias por curso e semestre
 declare -A MATERIAS_ADS=(
-    [1]="Engenharia de Software I|Algoritmos e Lógica de Programação|Sistemas Operacionais|Arquitetura e Organização de Computadores|Comunicação e Expressão|Inglês I|Projeto Integrador I"
-    [2]="Banco de Dados Relacional|Engenharia de Software II|Linguagem de Programação|Cálculo|Interação Humano Computador|Comunicação e Expressão II|Inglês II|Gestão Financeira Empresarial com Tecnologias"
-    [3]="Laboratório de Banco de Dados|Gestão de Negócios|Experiência do Usuário|Programação Orientada a Objetos|Estrutura de Dados|Gestão de Projetos Ágeis|Inglês III"
-    [4]="Engenharia de Software III|Programação Orientada a Objetos|Banco de Dados|Sistemas Operacionais II|Programação Web (Eletiva)|Metodologia da Pesquisa Tecnológica Científica|Inglês IV"
-    [5]="Redes de Computadores I|Programação Linear|Laboratório de Engenharia de Software|Segurança da Informação|Eletiva II – Programação Script|Eletiva I – Laboratório de Banco de Dados|Inglês V"
-    [6]="Inteligência Artificial (Escolha III)|Gestão de Projetos|Empreendedorismo|Gestão de Equipes|Gestão e Governança de TI|Ética e Responsabilidade|Inglês VI|Tópicos Especiais (Escolha II)"
+    [1]="Inglês I|Algoritmos e Lógica de Programação|Engenharia de Software I|Comunicação e Expressão|Arquitetura e Organização de Computadores|Projeto Integrador I|Sistemas Operacionais"
+    [2]="Interação Humano Computador|Linguagem de Programação|Gestão Financeira Empresarial com Tecnologia|Cálculo|Engenharia de Software II|Banco de Dados Relacional|Comunicação e Expressão II|Inglês II"
+    [3]="Programação Orientada a Objetos|Gestão de Negócios|Estrutura de Dados|Gestão de Projetos Ágeis|Laboratório de Banco de Dados|Experiência do Usuário|Inglês III"
+    [4]="Inglês IV|Programação Orientada a Objetos|Engenharia de Software III|Sistemas Operacionais II|Banco de Dados|Metodologia de Pesquisa Científica e Tecnológica|Programação Web"
+    [5]="Redes de Computadores I|Programação Linear|Inglês V|Laboratório de Engenharia de Software|Segurança da Informação|Programação Script|Laboratório de Banco de Dados"
+    [6]="Inteligência Artificial|Tópicos Especiais|Gestão de Equipes|Gestão de Projetos|Gestão e Governança de TI|Empreendedorismo|Ética|Inglês VI"
 )
 
 declare -A MATERIAS_DSM=(
-    [1]="Modelagem de Banco de Dados|Desenvolvimento Web I|Algoritmos e Lógica de Programação|Engenharia de Software I|Design Digital|Sistemas Operacionais e Redes|Inglês I"
-    [2]="Banco de Dados Relacional|Desenvolvimento Web II|Técnicas de Programação I|Engenharia de Software II|Estrutura de Dados|Matemática para Computação|Inglês II"
-    [3]="Banco de Dados Não Relacional|Desenvolvimento Web III|Técnicas de Programação II|Gestão Ágil de Projetos|Álgebra Linear|Interação Humano Computador|Inglês III"
-    [4]="Integração e Entrega Contínua|Laboratório de Desenvolvimento Web|Programação para Dispositivos Móveis I|Internet das Coisas e Aplicações|Estatística Aplicada|Experiência do Usuário|Inglês IV"
-    [5]="Segurança no Desenvolvimento de Aplicações|Lab. de Desenvolvimento para Dispositivos Móveis|Programação para Dispositivos Móveis II|Aprendizagem de Máquina|Computação em Nuvem I"
-    [6]="Mineração de Dados|Lab. de Desenvolvimento Multiplataforma|Qualidade e Testes de Software|Processamento de Linguagem Natural|Computação em Nuvem II|Ética Profissional e Patente"
+    [1]="Desenvolvimento Web I|Engenharia de Software I|Algoritmos e Lógica de Programação|Design Digital|Sistemas Operacionais e Redes de Computadores|Modelagem de Banco de Dados"
+    [2]="Engenharia de Software II|Estrutura de Dados|Desenvolvimento Web II|Técnicas de Programação I|Matemática para Computação|Banco de Dados Relacional"
+    [3]="Banco de Dados Não Relacional|Inglês I|Gestão Ágil de Projetos de Software|Interação Humano-Computador|Álgebra Linear|Técnicas de Programação II|Desenvolvimento Web III"
+    [4]="Programação para Dispositivos Móveis I|Experiência do Usuário|Estatística Aplicada|Integração e Entrega|Internet das Coisas|Laboratório de Desenvolvimento Web|Inglês II"
+    [5]="Redação|Computação em Nuvem I|Programação para Dispositivos Móveis II|Aprendizagem de Máquinas|Laboratório de Dispositivos Móveis|Segurança no Desenvolvimento de Aplicações|Inglês III"
+    [6]="Qualidade e Testes de Software|Mineração de Dados|Processamento de Linguagem Natural|Computação em Nuvem II|Ética Profissional e Patente|Laboratório de Desenvolvimento Multiplataforma|Inglês IV"
 )
 
 declare -A MATERIAS_GRH=(
-    [1]="Projeto Integrador I|Matemática Elementar|Comportamento Organizacional|Leitura e Produção de Textos|Gestão das Relações Interpessoais|Administração Geral|Inglês I"
-    [2]="Comunicação Empresarial|Métodos para Produção do Conhecimento|Gestão de Pessoas na Administração Pública|Espanhol I|Captação e Seleção de Talentos|Estatística|Inglês II|Projeto Integrador II"
-    [3]="Projeto Integrador III|Espanhol II|Inglês III|Informática Aplicada à Gestão de Pessoas I|Legislação Trabalhista e Previdenciária|Educação Corporativa|Gestão das Rotinas de Pessoal I|Fundamentos de Economia"
-    [4]="Gestão da Inclusão Social|Gestão Financeira|Gestão de Carreira e Benefícios|Gestão das Rotinas de Pessoal II|Informática Aplicada à Gestão de Pessoas II|Gestão do Clima Organizacional|Inglês IV|Projeto Integrador IV"
-    [5]="Projeto de Recursos Humanos I|Empreendedorismo|Endomarketing e Gestão de Clientes Internos|Gestão por Competências|Saúde e Segurança Ocupacional|Gestão de Conflitos e Negociação|Remuneração Estratégica|Inglês V"
-    [6]="Projeto de Recursos Humanos II|Gestão do Conhecimento|Auditoria e Gestão da Qualidade de Vida no Trabalho|Tópicos Especiais em Gestão de Talentos Humanos|Planejamento Estratégico em RH|Consultoria em Gestão de Pessoas|Ética e Responsabilidade Social Empresarial|Inglês VI"
+    [1]="Inglês I|Matemática Elementar|Comportamento Organizacional|Projeto Integrador I|Administração Geral|Gestão das Relações Interpessoais|Leitura e Produção de Texto"
+    [2]="Comunicação Empresarial|Gestão de Pessoas na Administração Pública|Projeto Integrador II|Espanhol I|Métodos para Produção do Conhecimento|Captação e Seleção de Talentos|Estatística|Inglês II"
+    [3]="Fundamentos de Economia|Educação Corporativa|Legislação Trabalhista e Previdenciária|Informática Aplicada à Gestão de Pessoas|Projeto Integrador III|Espanhol II|Gestão das Rotinas de Pessoal|Inglês III"
+    [4]="Gestão da Inclusão Social|Gestão do Clima Organizacional|Gestão das Rotinas de Pessoal II|Gestão de Carreiras e Benefícios|Projeto Integrador IV|Informática Aplicada à Gestão de Pessoas II|Gestão Financeira|Inglês IV"
+    [5]="Inglês V|Empreendedorismo|Endomarketing|Gestão de Conflitos e Negociação|Saúde e Segurança Ocupacional|Remuneração Estratégica|Projeto de Recursos Humanos I|Gestão por Competências"
+    [6]="Projeto de Recursos Humanos II|Gestão do Conhecimento|Consultoria em Gestão de Pessoas|Gestão de Talentos Humanos|Tópicos Especiais em Gestão de Talentos|Inglês VI|Auditoria e Gestão da Qualidade de Vida no Trabalho|Planejamento Estratégico em RH|Ética e Responsabilidade Social Empresarial"
 )
 
 declare -A MATERIAS_GPI=(
-    [1]="Informática|Tecnologia da Produção|Fundamentos de Comunicação Empresarial|Cálculo|Administração|Métodos de Pesquisa|Inglês I|Projeto Integrador GPI I"
-    [2]="Materiais e Tratamentos I|Estatística|Fundamentos de Matemática Financeira|Ergonomia|Introdução à Contabilidade|Liderança e Empreendedorismo|Inglês II|Projeto Integrador GPI II"
-    [3]="Estratégia de Produção e Operações|Gestão da Produção Aplicada|Economia|Custos Industriais|Materiais e Tratamentos II|Projeto de Produto I|Inglês III"
-    [4]="Processo de Produção|Higiene e Segurança do Trabalho|Projeto de Produto II|Gestão da Qualidade|PPCP (Planejamento e Controle da Produção)|Automação Industrial|Projeto Integrador GPI III|Inglês IV"
-    [5]="Espanhol I|Gestão Ambiental|Fundamentos de Gestão de Projetos|Gestão Financeira|Gestão da Cadeia de Suprimentos|Projeto de Fábrica|Projeto de Graduação I"
-    [6]="Tecnologia da Informação|Comércio Exterior|SAP|Marketing e Vendas|Gestão de Pessoas|Espanhol II|Projeto de Graduação II"
+    [1]="Informática|Comunicação Empresarial|Metodologia de Pesquisa|Tecnologia de Produção|Administração|Inglês I|Cálculo|Projeto GPI I"
+    [2]="Desenho Técnico|Fundamentos de Matemática Financeira|Inglês II|Matemática|Estatística|Projeto GPI II|Economia|Introdução à Contabilidade"
+    [3]="Projeto GPI III|Economia|Design de Produto|Gestão da Produção Aplicada|Custos Industriais|Projeto de Produto I|Inglês III|Materiais e Ensaios|Estrutura de Operações"
+    [4]="Projeto de Produto II|Gestão da Qualidade|PPCP|Higiene e Segurança do Trabalho|Processo de Produção|Fundamentos de Automação Industrial|Inglês IV"
+    [5]="Projeto de Fábrica|Gestão da Cadeia de Suprimentos|Gestão Ambiental|Gestão Financeira|Ética e Direito Empresarial|Gestão de Projetos|Projeto de Graduação I"
+    [6]="Comércio Exterior|Tecnologia da Informação|Gestão de Pessoas|Marketing|Espanhol II|SAP|Projeto de Graduação II"
 )
 
 # Mapa para associar curso ao array de matérias
@@ -123,7 +123,12 @@ echo "FASE 1: Criando salas..."
 echo ""
 
 for curso in ADS DSM GRH GPI; do
-    for turno in Manhã Noite; do
+    for turno in Matutino Noturno; do
+        # DSM só possui turno Noturno
+        if [[ "$curso" == "DSM" && "$turno" == "Matutino" ]]; then
+            continue
+        fi
+
         for semestre in 1° 2° 3° 4° 5° 6°; do
             nome="${curso} ${semestre} ${turno}"
             criar_sala "$nome" "$semestre" "$curso"

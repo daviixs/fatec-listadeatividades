@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ChevronLeft, Home, Menu, X } from 'lucide-react';
+import { ChevronLeft, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
@@ -13,57 +13,53 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
 
   const isHome = location.pathname === '/';
 
-  const handleBack = () => {
-    navigate(-1);
-  };
+  const handleBack = () => navigate(-1);
 
   const getTitle = () => {
-    if (isHome) return 'Visão Geral';
+    if (isHome) return 'FATEC / LISTA DE ATIVIDADES';
     const parts = location.pathname.split('/').filter(Boolean);
-    if (parts.length > 0) return 'Aulas';
-    return 'Visão Geral';
+    return ['FATEC', ...parts].join(' / ').toUpperCase();
   };
 
   return (
-    <header className="w-full bg-slate-50 border-b-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 pb-2">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 sm:gap-4">
+    <header className="w-full bg-ink text-paper border-b-[3px] border-ink shadow-brutal">
+      <div className="max-w-[1100px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 py-3">
+        <div className="flex items-center gap-3 sm:gap-4">
           <Button
-            variant="ghost"
+            variant="outline"
             size="icon"
             onClick={onMenuClick}
-            className="rounded-xl h-10 w-10 flex-shrink-0 lg:hidden"
+            className="lg:hidden bg-paper text-ink border-[3px] border-[var(--paper)] hover:-translate-y-[2px] shadow-brutal"
             aria-label={isSidebarOpen ? 'Fechar menu' : 'Abrir menu'}
           >
             {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
+
           {!isHome && (
-            <Button 
-              variant="outline" 
-              size="icon" 
+            <Button
+              variant="outline"
+              size="icon"
               onClick={handleBack}
-              className="rounded-xl border-slate-200 text-slate-500 hover:text-slate-900 shadow-none h-10 w-10 font-bold hidden sm:flex"
+              className="hidden sm:inline-flex bg-paper text-ink border-[3px] border-[var(--paper)] shadow-brutal hover:-translate-y-[2px]"
               aria-label="Voltar"
             >
               <ChevronLeft className="w-5 h-5" />
             </Button>
           )}
-          {!isHome && (
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
+
+          <div className="flex flex-col">
+            <span className="text-xs sm:text-sm font-mono tracking-[0.08em]">2026 / SISTEMA ACADÊMICO</span>
+            <h1 className="text-lg sm:text-xl md:text-2xl leading-tight font-extrabold font-[inherit]">
               {getTitle()}
             </h1>
-          )}
+          </div>
         </div>
 
-        <Button 
-          variant="outline" 
-          className="rounded-xl border-slate-200 text-slate-500 font-bold hover:text-slate-900 hover:border-slate-300 shadow-none gap-2 h-10 px-3 sm:px-4 text-xs cursor-pointer group transition-all duration-300 hidden sm:flex"
-        >
-          Notificações
-          <div className="w-4 h-4 bg-rose-500 text-white text-[9px] rounded-full flex items-center justify-center font-black group-hover:scale-125 group-hover:-translate-y-0.5 transition-transform duration-300 ease-out shadow-sm">
-            1
+        <div className="hidden sm:flex items-center gap-3">
+          <div className="px-3 py-1 bg-accent text-ink border-[3px] border-ink shadow-brutal text-xs font-mono uppercase tracking-[0.1em]">
+            Notificações: 1
           </div>
-        </Button>
+        </div>
       </div>
     </header>
   );

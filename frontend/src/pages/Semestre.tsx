@@ -16,16 +16,18 @@ export function Semestre() {
 
   return (
     <PageTransition>
-      <div className="mb-6 sm:mb-8 lg:mb-10 text-center md:text-left animate-in-fade">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
-          Selecione o Semestre
+      <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
+        <div className="faixa-label">03 / Semestres</div>
+        <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.05]">
+          {course.name} • {periodText}
         </h1>
-        <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400">
-          Curso <span className="font-medium text-slate-800 dark:text-slate-200">{course.name}</span> • Período <span className="font-medium text-slate-800 dark:text-slate-200">{periodText}</span>
+        <div className="divider-strong" />
+        <p className="text-sm sm:text-base font-mono text-ink/80">
+          Selecione o semestre para abrir o calendário brutalista.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
         {course.semesters.map((semester, index) => {
           const semNum = semester.name.match(/\d+/)?.[0] || String(index + 1);
 
@@ -33,10 +35,11 @@ export function Semestre() {
             <ActionCard
               key={semester.id}
               title={`${semNum}º`}
+              badge={String(index + 1).padStart(2, '0')}
               delay={index * 0.05}
               onClick={() => navigate(`/${course.id}/${periodId}/${semester.id}`)}
             >
-              <span className="text-slate-600 bg-slate-100 px-2 py-1 rounded-md text-xs">
+              <span className="badge-brutal" data-variant="outline">
                 {semester.subjects.length} matéria{semester.subjects.length !== 1 ? 's' : ''}
               </span>
             </ActionCard>

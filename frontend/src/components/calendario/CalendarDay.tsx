@@ -6,12 +6,12 @@ import { type Atividade } from "@/types/admin"
 import { TipoAtividade } from "@/types/admin"
 
 interface CalendarDayProps {
-  date: Date
+  date: Date | null
   isCurrentMonth: boolean
   atividades: Atividade[]
   tiposFiltro: Set<TipoAtividade>
   onClick: (date: Date) => void
-  onHover: (date: Date | null) => void
+  onHover: (date: Date | null, event?: React.MouseEvent) => void
   currentDate: Date
 }
 
@@ -24,6 +24,13 @@ export function CalendarDay({
   onHover,
   currentDate,
 }: CalendarDayProps) {
+  // Se não há data (célula vazia), renderizar placeholder
+  if (!date) {
+    return (
+      <div className="h-14 w-full bg-muted/10" />
+    )
+  }
+
   const dayDate = new Date(date)
   const dayIsToday = isToday(dayDate)
   const dayIsCurrentMonth = isCurrentMonth
@@ -45,7 +52,7 @@ export function CalendarDay({
       type="button"
       data-slot="calendar-day"
       onClick={() => onClick(date)}
-      onMouseEnter={() => onHover(date)}
+      onMouseEnter={(e) => onHover(date, e)}
       onMouseLeave={() => onHover(null)}
       disabled={!isCurrentMonth}
       className={cn(

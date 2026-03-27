@@ -25,7 +25,7 @@ export function CalendarioSemestre() {
   const [materias, setMaterias] = useState<MateriaApiResponse[]>([])
   const [atividades, setAtividades] = useState<Atividade[]>([])
 
-  const [materiaFiltro, setMateriaFiltro] = useState<number | null>(null)
+  const [materiaFiltro, setMateriaFiltro] = useState<string | null>(null)
   const [tiposFiltro, setTiposFiltro] = useState<Set<TipoAtividade>>(
     new Set([TipoAtividade.ATIVIDADE, TipoAtividade.PROVA, TipoAtividade.TRABALHO])
   )
@@ -114,10 +114,6 @@ export function CalendarioSemestre() {
   }
 
   const handleAdicionarTarefa = () => {
-    if (!materiaFiltro) {
-      toast.error("Selecione uma matéria primeiro.")
-      return
-    }
     setIsAddModalOpen(true)
   }
 
@@ -140,7 +136,7 @@ export function CalendarioSemestre() {
 
   const filteredAtividades = useMemo(() => {
     return atividades.filter((atividade) => {
-      if (materiaFiltro && atividade.materiaId !== materiaFiltro) {
+      if (materiaFiltro && atividade.materiaNome !== materiaFiltro) {
         return false
       }
       if (!tiposFiltro.has(atividade.tipo)) {
