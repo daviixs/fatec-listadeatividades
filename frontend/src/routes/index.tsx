@@ -9,6 +9,7 @@ import { Home } from '@/pages/Home';
 import { Periodo } from '@/pages/Periodo';
 import { Semestre } from '@/pages/Semestre';
 import { CalendarioSemestre } from '@/pages/CalendarioSemestre';
+import { Horarios } from '@/pages/Horarios';
 
 // Admin Pages
 import { AdminLogin } from '@/pages/admin/AdminLogin';
@@ -30,6 +31,7 @@ export default function AppRoutes() {
           <Route path="/:courseId/periodo" element={<Periodo />} />
           <Route path="/:courseId/:periodId/semestres" element={<Semestre />} />
           <Route path="/:courseId/:periodId/:semesterId" element={<CalendarioSemestre />} />
+          <Route path="/horarios" element={<Horarios />} />
           <Route
             path="/:courseId/:periodId/:semesterId/materias"
             element={<Navigate to={`/:courseId/:periodId/:semesterId`} replace />}

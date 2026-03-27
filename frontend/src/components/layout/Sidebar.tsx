@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, BookOpen, Calendar, Mail, ShoppingBag, User, LogOut, X } from 'lucide-react';
+import { Home, BookOpen, Calendar, User, LogOut, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SidebarProps {
@@ -10,10 +10,8 @@ interface SidebarProps {
 export function Sidebar({ onClose }: SidebarProps) {
   const navItems = [
     { icon: <Home className="w-5 h-5" />, label: 'Início', path: '/' },
+    { icon: <Calendar className="w-5 h-5" />, label: 'Horários', path: '/horarios' },
     { icon: <BookOpen className="w-5 h-5" />, label: 'Aulas', path: '/lessons' },
-    { icon: <Calendar className="w-5 h-5" />, label: 'Horário', path: '/#schedule' },
-    { icon: <Mail className="w-5 h-5" />, label: 'Mensagens', path: '/#inbox' },
-    { icon: <ShoppingBag className="w-5 h-5" />, label: 'Loja', path: '/#shop' },
     { icon: <User className="w-5 h-5" />, label: 'Perfil', path: '/#profile' },
   ];
 
