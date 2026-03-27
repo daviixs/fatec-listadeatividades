@@ -1,0 +1,4 @@
+2026-03-26 22:52:38.771912-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALA_DE_AULA" not found (this database is empty); SQL statement:
+select count(*)
+    from sala_de_aula [42104-240]
