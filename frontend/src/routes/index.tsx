@@ -8,8 +8,7 @@ import { AdminLayout } from '@/layouts/AdminLayout';
 import { Home } from '@/pages/Home';
 import { Periodo } from '@/pages/Periodo';
 import { Semestre } from '@/pages/Semestre';
-import { Materias } from '@/pages/Materias';
-import { Atividades } from '@/pages/Atividades';
+import { CalendarioSemestre } from '@/pages/CalendarioSemestre';
 
 // Admin Pages
 import { AdminLogin } from '@/pages/admin/AdminLogin';
@@ -30,8 +29,15 @@ export default function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/:courseId/periodo" element={<Periodo />} />
           <Route path="/:courseId/:periodId/semestres" element={<Semestre />} />
-          <Route path="/:courseId/:periodId/:semesterId/materias" element={<Materias />} />
-          <Route path="/:courseId/:periodId/:semesterId/:subjectId/atividades" element={<Atividades />} />
+          <Route path="/:courseId/:periodId/:semesterId" element={<CalendarioSemestre />} />
+          <Route
+            path="/:courseId/:periodId/:semesterId/materias"
+            element={<Navigate to={`/:courseId/:periodId/:semesterId`} replace />}
+          />
+          <Route
+            path="/:courseId/:periodId/:semesterId/:subjectId/atividades"
+            element={<Navigate to={`/:courseId/:periodId/:semesterId`} replace />}
+          />
         </Route>
 
         {/* Rotas Admin */}

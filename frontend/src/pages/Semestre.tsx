@@ -34,7 +34,7 @@ export function Semestre() {
               key={semester.id}
               title={`${semNum}º`}
               delay={index * 0.05}
-              onClick={() => navigate(`/${course.id}/${periodId}/${semester.id}/materias`)}
+              onClick={() => navigate(`/${course.id}/${periodId}/${semester.id}`)}
             >
               <span className="text-slate-600 bg-slate-100 px-2 py-1 rounded-md text-xs">
                 {semester.subjects.length} matéria{semester.subjects.length !== 1 ? 's' : ''}
