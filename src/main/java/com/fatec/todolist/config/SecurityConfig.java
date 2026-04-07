@@ -35,16 +35,16 @@ public class SecurityConfig {
                                 "/actuator/metrics/**"
                         ).permitAll()
                         // Endpoints publicos (aluno)
-                        .requestMatchers("/api/salas/**").permitAll()
-                        .requestMatchers("/api/materias/**").permitAll()
-                        .requestMatchers("/api/atividades/**").permitAll()
-                        .requestMatchers("/api/lembretes/**").permitAll()
-                        .requestMatchers("/api/entrada-sala/**").permitAll()
-                        .requestMatchers("/api/votacao/**").permitAll()
+                        .requestMatchers("/api/salas", "/api/salas/**").permitAll()
+                        .requestMatchers("/api/materias", "/api/materias/**").permitAll()
+                        .requestMatchers("/api/atividades", "/api/atividades/**").permitAll()
+                        .requestMatchers("/api/lembretes", "/api/lembretes/**").permitAll()
+                        .requestMatchers("/api/entrada-sala", "/api/entrada-sala/**").permitAll()
+                        .requestMatchers("/api/votacao", "/api/votacao/**").permitAll()
                         // Endpoints do lider (protegidos futuramente)
-                        .requestMatchers("/api/admin/**").permitAll()
+                        .requestMatchers("/api/admin", "/api/admin/**").permitAll()
                         // Endpoints do master admin
-                        .requestMatchers("/api/master-admin/**").permitAll()
+                        .requestMatchers("/api/master-admin", "/api/master-admin/**").permitAll()
                         // Qualquer outra rota precisa estar autenticada
                         .anyRequest().authenticated()
                 );
