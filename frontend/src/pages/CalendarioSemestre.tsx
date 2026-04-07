@@ -191,7 +191,7 @@ export function CalendarioSemestre() {
         <div className="flex flex-col gap-4 sm:gap-6">
           <div className="flex-1">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
-              Calendário - {formattedSemester}
+              Agenda do semestre - {formattedSemester}
             </h1>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-medium">
               <span className="font-semibold text-slate-800 dark:text-slate-200">
@@ -208,10 +208,10 @@ export function CalendarioSemestre() {
               <div className="space-y-1 text-left">
                 <div className="flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-[var(--ink)]/70">
                   <Bell className="size-4" />
-                  Notificações da sala
+                  Avisos da sala
                 </div>
                 <p className="text-sm text-[var(--ink)]/80">
-                  Cadastre um e-mail para receber alertas e lembretes desta sala sem sair do calendário.
+                  Receba lembretes desta sala por e-mail sem sair do calendário.
                 </p>
               </div>
 

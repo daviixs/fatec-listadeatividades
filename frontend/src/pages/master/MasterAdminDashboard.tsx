@@ -46,49 +46,49 @@ export function MasterAdminDashboard() {
           break;
       }
     } catch (error: any) {
-      toast.error('Erro ao carregar dados');
+      toast.error('Não foi possível carregar os dados.');
     } finally {
       setLoading(false);
     }
   };
 
   const handleDeleteEmail = async (id: number) => {
-    if (!confirm('Tem certeza que deseja excluir este email?')) return;
+    if (!confirm('Quer mesmo apagar este e-mail?')) return;
     setDeleting({ id, type: 'email' });
     try {
       await masterAdminApi.deleteEmail(id);
       setEmails(emails.filter(e => e.id !== id));
-      toast.success('Email excluído com sucesso');
+      toast.success('E-mail removido.');
     } catch (error: any) {
-      toast.error('Erro ao excluir email');
+      toast.error('Não foi possível remover esse e-mail.');
     } finally {
       setDeleting(null);
     }
   };
 
   const handleDeleteAtividade = async (id: number) => {
-    if (!confirm('Tem certeza que deseja excluir esta atividade?')) return;
+    if (!confirm('Quer mesmo apagar esta atividade?')) return;
     setDeleting({ id, type: 'atividade' });
     try {
       await masterAdminApi.deleteAtividade(id);
       setAtividades(atividades.filter(a => a.id !== id));
-      toast.success('Atividade excluída com sucesso');
+      toast.success('Atividade removida.');
     } catch (error: any) {
-      toast.error('Erro ao excluir atividade');
+      toast.error('Não foi possível remover a atividade.');
     } finally {
       setDeleting(null);
     }
   };
 
   const handleDeleteSala = async (id: number) => {
-    if (!confirm('Tem certeza que deseja excluir esta sala e todos os seus dados? Isso é uma ação irreversível!')) return;
+    if (!confirm('Quer mesmo apagar esta sala e todos os dados dela? Essa ação não pode ser desfeita.')) return;
     setDeleting({ id, type: 'sala' });
     try {
       await masterAdminApi.deleteSala(id);
       setSalas(salas.filter(s => s.id !== id));
-      toast.success('Sala excluída com sucesso');
+      toast.success('Sala removida.');
     } catch (error: any) {
-      toast.error('Erro ao excluir sala');
+      toast.error('Não foi possível remover a sala.');
     } finally {
       setDeleting(null);
     }
@@ -98,7 +98,7 @@ export function MasterAdminDashboard() {
     try {
       await masterAdminApi.logout();
       masterAdminStorage.clearSession();
-      toast.success('Você saiu do painel Super Admin');
+      toast.success('Você saiu da área geral.');
       navigate('/master-admin/login');
     } catch (error: any) {
       masterAdminStorage.clearSession();
@@ -126,10 +126,10 @@ export function MasterAdminDashboard() {
       <div className="animate-in-fade-in space-y-8">
         <div className="mb-8">
           <h1 className="text-4xl font-extrabold text-primary-700 mb-2">
-            Painel Super Admin
+            Visão geral do sistema
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-            Gerenciamento global do sistema
+            Acompanhe salas, atividades e avisos em um só lugar.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export function MasterAdminDashboard() {
                 <Mail className="w-8 h-8 opacity-90" />
                 <span className="text-3xl font-bold">{stats.emails}</span>
               </div>
-              <p className="text-sm font-medium opacity-90">Total de Emails</p>
+              <p className="text-sm font-medium opacity-90">E-mails salvos</p>
             </CardContent>
           </Card>
 
@@ -150,7 +150,7 @@ export function MasterAdminDashboard() {
                 <FileText className="w-8 h-8 opacity-90" />
                 <span className="text-3xl font-bold">{stats.atividades}</span>
               </div>
-              <p className="text-sm font-medium opacity-90">Total de Atividades</p>
+              <p className="text-sm font-medium opacity-90">Atividades</p>
             </CardContent>
           </Card>
 
@@ -160,7 +160,7 @@ export function MasterAdminDashboard() {
                 <Users className="w-8 h-8 opacity-90" />
                 <span className="text-3xl font-bold">{stats.salas}</span>
               </div>
-              <p className="text-sm font-medium opacity-90">Total de Salas</p>
+              <p className="text-sm font-medium opacity-90">Salas</p>
             </CardContent>
           </Card>
 
@@ -170,7 +170,7 @@ export function MasterAdminDashboard() {
                 <Mail className="w-8 h-8 opacity-90" />
                 <span className="text-3xl font-bold">{stats.emailsAtivos}</span>
               </div>
-              <p className="text-sm font-medium opacity-90">Emails Ativos</p>
+              <p className="text-sm font-medium opacity-90">E-mails ativos</p>
             </CardContent>
           </Card>
         </div>
@@ -187,7 +187,7 @@ export function MasterAdminDashboard() {
                 }`}
               >
                 <Mail className="w-5 h-5 inline mr-2" />
-                Emails
+                E-mails
               </button>
               <button
                 onClick={() => setActiveTab('atividades')}
@@ -228,7 +228,7 @@ export function MasterAdminDashboard() {
                         <span className={email.ativo ? 'text-green-600' : 'text-red-600'}>
                           {email.ativo ? 'Ativo' : 'Inativo'}
                         </span>
-                        <span>Cadastrado: {new Date(email.dataCadastro).toLocaleDateString('pt-BR')}</span>
+                        <span>Desde: {new Date(email.dataCadastro).toLocaleDateString('pt-BR')}</span>
                         {email.ultimoEnvio && (
                           <span>Último envio: {new Date(email.ultimoEnvio).toLocaleDateString('pt-BR')}</span>
                         )}
@@ -247,7 +247,7 @@ export function MasterAdminDashboard() {
                 ))}
                 {emails.length === 0 && (
                   <p className="text-center text-slate-500 dark:text-slate-400 py-8">
-                    Nenhum email cadastrado
+                    Nenhum e-mail por aqui
                   </p>
                 )}
               </div>
@@ -299,7 +299,7 @@ export function MasterAdminDashboard() {
                 ))}
                 {atividades.length === 0 && (
                   <p className="text-center text-slate-500 dark:text-slate-400 py-8">
-                    Nenhuma atividade cadastrada
+                    Nenhuma atividade por aqui
                   </p>
                 )}
               </div>
@@ -338,7 +338,7 @@ export function MasterAdminDashboard() {
                 ))}
                 {salas.length === 0 && (
                   <p className="text-center text-slate-500 dark:text-slate-400 py-8">
-                    Nenhuma sala cadastrada
+                    Nenhuma sala por aqui
                   </p>
                 )}
               </div>
@@ -353,7 +353,7 @@ export function MasterAdminDashboard() {
             className="w-full h-12 border-red-300 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 dark:border-red-900 dark:text-red-400 font-semibold"
           >
             <LogOut className="w-5 h-5 mr-2" />
-            Sair do Painel
+            Sair
           </Button>
         </div>
       </div>

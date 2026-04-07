@@ -49,10 +49,10 @@ export function AdminDashboard() {
     <PageTransition>
       <div className="space-y-6">
         <div className="space-y-2">
-          <div className="faixa-label">Painel Admin / Sala {salaId}</div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">Status e ações imediatas</h1>
+          <div className="faixa-label">Sua sala / {session.nomeSala}</div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">O que precisa da sua atenção</h1>
           <div className="divider-strong" />
-          <p className="text-sm font-mono text-ink/80">Controle de atividades, provas e pendências.</p>
+          <p className="text-sm font-mono text-ink/80">Veja atividades, provas e o que ainda falta revisar.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -105,14 +105,14 @@ export function AdminDashboard() {
                 onClick={() => navigate(`/admin/${salaId}/atividades`)}
                 className="w-full justify-between"
               >
-                Gerenciar Atividades <FileText className="w-4 h-4" />
+                Ver atividades <FileText className="w-4 h-4" />
               </Button>
               <Button
                 onClick={() => navigate(`/admin/${salaId}/provas`)}
                 variant="secondary"
                 className="w-full justify-between"
               >
-                Gerenciar Provas <Calendar className="w-4 h-4" />
+                Ver provas <Calendar className="w-4 h-4" />
               </Button>
             </CardContent>
           </Card>
@@ -120,16 +120,16 @@ export function AdminDashboard() {
           {stats.pendentes > 0 && (
             <Card className="bg-alert text-paper">
               <CardContent className="p-4 sm:p-5 space-y-3">
-                <h3 className="text-lg font-extrabold">Atenção: pendências</h3>
+                <h3 className="text-lg font-extrabold">Ainda faltam aprovações</h3>
                 <p className="text-sm font-mono">
-                  {stats.pendentes} atividade(s) aguardando aprovação. Trate agora para manter o calendário limpo.
+                  {stats.pendentes} atividade(s) esperando sua revisão.
                 </p>
                 <Button
                   onClick={() => navigate(`/admin/${salaId}/atividades`)}
                   variant="outline"
                   className="bg-paper text-ink"
                 >
-                  Revisar pendentes
+                  Revisar agora
                 </Button>
               </CardContent>
             </Card>

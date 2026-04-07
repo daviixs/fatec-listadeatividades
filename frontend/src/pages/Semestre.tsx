@@ -17,13 +17,13 @@ export function Semestre() {
   return (
     <PageTransition>
       <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
-        <div className="faixa-label">03 / Semestres</div>
+        <div className="faixa-label">03 / Escolha o semestre</div>
         <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.05]">
           {course.name} • {periodText}
         </h1>
         <div className="divider-strong" />
         <p className="text-sm sm:text-base font-mono text-ink/80">
-          Selecione o semestre para abrir o calendário brutalista.
+          Escolha o semestre para ver as matérias e as datas da sua turma.
         </p>
       </div>
 

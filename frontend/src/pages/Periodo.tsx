@@ -16,19 +16,19 @@ export function Periodo() {
   return (
     <PageTransition>
       <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
-        <div className="faixa-label">02 / Período</div>
+        <div className="faixa-label">02 / Escolha o turno</div>
         <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.05]">
-          {course.name}: escolha o turno.
+          {course.name}: em qual turno você estuda?
         </h1>
         <div className="divider-strong" />
         <p className="text-sm sm:text-base font-mono text-ink/80">
-          Curso: {course.name} • Código: {course.id.toUpperCase()}
+          Escolha o horário das suas aulas para continuar.
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         <ActionCard
-          title="Diurno"
+          title="Manhã"
           badge="01"
           icon={<Sun className="w-8 h-8 text-amber-500" />}
           delay={0.1}
@@ -36,7 +36,7 @@ export function Periodo() {
         />
 
         <ActionCard
-          title="Noturno"
+          title="Noite"
           badge="02"
           icon={<Moon className="w-8 h-8 text-slate-600" />}
           delay={0.2}

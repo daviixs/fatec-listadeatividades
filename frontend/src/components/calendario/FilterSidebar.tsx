@@ -53,7 +53,7 @@ export function FilterSidebar({
             "font-bold text-slate-900",
             isCollapsed && "hidden"
           )}>
-            FILTROS
+            O QUE MOSTRAR
           </h2>
           <button
             type="button"
@@ -186,7 +186,7 @@ export function FilterSidebar({
             )}
           >
             <Plus className="w-4 h-4" />
-            {!isCollapsed && "Adicionar Tarefa"}
+            {!isCollapsed && "Adicionar atividade"}
           </Button>
         </div>
       </div>

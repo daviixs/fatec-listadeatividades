@@ -17,13 +17,13 @@ export function Home() {
   return (
     <PageTransition>
       <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
-        <div className="faixa-label">Seu Calendário Acadêmico / Painel Discente / 2026</div>
+        <div className="faixa-label">Seu Calendário Acadêmico / 2026</div>
         <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.05]">
-          Painel do Discente — escolha o curso e avance.
+          Escolha seu curso
         </h1>
         <div className="divider-strong" />
         <p className="text-sm sm:text-base font-mono text-ink/80">
-          Mobile-first. Atualizado diariamente. Acesso rápido a períodos, semestres e calendários.
+          Acesse com facilidade pelo celular e veja períodos, semestres e datas importantes em poucos toques.
         </p>
       </div>
 

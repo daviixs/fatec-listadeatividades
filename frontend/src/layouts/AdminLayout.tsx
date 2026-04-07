@@ -55,7 +55,7 @@ export function AdminLayout() {
             {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900">
-            Painel Administrativo
+            Área da sala
           </h1>
         </div>
         <Outlet />

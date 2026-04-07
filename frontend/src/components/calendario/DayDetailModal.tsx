@@ -99,7 +99,7 @@ export function DayDetailModal({
 
         <div className="p-4 overflow-y-auto max-h-[70vh]">
           <div className="mb-4 flex flex-wrap items-center gap-2 rounded-md bg-slate-50 p-3">
-            <span className="text-xs font-semibold text-slate-700">Filtrar por:</span>
+            <span className="text-xs font-semibold text-slate-700">Mostrar:</span>
             {Object.values(TipoAtividade).map((tipo) => (
               <div key={tipo} className="flex items-center gap-1.5">
                 <Checkbox
@@ -124,7 +124,7 @@ export function DayDetailModal({
           {filteredActivities.length === 0 ? (
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-8 text-center">
               <p className="text-sm text-slate-600">
-                Nenhuma atividade encontrada neste dia com os filtros selecionados.
+                Nada marcado para este dia com a seleção atual.
               </p>
             </div>
           ) : (
@@ -173,11 +173,11 @@ export function DayDetailModal({
                         </span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="font-semibold text-slate-700">Tipo de entrega:</span>
+                        <span className="font-semibold text-slate-700">Como entregar:</span>
                         <span className="text-slate-900">
                           {atividade.tipoEntrega === "LINK_EXTERNO"
-                            ? "Link Externo"
-                            : "Entrega Manual"}
+                            ? "Por link"
+                            : "Entrega manual"}
                         </span>
                       </div>
                       <div className="flex items-center justify-between">

@@ -29,13 +29,13 @@ export function AdminLogin() {
           senha: senha,
         });
 
-        toast.success(`Bem-vindo ao painel de ${response.nomeSala}!`);
+        toast.success(`Tudo certo! Você entrou na sala ${response.nomeSala}.`);
         navigate(`/admin/${response.salaId}`);
       } else {
-        toast.error('Senha inválida');
+        toast.error('A senha não confere.');
       }
     } catch (error) {
-      toast.error('Erro ao fazer login. Verifique código da sala e senha.');
+      toast.error('Não foi possível entrar. Confira o código e a senha da sala.');
     } finally {
       setIsLoading(false);
     }
@@ -51,10 +51,10 @@ export function AdminLogin() {
                 <Lock className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-3xl font-bold text-primary-700 mb-2">
-                Painel Admin
+                Entrar na sua sala
               </h1>
               <p className="text-slate-600 dark:text-slate-400">
-                Acesse o painel de administração da sua sala
+                Entre para organizar atividades, provas e avisos da sua sala.
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export function AdminLogin() {
 
               <div className="space-y-2">
                 <Label htmlFor="senha" className="text-slate-700 dark:text-slate-300 font-semibold">
-                  Senha do Líder
+                  Senha da sala
                 </Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -100,13 +100,13 @@ export function AdminLogin() {
                 className="w-full h-12 bg-gradient-to-r from-[#5A7C7A] to-[#6B9B7A] hover:from-[#3D5655] hover:to-[#5A8A69] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 disabled={isLoading}
               >
-                {isLoading ? 'Entrando...' : 'Entrar no Painel'}
+                {isLoading ? 'Entrando...' : 'Entrar'}
               </Button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-sm text-slate-500 dark:text-slate-400">
-                Precisa de ajuda? Entre em contato com o suporte.
+                Se precisar, confirme o código e a senha com quem organiza a sala.
               </p>
             </div>
           </div>

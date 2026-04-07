@@ -22,20 +22,20 @@ export function AdminProvas() {
       const data = await adminApi.getProvas(Number(salaId));
       setProvas(data);
     } catch (error) {
-      toast.error('Erro ao carregar provas');
+      toast.error('Não foi possível carregar as provas.');
     } finally {
       setLoading(false);
     }
   };
 
   const handleExcluir = async (id: number) => {
-    if (!confirm('Tem certeza que deseja excluir esta prova?')) return;
+    if (!confirm('Quer mesmo apagar esta prova?')) return;
     try {
       await adminApi.excluirAtividade(Number(salaId), id);
-      toast.success('Prova excluída com sucesso!');
+      toast.success('Prova removida.');
       loadProvas();
     } catch (error) {
-      toast.error('Erro ao excluir prova');
+      toast.error('Não foi possível remover a prova.');
     }
   };
 
@@ -55,7 +55,7 @@ export function AdminProvas() {
             Provas
           </h1>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-            Gerencie todas as provas da sala
+            Veja as provas desta sala.
           </p>
         </div>
 
@@ -64,10 +64,10 @@ export function AdminProvas() {
             <CardContent className="p-8 sm:p-12 text-center">
               <Calendar className="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-slate-400 mb-4" />
               <h3 className="text-base sm:text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                Nenhuma prova cadastrada
+                Nenhuma prova por aqui
               </h3>
               <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400">
-                Você ainda não possui provas registradas nesta sala.
+                Você ainda não adicionou nenhuma prova nesta sala.
               </p>
             </CardContent>
           </Card>

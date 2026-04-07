@@ -76,12 +76,12 @@ export function Horarios() {
         <header className="bg-ink text-paper border-[3px] border-ink shadow-brutal rounded-[6px] p-4 sm:p-5">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-xs font-mono uppercase tracking-[0.08em]">Horários de Aula / 2026</p>
+              <p className="text-xs font-mono uppercase tracking-[0.08em]">Horários da turma / 2026</p>
               <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight">
-                {course.name} — {turno.name}
+                {course.name} - {turno.name}
               </h1>
             </div>
-            <Badge variant="secondary">Linhas: {filteredSlots.length}</Badge>
+            <Badge variant="secondary">Aulas: {filteredSlots.length}</Badge>
           </div>
         </header>
 
@@ -120,7 +120,7 @@ export function Horarios() {
             </div>
 
             <div className="space-y-1">
-              <p className="text-[11px] font-mono uppercase tracking-[0.08em]">Semestre/Período</p>
+              <p className="text-[11px] font-mono uppercase tracking-[0.08em]">Semestre</p>
               <Select value={semesterId} onValueChange={handleSemesterChange}>
                 <SelectTrigger className="w-full">
                   <SelectValue />
@@ -136,9 +136,9 @@ export function Horarios() {
             </div>
 
             <div className="space-y-1">
-              <p className="text-[11px] font-mono uppercase tracking-[0.08em]">Buscar (disciplina/dia)</p>
+              <p className="text-[11px] font-mono uppercase tracking-[0.08em]">Buscar</p>
               <Input
-                placeholder="Filtrar por nome ou dia"
+                placeholder="Busque por matéria ou dia"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -181,7 +181,7 @@ export function Horarios() {
               {filteredSlots.length === 0 && (
                 <tr>
                   <td colSpan={4} className="px-4 py-6 text-center text-sm font-mono text-ink/70">
-                    Nenhum horário encontrado para esse filtro.
+                    Nenhum horário encontrado com esse filtro.
                   </td>
                 </tr>
               )}

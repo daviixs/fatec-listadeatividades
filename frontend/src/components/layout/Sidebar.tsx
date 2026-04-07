@@ -30,10 +30,15 @@ export function Sidebar({ onClose }: SidebarProps) {
       {/* Logo */}
       <div className="p-6 pt-12 lg:pt-8">
         <div className="border-[3px] border-[var(--paper)] bg-paper text-ink rounded-sm shadow-brutal p-4 text-center">
+          <img 
+            src="/images/icon.png"
+            alt="Ícone Calendário Acadêmico" 
+            className="w-12 h-12 mx-auto mb-3"
+          />
           <p className="text-xs font-mono tracking-[0.1em] uppercase mb-1">Seu Calendário Acadêmico</p>
-          <h1 className="text-2xl font-extrabold leading-none">Painel</h1>
+          <h1 className="text-2xl font-extrabold leading-none">Sua agenda</h1>
           <div className="divider-strong mt-3" />
-          <p className="text-xs font-mono mt-2">2026 / Agenda da turma</p>
+          <p className="text-xs font-mono mt-2">2026 / Tudo em um só lugar</p>
         </div>
       </div>
 

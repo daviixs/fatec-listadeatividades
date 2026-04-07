@@ -22,10 +22,10 @@ export function MasterAdminLogin() {
     try {
       const response = await masterAdminApi.login({ username, password });
       masterAdminStorage.saveSession({ token: response.token, username: response.username });
-      toast.success('Bem-vindo ao painel Super Admin!');
+      toast.success('Tudo certo. Você entrou na área geral.');
       navigate('/master-admin/dashboard');
     } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Erro ao fazer login. Verifique suas credenciais.');
+      toast.error(error.response?.data?.message || 'Não foi possível entrar. Confira seus dados.');
     } finally {
       setIsLoading(false);
     }
@@ -41,10 +41,10 @@ export function MasterAdminLogin() {
                 <ShieldCheck className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-3xl font-bold text-primary-700 mb-2">
-                Painel Super Admin
+                Acesso geral
               </h1>
               <p className="text-slate-600 dark:text-slate-400">
-                Acesso administrativo global ao sistema
+                Entre para acompanhar salas, atividades e avisos em um só lugar.
               </p>
             </div>
 
@@ -90,13 +90,13 @@ export function MasterAdminLogin() {
                 className="w-full h-12 bg-gradient-to-r from-[#5A7C7A] to-[#6B9B7A] hover:from-[#3D5655] hover:to-[#5A8A69] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 disabled={isLoading}
               >
-                {isLoading ? 'Entrando...' : 'Entrar no Painel'}
+                {isLoading ? 'Entrando...' : 'Entrar'}
               </Button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-sm text-slate-500 dark:text-slate-400">
-                Acesso restrito a administradores autorizados.
+                Acesso reservado.
               </p>
             </div>
           </div>

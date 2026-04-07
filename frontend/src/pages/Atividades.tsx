@@ -287,9 +287,9 @@ export function Atividades() {
 
       await loadAtividades(materia.id);
       setIsCreateDialogOpen(false);
-      toast.success('Atividade criada com sucesso.');
+      toast.success('Atividade salva.');
     } catch {
-      toast.error('Não foi possível criar a atividade.');
+      toast.error('Não foi possível salvar a atividade.');
     } finally {
       setIsSubmitting(false);
     }
@@ -351,9 +351,9 @@ export function Atividades() {
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-100 flex items-center justify-center mb-4 sm:mb-6 text-slate-500 shadow-inner">
               <Calendar className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">Nenhuma atividade cadastrada</h2>
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">Ainda não há atividades</h2>
             <p className="text-slate-600 font-medium max-w-md mb-6 sm:mb-8 text-sm sm:text-base">
-              Esta matéria ainda não possui tarefas. Cadastre a primeira atividade para manter a turma organizada.
+              Esta matéria ainda não possui tarefas. Adicione a primeira atividade para manter a turma organizada.
             </p>
             <Button
               size="lg"
@@ -361,7 +361,7 @@ export function Atividades() {
               onClick={openCreateDialog}
             >
               <PlusCircle className="w-5 h-5" />
-              Cadastrar Atividade
+              Adicionar atividade
             </Button>
           </div>
         </div>
@@ -608,7 +608,7 @@ export function Atividades() {
           <DialogHeader className="px-4 sm:px-6 pt-6 pb-2">
             <DialogTitle className="text-xl sm:text-2xl font-extrabold text-slate-900">Nova Atividade</DialogTitle>
             <DialogDescription className="text-slate-600 text-sm sm:text-base">
-              Preencha os dados para cadastrar uma nova atividade em {subjectLabel}.
+              Preencha as informações para criar uma nova atividade em {subjectLabel}.
             </DialogDescription>
           </DialogHeader>
 
@@ -639,7 +639,7 @@ export function Atividades() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label className="text-sm">Tipo de Entrega *</Label>
+              <Label className="text-sm">Como será a entrega? *</Label>
                 <Select
                   value={form.tipoEntrega}
                   onValueChange={(value) =>
@@ -650,8 +650,8 @@ export function Atividades() {
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value={TipoEntrega.ENTREGA_MANUAL}>Entrega Manual</SelectItem>
-                    <SelectItem value={TipoEntrega.LINK_EXTERNO}>Link Externo</SelectItem>
+                    <SelectItem value={TipoEntrega.ENTREGA_MANUAL}>Entrega manual</SelectItem>
+                    <SelectItem value={TipoEntrega.LINK_EXTERNO}>Por link</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -671,7 +671,7 @@ export function Atividades() {
 
             {form.tipoEntrega === TipoEntrega.LINK_EXTERNO && (
               <div className="space-y-2">
-                <Label htmlFor="linkEntrega" className="text-sm">Link de Entrega *</Label>
+                <Label htmlFor="linkEntrega" className="text-sm">Link *</Label>
                 <Input
                   id="linkEntrega"
                   type="url"
@@ -685,7 +685,7 @@ export function Atividades() {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="regras" className="text-sm">Regras *</Label>
+              <Label htmlFor="regras" className="text-sm">Orientações *</Label>
               <Textarea
                 id="regras"
                 value={form.regras}
@@ -713,7 +713,7 @@ export function Atividades() {
                     Salvando...
                   </>
                 ) : (
-                  'Cadastrar Atividade'
+                  'Salvar atividade'
                 )}
               </Button>
             </DialogFooter>

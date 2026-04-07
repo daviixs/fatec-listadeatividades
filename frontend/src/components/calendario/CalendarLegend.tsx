@@ -32,7 +32,7 @@ export function CalendarLegend({ tiposFiltro, onTipoToggle }: CalendarLegendProp
 
   return (
     <div className="flex flex-wrap items-center gap-4">
-      <span className="text-xs font-semibold text-slate-700">LEGENDA:</span>
+      <span className="text-xs font-semibold text-slate-700">Mostrar no calendário:</span>
       {legendItems.map((item) => (
         <button
           key={item.tipo}

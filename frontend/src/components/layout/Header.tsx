@@ -16,9 +16,21 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
   const handleBack = () => navigate(-1);
 
   const getTitle = () => {
-    if (isHome) return 'PAINEL DO DISCENTE';
-    const parts = location.pathname.split('/').filter(Boolean);
-    return parts.join(' / ').toUpperCase();
+    const path = location.pathname;
+
+    if (path === '/') return 'ESCOLHA SEU CURSO';
+    if (path === '/horarios') return 'HORÁRIOS DE AULA';
+    if (/^\/[^/]+\/periodo$/.test(path)) return 'ESCOLHA O TURNO';
+    if (/^\/[^/]+\/[^/]+\/semestres$/.test(path)) return 'ESCOLHA O SEMESTRE';
+    if (path === '/admin') return 'ENTRAR NA SUA SALA';
+    if (/^\/admin\/[^/]+\/atividades$/.test(path)) return 'ATIVIDADES DA SALA';
+    if (/^\/admin\/[^/]+\/provas$/.test(path)) return 'PROVAS DA SALA';
+    if (/^\/admin\/[^/]+$/.test(path)) return 'VISÃO GERAL DA SALA';
+    if (path === '/master-admin/login') return 'ACESSO GERAL';
+    if (path === '/master-admin/dashboard') return 'VISÃO GERAL DO SISTEMA';
+    if (/^\/[^/]+\/[^/]+\/[^/]+$/.test(path)) return 'AGENDA DO SEMESTRE';
+
+    return 'SEU CALENDÁRIO ACADÊMICO';
   };
 
   return (
@@ -48,7 +60,7 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
           )}
 
           <div className="flex flex-col">
-            <span className="text-xs sm:text-sm font-mono tracking-[0.08em]">2026 / SEU CALENDÁRIO ACADÊMICO</span>
+            <span className="text-xs sm:text-sm font-mono tracking-[0.08em]">2026 / Seu Calendário Acadêmico</span>
             <h1 className="text-lg sm:text-xl md:text-2xl leading-tight font-extrabold font-[inherit]">
               {getTitle()}
             </h1>
@@ -57,7 +69,7 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
 
         <div className="hidden sm:flex items-center gap-3">
           <div className="px-3 py-1 bg-accent text-ink border-[3px] border-ink shadow-brutal text-xs font-mono uppercase tracking-[0.1em]">
-            Notificações: 1
+            Avisos: 1
           </div>
         </div>
       </div>

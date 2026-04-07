@@ -71,7 +71,7 @@ export function Materias() {
     e.preventDefault();
 
     if (!email.trim() || !sala) {
-      toast.error('Por favor, preencha o email.');
+      toast.error('Informe um e-mail para continuar.');
       return;
     }
 
@@ -84,7 +84,7 @@ export function Materias() {
       setEmail('');
       setShowSuccessModal(true);
     } catch {
-      toast.error('Erro ao cadastrar email. Tente novamente.');
+      toast.error('Não foi possível salvar esse e-mail. Tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
@@ -135,12 +135,12 @@ export function Materias() {
           </div>
           {sala && (
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
-              <div className="flex items-center gap-2 mb-2">
-                <Bell className="w-4 h-4 text-slate-600" />
-                <span className="font-semibold text-slate-700 text-sm">Receber avisos por email</span>
+                <div className="flex items-center gap-2 mb-2">
+                  <Bell className="w-4 h-4 text-slate-600" />
+                <span className="font-semibold text-slate-700 text-sm">Receber avisos por e-mail</span>
               </div>
               <p className="text-xs text-slate-600 mb-3">
-                Cadastre seu email para receber notificações sobre novas atividades e prazos desta sala.
+                Informe seu e-mail para receber avisos sobre novas atividades e prazos desta sala.
               </p>
               <form onSubmit={handleEmailSubmit} className="flex gap-2">
                 <Input
@@ -156,7 +156,7 @@ export function Materias() {
                   {isSubmitting ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
                   ) : (
-                    'Cadastrar'
+                    'Salvar e-mail'
                   )}
                 </Button>
               </form>
@@ -201,8 +201,8 @@ export function Materias() {
             <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-white/20 rounded-full flex items-center justify-center">
               <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Parabéns!</h2>
-            <p className="text-green-100 text-xs sm:text-sm">Seu email foi cadastrado com sucesso!</p>
+            <h2 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Tudo certo!</h2>
+            <p className="text-green-100 text-xs sm:text-sm">Seu e-mail foi salvo com sucesso.</p>
           </div>
           <div className="p-5 sm:p-6 bg-white">
             <div className="flex items-start gap-3 sm:gap-4 mb-4">
@@ -210,7 +210,7 @@ export function Materias() {
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-800 mb-1 text-sm sm:text-base">Você receberá avisos por email</h3>
+                <h3 className="font-semibold text-slate-800 mb-1 text-sm sm:text-base">Você vai receber avisos por e-mail</h3>
                 <p className="text-xs sm:text-sm text-slate-600">
                   De tempos em tempos, enviaremos notificações sobre as <strong>atividades pendentes</strong> desta sala para que você não perca nenhum prazo importante.
                 </p>

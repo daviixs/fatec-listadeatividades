@@ -31,7 +31,7 @@ export function AdminAtividades() {
       setAtividades(todas);
       setPendentes(pend);
     } catch (error) {
-      toast.error('Erro ao carregar atividades');
+      toast.error('Não foi possível carregar as atividades.');
     } finally {
       setLoading(false);
     }
@@ -40,31 +40,31 @@ export function AdminAtividades() {
   const handleAprovar = async (id: number) => {
     try {
       await adminApi.aprovarAtividade(Number(salaId), id);
-      toast.success('Atividade aprovada com sucesso!');
+      toast.success('Atividade aprovada.');
       loadData();
     } catch (error) {
-      toast.error('Erro ao aprovar atividade');
+      toast.error('Não foi possível aprovar a atividade.');
     }
   };
 
   const handleRejeitar = async (id: number) => {
     try {
       await adminApi.rejeitarAtividade(Number(salaId), id);
-      toast.success('Atividade rejeitada com sucesso!');
+      toast.success('Atividade não aprovada.');
       loadData();
     } catch (error) {
-      toast.error('Erro ao rejeitar atividade');
+      toast.error('Não foi possível concluir essa ação.');
     }
   };
 
   const handleExcluir = async (id: number) => {
-    if (!confirm('Tem certeza que deseja excluir esta atividade?')) return;
+    if (!confirm('Quer mesmo apagar esta atividade?')) return;
     try {
       await adminApi.excluirAtividade(Number(salaId), id);
-      toast.success('Atividade excluída com sucesso!');
+      toast.success('Atividade removida.');
       loadData();
     } catch (error) {
-      toast.error('Erro ao excluir atividade');
+      toast.error('Não foi possível remover a atividade.');
     }
   };
 
@@ -84,7 +84,7 @@ export function AdminAtividades() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'PENDENTE':
-        return <Badge className="bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">Pendente</Badge>;
+        return <Badge className="bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">Para revisar</Badge>;
       case 'APROVADA':
         return <Badge className="bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200">Aprovada</Badge>;
       case 'REJEITADA':
@@ -124,7 +124,7 @@ export function AdminAtividades() {
               Atividades
             </h1>
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-              Gerencie todas as atividades da sala
+              Veja tudo o que foi enviado para esta sala.
             </p>
           </div>
           <Button
@@ -132,22 +132,22 @@ export function AdminAtividades() {
             className="w-full sm:w-auto bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white shadow-lg"
           >
             <PlusCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            <span className="text-sm sm:text-base">Nova Atividade</span>
+            <span className="text-sm sm:text-base">Adicionar atividade</span>
           </Button>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
           <TabsList className="bg-slate-100 dark:bg-slate-800 w-full sm:w-auto overflow-x-auto">
             <TabsTrigger value="todas" className="text-sm">Todas ({atividades.length})</TabsTrigger>
-            <TabsTrigger value="pendentes" className="text-sm">Pendentes ({pendentes.length})</TabsTrigger>
+            <TabsTrigger value="pendentes" className="text-sm">Para revisar ({pendentes.length})</TabsTrigger>
             <TabsTrigger value="aprovadas" className="text-sm">Aprovadas</TabsTrigger>
-            <TabsTrigger value="rejeitadas" className="text-sm">Rejeitadas</TabsTrigger>
+            <TabsTrigger value="rejeitadas" className="text-sm">Não aprovadas</TabsTrigger>
           </TabsList>
 
           {filtered.length === 0 ? (
             <Card>
               <CardContent className="p-8 sm:p-12 text-center">
-                <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base">Nenhuma atividade encontrada</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base">Nada por aqui ainda.</p>
               </CardContent>
             </Card>
           ) : (

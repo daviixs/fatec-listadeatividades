@@ -83,17 +83,17 @@ export function AddActivityModal({
     event.preventDefault()
 
     if (!form.materiaId) {
-      toast.error("Selecione uma matéria.")
+      toast.error("Escolha uma matéria.")
       return
     }
 
     if (!form.titulo.trim() || !form.descricao.trim() || !form.regras.trim() || !form.prazo) {
-      toast.error("Preencha os campos obrigatórios.")
+      toast.error("Preencha as informações obrigatórias.")
       return
     }
 
     if (form.tipoEntrega === TipoEntrega.LINK_EXTERNO && !form.linkEntrega.trim()) {
-      toast.error("Informe o link de entrega para entrega externa.")
+      toast.error("Adicione o link da atividade.")
       return
     }
 
@@ -113,9 +113,9 @@ export function AddActivityModal({
       setForm(initialFormState)
       onOpenChange(false)
       onSuccess()
-      toast.success("Atividade criada com sucesso.")
+      toast.success("Atividade salva.")
     } catch {
-      toast.error("Não foi possível criar a atividade.")
+      toast.error("Não foi possível salvar a atividade.")
     } finally {
       setIsSubmitting(false)
     }
@@ -126,10 +126,10 @@ export function AddActivityModal({
       <DialogContent className="sm:max-w-xl p-0 overflow-hidden rounded-2xl border border-slate-200 bg-white max-h-[90vh] overflow-y-auto">
         <DialogHeader className="px-4 sm:px-6 pt-6 pb-2">
           <DialogTitle className="text-xl sm:text-2xl font-extrabold text-slate-900">
-            Nova Atividade
+            Adicionar atividade
           </DialogTitle>
           <DialogDescription className="text-slate-600 text-sm sm:text-base">
-            Preencha os dados para cadastrar uma nova atividade.
+            Preencha as informações para criar uma nova atividade.
           </DialogDescription>
         </DialogHeader>
 
@@ -142,7 +142,7 @@ export function AddActivityModal({
               id="titulo"
               value={form.titulo}
               onChange={(event) => setForm((prev) => ({ ...prev, titulo: event.target.value }))}
-              placeholder="Ex: Lista de exercícios 03"
+              placeholder="Ex: Lista de exercícios 3"
               className="h-11 sm:h-10 text-base"
               required
             />
@@ -199,7 +199,7 @@ export function AddActivityModal({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label className="text-sm">Tipo de Entrega *</Label>
+              <Label className="text-sm">Como será a entrega? *</Label>
               <Select
                 value={form.tipoEntrega}
                 onValueChange={(value) =>
@@ -210,8 +210,8 @@ export function AddActivityModal({
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value={TipoEntrega.ENTREGA_MANUAL}>Entrega Manual</SelectItem>
-                  <SelectItem value={TipoEntrega.LINK_EXTERNO}>Link Externo</SelectItem>
+                  <SelectItem value={TipoEntrega.ENTREGA_MANUAL}>Entrega manual</SelectItem>
+                  <SelectItem value={TipoEntrega.LINK_EXTERNO}>Por link</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -242,9 +242,7 @@ export function AddActivityModal({
 
           {form.tipoEntrega === TipoEntrega.LINK_EXTERNO && (
             <div className="space-y-2">
-              <Label htmlFor="linkEntrega" className="text-sm">
-                Link de Entrega *
-              </Label>
+                <Label htmlFor="linkEntrega" className="text-sm">Link *</Label>
               <Input
                 id="linkEntrega"
                 type="url"
@@ -258,9 +256,7 @@ export function AddActivityModal({
           )}
 
           <div className="space-y-2">
-            <Label htmlFor="regras" className="text-sm">
-              Regras *
-            </Label>
+              <Label htmlFor="regras" className="text-sm">Orientações *</Label>
             <Textarea
               id="regras"
               value={form.regras}
@@ -292,9 +288,9 @@ export function AddActivityModal({
                   Salvando...
                 </>
               ) : (
-                "Cadastrar Atividade"
-              )}
-            </Button>
+                  "Salvar atividade"
+                )}
+              </Button>
           </DialogFooter>
         </form>
       </DialogContent>

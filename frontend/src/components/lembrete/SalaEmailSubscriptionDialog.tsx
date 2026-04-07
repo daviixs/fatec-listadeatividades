@@ -56,7 +56,7 @@ export function SalaEmailSubscriptionDialog({
       setSubmittedEmail(normalizedEmail);
       setIsSuccess(true);
     } catch {
-      toast.error('Não foi possível cadastrar o e-mail nesta sala.');
+      toast.error('Não foi possível salvar esse e-mail nesta sala.');
     } finally {
       setIsSubmitting(false);
     }
@@ -72,7 +72,7 @@ export function SalaEmailSubscriptionDialog({
         className="w-full sm:w-auto"
       >
         <Bell className="size-4" />
-        Cadastrar e-mail
+        Receber por e-mail
       </Button>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -86,10 +86,10 @@ export function SalaEmailSubscriptionDialog({
                   </div>
                   <div>
                     <h2 className="font-mono text-lg font-bold uppercase tracking-[0.08em] text-[var(--ink)]">
-                      Inscrição confirmada
+                      Tudo certo
                     </h2>
                     <p className="mt-1 text-sm text-[var(--ink)]/80">
-                      O endereço <strong>{submittedEmail}</strong> agora está vinculado à sala {salaNome}.
+                      O endereço <strong>{submittedEmail}</strong> agora vai receber os avisos da sala {salaNome}.
                     </p>
                   </div>
                 </div>
@@ -99,13 +99,13 @@ export function SalaEmailSubscriptionDialog({
                 <div className="flex items-start gap-3">
                   <Mail className="mt-0.5 size-4 text-[var(--ink)]" />
                   <p>
-                    Novos assinantes recebem o e-mail de boas-vindas e os próximos lembretes seguem o cron do backend.
+                    Quem entra agora recebe a mensagem de boas-vindas. Depois, os próximos avisos chegam automaticamente.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Bell className="mt-0.5 size-4 text-[var(--ink)]" />
                   <p>
-                    Se este e-mail já existia, a sala atual substituiu as salas anteriores cadastradas para ele.
+                    Se esse e-mail já estava em uso, a sala atual passou a ser a sala vinculada a ele.
                   </p>
                 </div>
               </div>
@@ -125,10 +125,10 @@ export function SalaEmailSubscriptionDialog({
                   </div>
                   <div>
                     <DialogTitle className="font-mono text-lg font-bold uppercase tracking-[0.08em] text-[var(--ink)]">
-                      Alertas por e-mail
+                      Receba avisos por e-mail
                     </DialogTitle>
                     <DialogDescription className="mt-1 text-sm text-[var(--ink)]/75">
-                      Cadastre um endereço para receber avisos da sala <strong>{salaNome}</strong>.
+                      Informe um e-mail para receber avisos da sala <strong>{salaNome}</strong>.
                     </DialogDescription>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export function SalaEmailSubscriptionDialog({
 
               <div className="space-y-4 px-6 py-5">
                 <div className="rounded-[6px] border-[3px] border-[var(--ink)] bg-[var(--accent)]/40 p-3 text-xs font-mono uppercase tracking-[0.08em] text-[var(--ink)]/80">
-                  Se o e-mail já estiver cadastrado, esta sala substituirá as salas anteriores vinculadas a ele.
+                  Se esse e-mail já estiver em uso, esta sala passará a ser a sala vinculada a ele.
                 </div>
 
                 <div className="space-y-2">
@@ -175,7 +175,7 @@ export function SalaEmailSubscriptionDialog({
                   ) : (
                     <>
                       <Mail className="size-4" />
-                      Confirmar e-mail
+                      Salvar e-mail
                     </>
                   )}
                 </Button>

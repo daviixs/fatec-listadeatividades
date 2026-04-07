@@ -18,7 +18,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre, onClose }: AdminSideb
 
   const menuItems = [
     {
-      label: 'Dashboard',
+      label: 'Visão geral',
       icon: LayoutDashboard,
       path: `/admin/${salaId}`,
     },
@@ -36,7 +36,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre, onClose }: AdminSideb
 
   const handleLogout = () => {
     adminStorage.clearSession();
-    toast.success('Você saiu do painel admin');
+    toast.success('Você saiu da área da sala');
     navigate('/admin');
     onClose?.();
   };
@@ -63,7 +63,7 @@ export function AdminSidebar({ salaId, nomeSala, semestre, onClose }: AdminSideb
         </div>
         <div>
           <h2 className="font-bold text-slate-900 dark:text-white text-lg leading-tight">
-            Painel Admin
+            Sua sala
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             {nomeSala}

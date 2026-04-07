@@ -31,7 +31,7 @@ export const courses: Course[] = [
     id: 'ads',
     name: 'ADS',
     fullName: 'Análise e Desenvolvimento de Sistemas',
-    description: 'Desenvolvimento, análise e gestão de sistemas e softwares.',
+    description: 'Criação e organização de sistemas e programas.',
     semesters: [
       {
         id: '1',
@@ -119,7 +119,7 @@ export const courses: Course[] = [
     id: 'dsm',
     name: 'DSM',
     fullName: 'Desenvolvimento de Software Multiplataforma',
-    description: 'Desenvolvimento de aplicações multiplataforma para web e mobile.',
+    description: 'Criação de aplicativos para web, celular e outros dispositivos.',
     semesters: [
       {
         id: '1',
@@ -202,7 +202,7 @@ export const courses: Course[] = [
     id: 'gpi',
     name: 'GPI',
     fullName: 'Gestão da Produção Industrial',
-    description: 'Planejamento e controle de processos industriais.',
+    description: 'Organização e melhoria de processos industriais.',
     semesters: [
       {
         id: '1',
@@ -291,7 +291,7 @@ export const courses: Course[] = [
     id: 'grh',
     name: 'GRH',
     fullName: 'Gestão de Recursos Humanos',
-    description: 'Administração de pessoas e talentos.',
+    description: 'Cuidado com pessoas, equipes e desenvolvimento profissional.',
     semesters: [
       {
         id: '1',
