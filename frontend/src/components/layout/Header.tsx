@@ -16,9 +16,9 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
   const handleBack = () => navigate(-1);
 
   const getTitle = () => {
-    if (isHome) return 'FATEC / LISTA DE ATIVIDADES';
+    if (isHome) return 'PAINEL DO DISCENTE';
     const parts = location.pathname.split('/').filter(Boolean);
-    return ['FATEC', ...parts].join(' / ').toUpperCase();
+    return parts.join(' / ').toUpperCase();
   };
 
   return (
@@ -48,7 +48,7 @@ export function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
           )}
 
           <div className="flex flex-col">
-            <span className="text-xs sm:text-sm font-mono tracking-[0.08em]">2026 / SISTEMA ACADÊMICO</span>
+            <span className="text-xs sm:text-sm font-mono tracking-[0.08em]">2026 / SEU CALENDÁRIO ACADÊMICO</span>
             <h1 className="text-lg sm:text-xl md:text-2xl leading-tight font-extrabold font-[inherit]">
               {getTitle()}
             </h1>

@@ -1,33 +1,33 @@
 [INFO] Scanning for projects...
 [INFO] 
-[INFO] -------------------------< com.fatec:todolist >-------------------------
-[INFO] Building todolist 0.0.1-SNAPSHOT
+[INFO] -------------------------< com.seucalendarioacademico:seu-calendario-academico >-------------------------
+[INFO] Building seu-calendario-academico 0.0.1-SNAPSHOT
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- clean:3.5.0:clean (default-clean) @ todolist ---
-[INFO] Deleting /Users/davixavier/Desktop/todolist/target
+[INFO] --- clean:3.5.0:clean (default-clean) @ seu-calendario-academico ---
+[INFO] Deleting /Users/davixavier/Desktop/seu-calendario-academico/target
 [INFO] 
-[INFO] --- resources:3.3.1:resources (default-resources) @ todolist ---
+[INFO] --- resources:3.3.1:resources (default-resources) @ seu-calendario-academico ---
 [INFO] Copying 1 resource from src/main/resources to target/classes
 [INFO] Copying 1 resource from src/main/resources to target/classes
 [INFO] 
-[INFO] --- compiler:3.14.1:compile (default-compile) @ todolist ---
+[INFO] --- compiler:3.14.1:compile (default-compile) @ seu-calendario-academico ---
 [INFO] Recompiling the module because of changed source code.
 [INFO] Compiling 61 source files with javac [debug parameters release 17] to target/classes
 [INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/service/LembreteEmailService.java:[64,39] cannot find symbol
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/service/LembreteEmailService.java:[64,39] cannot find symbol
   symbol:   method findAllByEmail(java.lang.String)
-  location: variable lembreteEmailRepository of type com.fatec.todolist.repository.LembreteEmailRepository
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[61,27] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[96,35] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[100,72] cannot find symbol
+  location: variable lembreteEmailRepository of type com.seucalendarioacademico.repository.LembreteEmailRepository
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[61,27] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[96,35] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[100,72] cannot find symbol
   symbol:   method semestre()
   location: variable s of type java.lang.Object
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[101,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.fatec.todolist.dto.SemestreResponse>
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[101,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.seucalendarioacademico.dto.SemestreResponse>
 [INFO] 5 errors 
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
@@ -36,16 +36,16 @@
 [INFO] Total time:  1.476 s
 [INFO] Finished at: 2026-03-10T16:12:42-03:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project todolist: Compilation failure: Compilation failure: 
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/service/LembreteEmailService.java:[64,39] cannot find symbol
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project seu-calendario-academico: Compilation failure: Compilation failure: 
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/service/LembreteEmailService.java:[64,39] cannot find symbol
 [ERROR]   symbol:   method findAllByEmail(java.lang.String)
-[ERROR]   location: variable lembreteEmailRepository of type com.fatec.todolist.repository.LembreteEmailRepository
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[61,27] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[96,35] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[100,72] cannot find symbol
+[ERROR]   location: variable lembreteEmailRepository of type com.seucalendarioacademico.repository.LembreteEmailRepository
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[61,27] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[96,35] incompatible types: java.lang.Integer cannot be converted to java.lang.Long
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[100,72] cannot find symbol
 [ERROR]   symbol:   method semestre()
 [ERROR]   location: variable s of type java.lang.Object
-[ERROR] /Users/davixavier/Desktop/todolist/src/main/java/com/fatec/todolist/controller/SalaDeAulaController.java:[101,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.fatec.todolist.dto.SemestreResponse>
+[ERROR] /Users/davixavier/Desktop/seu-calendario-academico/src/main/java/com/seucalendarioacademico/controller/SalaDeAulaController.java:[101,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.seucalendarioacademico.dto.SemestreResponse>
 [ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.

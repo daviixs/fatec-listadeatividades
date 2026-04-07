@@ -17,7 +17,7 @@ export function Home() {
   return (
     <PageTransition>
       <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
-        <div className="faixa-label">FATEC / Lista de Atividades / 2026</div>
+        <div className="faixa-label">Seu Calendário Acadêmico / Painel Discente / 2026</div>
         <h1 className="text-3xl sm:text-4xl font-extrabold leading-[1.05]">
           Painel do Discente — escolha o curso e avance.
         </h1>

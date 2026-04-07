@@ -1,9 +1,9 @@
 services:
   postgres:
     image: postgres:17
-    container_name: todolist-fatec-db
+    container_name: seu-calendario-academico-db
     environment:
-      POSTGRES_DB: todolist_fatec
+      POSTGRES_DB: seu_calendario_academico
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -12,7 +12,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
   redis:
     image: redis:7.4-alpine
-    container_name: todolist-fatec-redis
+    container_name: seu-calendario-academico-redis
     ports:
       - "6379:6379"
     volumes:

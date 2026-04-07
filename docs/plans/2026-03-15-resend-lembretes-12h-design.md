@@ -189,10 +189,10 @@ CREATE TABLE lembrete_envio_item (
 
 ### 2) Enums de status
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/entity/LembreteJobStatus.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/entity/LembreteJobStatus.java`
 
 ```java
-package com.fatec.todolist.entity;
+package com.seucalendarioacademico.entity;
 
 public enum LembreteJobStatus {
     PENDING,
@@ -203,10 +203,10 @@ public enum LembreteJobStatus {
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/entity/LembreteItemStatus.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/entity/LembreteItemStatus.java`
 
 ```java
-package com.fatec.todolist.entity;
+package com.seucalendarioacademico.entity;
 
 public enum LembreteItemStatus {
     PENDING,
@@ -218,10 +218,10 @@ public enum LembreteItemStatus {
 
 ### 3) Entidades de assinatura
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/entity/LembreteAssinante.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/entity/LembreteAssinante.java`
 
 ```java
-package com.fatec.todolist.entity;
+package com.seucalendarioacademico.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -260,10 +260,10 @@ public class LembreteAssinante {
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/entity/LembreteAssinanteSala.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/entity/LembreteAssinanteSala.java`
 
 ```java
-package com.fatec.todolist.entity;
+package com.seucalendarioacademico.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -308,10 +308,10 @@ public class LembreteAssinanteSala {
 
 ### 4) Entidades de dispatch
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/entity/LembreteEnvioJob.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/entity/LembreteEnvioJob.java`
 
 ```java
-package com.fatec.todolist.entity;
+package com.seucalendarioacademico.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -357,10 +357,10 @@ public class LembreteEnvioJob {
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/entity/LembreteEnvioItem.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/entity/LembreteEnvioItem.java`
 
 ```java
-package com.fatec.todolist.entity;
+package com.seucalendarioacademico.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -423,12 +423,12 @@ public class LembreteEnvioItem {
 
 ### 5) Repositories
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/repository/LembreteAssinanteRepository.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/repository/LembreteAssinanteRepository.java`
 
 ```java
-package com.fatec.todolist.repository;
+package com.seucalendarioacademico.repository;
 
-import com.fatec.todolist.entity.LembreteAssinante;
+import com.seucalendarioacademico.entity.LembreteAssinante;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -440,12 +440,12 @@ public interface LembreteAssinanteRepository extends JpaRepository<LembreteAssin
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/repository/LembreteAssinanteSalaRepository.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/repository/LembreteAssinanteSalaRepository.java`
 
 ```java
-package com.fatec.todolist.repository;
+package com.seucalendarioacademico.repository;
 
-import com.fatec.todolist.entity.LembreteAssinanteSala;
+import com.seucalendarioacademico.entity.LembreteAssinanteSala;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -456,12 +456,12 @@ public interface LembreteAssinanteSalaRepository extends JpaRepository<LembreteA
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/repository/LembreteEnvioJobRepository.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/repository/LembreteEnvioJobRepository.java`
 
 ```java
-package com.fatec.todolist.repository;
+package com.seucalendarioacademico.repository;
 
-import com.fatec.todolist.entity.LembreteEnvioJob;
+import com.seucalendarioacademico.entity.LembreteEnvioJob;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
@@ -472,12 +472,12 @@ public interface LembreteEnvioJobRepository extends JpaRepository<LembreteEnvioJ
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/repository/LembreteEnvioItemRepository.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/repository/LembreteEnvioItemRepository.java`
 
 ```java
-package com.fatec.todolist.repository;
+package com.seucalendarioacademico.repository;
 
-import com.fatec.todolist.entity.LembreteEnvioItem;
+import com.seucalendarioacademico.entity.LembreteEnvioItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
@@ -489,13 +489,13 @@ public interface LembreteEnvioItemRepository extends JpaRepository<LembreteEnvio
 
 ### 6) Atualizacao do repository de atividades
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/repository/AtividadeRepository.java` (adicionar metodo)
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/repository/AtividadeRepository.java` (adicionar metodo)
 
 ```java
-package com.fatec.todolist.repository;
+package com.seucalendarioacademico.repository;
 
-import com.fatec.todolist.entity.Atividade;
-import com.fatec.todolist.entity.StatusAtividade;
+import com.seucalendarioacademico.entity.Atividade;
+import com.seucalendarioacademico.entity.StatusAtividade;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -527,10 +527,10 @@ public interface AtividadeRepository extends JpaRepository<Atividade, Long> {
 
 ### 7) DTOs de entrada/saida
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/dto/LembretePreferenciasRequest.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/dto/LembretePreferenciasRequest.java`
 
 ```java
-package com.fatec.todolist.dto;
+package com.seucalendarioacademico.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -548,10 +548,10 @@ public record LembretePreferenciasRequest(
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/dto/LembretePreferenciasResponse.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/dto/LembretePreferenciasResponse.java`
 
 ```java
-package com.fatec.todolist.dto;
+package com.seucalendarioacademico.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -568,10 +568,10 @@ public record LembretePreferenciasResponse(
 
 ### 8) Cliente Resend
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/service/ResendClient.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/service/ResendClient.java`
 
 ```java
-package com.fatec.todolist.service;
+package com.seucalendarioacademico.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -626,20 +626,20 @@ public class ResendClient {
 
 ### 9) Servico de preferencias
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/service/LembretePreferenciaService.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/service/LembretePreferenciaService.java`
 
 ```java
-package com.fatec.todolist.service;
+package com.seucalendarioacademico.service;
 
-import com.fatec.todolist.dto.LembretePreferenciasRequest;
-import com.fatec.todolist.dto.LembretePreferenciasResponse;
-import com.fatec.todolist.entity.LembreteAssinante;
-import com.fatec.todolist.entity.LembreteAssinanteSala;
-import com.fatec.todolist.entity.SalaDeAula;
-import com.fatec.todolist.exception.RecursoNaoEncontradoException;
-import com.fatec.todolist.repository.LembreteAssinanteRepository;
-import com.fatec.todolist.repository.LembreteAssinanteSalaRepository;
-import com.fatec.todolist.repository.SalaDeAulaRepository;
+import com.seucalendarioacademico.dto.LembretePreferenciasRequest;
+import com.seucalendarioacademico.dto.LembretePreferenciasResponse;
+import com.seucalendarioacademico.entity.LembreteAssinante;
+import com.seucalendarioacademico.entity.LembreteAssinanteSala;
+import com.seucalendarioacademico.entity.SalaDeAula;
+import com.seucalendarioacademico.exception.RecursoNaoEncontradoException;
+import com.seucalendarioacademico.repository.LembreteAssinanteRepository;
+import com.seucalendarioacademico.repository.LembreteAssinanteSalaRepository;
+import com.seucalendarioacademico.repository.SalaDeAulaRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -724,13 +724,13 @@ public class LembretePreferenciaService {
 
 ### 10) Servico de dispatch (core)
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/service/LembreteDispatchService.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/service/LembreteDispatchService.java`
 
 ```java
-package com.fatec.todolist.service;
+package com.seucalendarioacademico.service;
 
-import com.fatec.todolist.entity.*;
-import com.fatec.todolist.repository.*;
+import com.seucalendarioacademico.entity.*;
+import com.seucalendarioacademico.repository.*;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -882,10 +882,10 @@ public class LembreteDispatchService {
 
 ### 11) Scheduler
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/config/SchedulingConfig.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/config/SchedulingConfig.java`
 
 ```java
-package com.fatec.todolist.config;
+package com.seucalendarioacademico.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -896,10 +896,10 @@ public class SchedulingConfig {
 }
 ```
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/service/LembreteSchedulerService.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/service/LembreteSchedulerService.java`
 
 ```java
-package com.fatec.todolist.service;
+package com.seucalendarioacademico.service;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -922,15 +922,15 @@ public class LembreteSchedulerService {
 
 ### 12) Controller de preferencia e operacao
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/controller/LembretePreferenciaController.java`
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/controller/LembretePreferenciaController.java`
 
 ```java
-package com.fatec.todolist.controller;
+package com.seucalendarioacademico.controller;
 
-import com.fatec.todolist.dto.LembretePreferenciasRequest;
-import com.fatec.todolist.dto.LembretePreferenciasResponse;
-import com.fatec.todolist.service.LembreteDispatchService;
-import com.fatec.todolist.service.LembretePreferenciaService;
+import com.seucalendarioacademico.dto.LembretePreferenciasRequest;
+import com.seucalendarioacademico.dto.LembretePreferenciasResponse;
+import com.seucalendarioacademico.service.LembreteDispatchService;
+import com.seucalendarioacademico.service.LembretePreferenciaService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -992,7 +992,7 @@ resend.from=${RESEND_FROM:no-reply@seudominio.com}
 
 ### 14) Ajuste de seguranca recomendado
 
-Arquivo proposto: `src/main/java/com/fatec/todolist/config/SecurityConfig.java` (trecho)
+Arquivo proposto: `src/main/java/com/seucalendarioacademico/config/SecurityConfig.java` (trecho)
 
 ```java
 .requestMatchers("/api/admin/lembretes/**").authenticated()
