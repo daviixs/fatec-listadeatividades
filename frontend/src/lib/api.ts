@@ -8,12 +8,6 @@ const api = axios.create({
   },
 });
 
-// Log de depuração para inspecionar baseURL em runtime
-if (import.meta.env.DEV || import.meta.env.VITE_LOG_API_BASE === 'true') {
-  // eslint-disable-next-line no-console
-  console.info('[API] baseURL =', import.meta.env.VITE_API_BASE_URL ?? '/api');
-}
-
 // Response interceptor para tratamento global de erros
 api.interceptors.response.use(
   (response) => response,
