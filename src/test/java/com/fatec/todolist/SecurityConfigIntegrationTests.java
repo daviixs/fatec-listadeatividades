@@ -36,6 +36,13 @@ class SecurityConfigIntegrationTests {
     }
 
     @Test
+    void devePermitirAcessoPublicoAoHealth() throws Exception {
+        mockMvc.perform(get("/health"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("OK"));
+    }
+
+    @Test
     void devePermitirAcessoPublicoAoEndpointRaizDeSalas() throws Exception {
         salaRepository.save(novaSala("ADS 1° DIURNO", "1"));
 
