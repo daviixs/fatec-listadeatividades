@@ -14,6 +14,7 @@ import java.util.UUID;
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(properties = {
@@ -39,6 +40,17 @@ class SecurityConfigIntegrationTests {
     void devePermitirAcessoPublicoAoHealth() throws Exception {
         mockMvc.perform(get("/health"))
                 .andExpect(status().isOk())
+                .andExpect(header().string("Cache-Control", "no-store, no-cache, max-age=0, must-revalidate"))
+                .andExpect(header().string("Pragma", "no-cache"))
+                .andExpect(content().string("OK"));
+    }
+
+    @Test
+    void devePermitirAcessoPublicoAoAliasApiHealth() throws Exception {
+        mockMvc.perform(get("/api/health"))
+                .andExpect(status().isOk())
+                .andExpect(header().string("Cache-Control", "no-store, no-cache, max-age=0, must-revalidate"))
+                .andExpect(header().string("Pragma", "no-cache"))
                 .andExpect(content().string("OK"));
     }
 
@@ -49,6 +61,12 @@ class SecurityConfigIntegrationTests {
         mockMvc.perform(get("/api/salas"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("ADS 1° DIURNO")));
+    }
+
+    @Test
+    void naoDeveTratarApiRaizComoEndpointDeHealth() throws Exception {
+        mockMvc.perform(get("/api"))
+                .andExpect(status().isForbidden());
     }
 
     private SalaDeAula novaSala(String nome, String semestre) {

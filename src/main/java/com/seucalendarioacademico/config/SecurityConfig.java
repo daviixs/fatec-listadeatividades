@@ -26,6 +26,7 @@ public class SecurityConfig {
                         // Swagger / OpenAPI
                         .requestMatchers(
                                 "/health",
+                                "/api/health",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
                                 "/v3/api-docs/**",
