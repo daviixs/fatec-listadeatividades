@@ -1,7 +1,7 @@
 # Especificação de Telas Frontend
 
 **Data:** 2026-03-09
-**Projeto:** TodoList FATEC - Centralização da Sala com Votação de Cancelamento
+**Projeto:** Seu Calendário Acadêmico - Centralização da Sala com Votação de Cancelamento
 
 ---
 

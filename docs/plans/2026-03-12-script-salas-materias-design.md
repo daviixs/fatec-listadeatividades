@@ -5,7 +5,7 @@
 
 ## Visão Geral
 
-Criar um script Bash único (`criar_salas_com_materias.sh`) que popula automaticamente o banco de dados com todas as 48 salas de aula e suas respectivas matérias conforme as grades curriculares dos 4 cursos da FATEC.
+Criar um script Bash único (`criar_salas_com_materias.sh`) que popula automaticamente o banco de dados com todas as 48 salas de aula e suas respectivas matérias conforme as grades curriculares dos 4 cursos da instituição.
 
 ## Objetivos
 

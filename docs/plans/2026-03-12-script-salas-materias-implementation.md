@@ -244,7 +244,7 @@
 
 ### Step 1: Create Script File
 ```bash
-cd /Users/davixavier/Desktop/todolist
+cd /Users/davixavier/Desktop/seu-calendario-academico
 mkdir -p scripts
 touch scripts/criar_salas_com_materias.sh
 chmod +x scripts/criar_salas_com_materias.sh
@@ -340,7 +340,7 @@ Access H2 Console at http://localhost:8080/h2-console
 #!/bin/bash
 
 # Script: criar_salas_com_materias.sh
-# Description: Create 48 rooms and ~240 subjects for FATEC courses
+# Description: Create 48 rooms and ~240 subjects for instituição courses
 # Date: 2026-03-12
 
 # ============== CONSTANTS ==============

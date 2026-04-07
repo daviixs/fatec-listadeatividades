@@ -4,7 +4,7 @@
 # Compatível com bash 3.x (macOS)
 
 export API_URL="http://localhost:8080/api"
-export SEGREDO="fatec2026"
+export SEGREDO="seu-calendario-2026"
 export PROFESSOR="Professor"
 
 # Cores para output
@@ -366,7 +366,7 @@ fi
 echo -e "${GREEN}✓ Backend encontrado!${NC}\n"
 
 # Main
-echo -e "${YELLOW}=== Criando todas as salas e matérias da FATEC ===${NC}"
+echo -e "${YELLOW}=== Criando salas e matérias do Seu Calendário Acadêmico ===${NC}"
 
 # Processa cada curso
 processar_curso "ADS" criar_materias_ads

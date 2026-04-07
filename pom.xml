@@ -8,11 +8,11 @@
 		<version>4.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.fatec</groupId>
-	<artifactId>todolist</artifactId>
+	<groupId>com.seucalendarioacademico</groupId>
+	<artifactId>seu-calendario-academico</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>todolist</name>
-	<description>Fatec todolist</description>
+	<name>seu-calendario-academico</name>
+	<description>Seu Calendário Acadêmico</description>
 	<url/>
 	<licenses>
 		<license/>

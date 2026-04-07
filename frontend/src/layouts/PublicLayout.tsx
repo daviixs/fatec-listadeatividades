@@ -9,7 +9,7 @@ export default function PublicLayout() {
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <GraduationCap className="h-6 w-6 text-blue-500" />
-            <h1 className="font-semibold text-lg text-gray-800">LISTA de TAREFAS FATEC</h1>
+            <h1 className="font-semibold text-lg text-gray-800">Seu Calendário Acadêmico</h1>
           </Link>
 
           <Link to="/login">
@@ -27,7 +27,7 @@ export default function PublicLayout() {
 
       <footer className="bg-white border-t py-6 mt-8">
         <div className="container mx-auto px-4 text-center text-sm text-gray-600">
-          <p>&copy; {new Date().getFullYear()} LISTA de TAREFAS FATEC. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Seu Calendário Acadêmico. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>

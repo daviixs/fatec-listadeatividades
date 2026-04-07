@@ -35,7 +35,7 @@
 - Toasts/feedback: fundo preto texto paper; sucesso em amarelo; erro em vermelho.
 
 ## Páginas
-- Home: faixa superior preta “FATEC LISTA DE ATIVIDADES / 2026”; cards de cursos numerados (01 ADS, 02 DSM...) com botão “ENTRAR” amarelo.
+- Home: faixa superior preta “SEU CALENDÁRIO ACADÊMICO / 2026”; cards de cursos numerados (01 ADS, 02 DSM...) com botão “ENTRAR” amarelo.
 - Período/Semestres: timeline vertical preta com marcadores amarelos; cada bloco paper com divisor grosso e CTA “ver calendário”.
 - Calendário do semestre: header preto com curso/semestre; colunas por semana como módulos; atividades em blocos empilhados com badges de status.
 - Admin dashboard: 2 colunas em desktop; métricas em cards pretos, listas de atividades/provas em paper; CTAs grandes amarelos.

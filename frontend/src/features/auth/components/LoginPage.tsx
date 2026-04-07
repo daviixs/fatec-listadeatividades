@@ -57,7 +57,7 @@ export default function LoginPage() {
         <div className="text-center mb-6">
           <LinkTo to="/" className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
             <GraduationCap className="h-10 w-10 text-blue-500" />
-            <h1 className="text-2xl font-bold text-gray-800">LISTA de TAREFAS FATEC</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Seu Calendário Acadêmico</h1>
           </LinkTo>
         </div>
 
