@@ -34,7 +34,10 @@ api.interceptors.response.use(
           toast.error(data?.mensagem || 'Conflito: recurso já existe.');
           break;
         case 500:
-          toast.error('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          toast.error(data?.mensagem || 'Ocorreu um erro inesperado. Tente novamente mais tarde.');
+          break;
+        case 503:
+          toast.error(data?.mensagem || 'Serviço temporariamente indisponível.');
           break;
         default:
           toast.error(data?.mensagem || 'Erro desconhecido.');

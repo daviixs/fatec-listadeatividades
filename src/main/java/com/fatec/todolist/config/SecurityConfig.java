@@ -28,7 +28,11 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
                                 "/v3/api-docs/**",
-                                "/v3/api-docs"
+                                "/v3/api-docs",
+                                "/actuator/health",
+                                "/actuator/info",
+                                "/actuator/caches/**",
+                                "/actuator/metrics/**"
                         ).permitAll()
                         // Endpoints publicos (aluno)
                         .requestMatchers("/api/salas/**").permitAll()

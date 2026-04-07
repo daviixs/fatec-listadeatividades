@@ -3,11 +3,11 @@ package com.fatec.todolist.controller;
 import com.fatec.todolist.dto.CursoResponse;
 import com.fatec.todolist.dto.MateriaResponse;
 import com.fatec.todolist.dto.SalaDeAulaRequest;
+import com.fatec.todolist.dto.SalaCalendarioResponse;
 import com.fatec.todolist.dto.SalaDeAulaResponse;
 import com.fatec.todolist.dto.SemestreResponse;
-import com.fatec.todolist.entity.Materia;
 import com.fatec.todolist.entity.SalaDeAula;
-import com.fatec.todolist.service.MateriaService;
+import com.fatec.todolist.service.SalaConsultaService;
 import com.fatec.todolist.service.SalaDeAulaService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -15,51 +15,44 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/salas")
 public class SalaDeAulaController {
 
     private final SalaDeAulaService salaService;
-    private final MateriaService materiaService;
+    private final SalaConsultaService salaConsultaService;
 
-    public SalaDeAulaController(SalaDeAulaService salaService, MateriaService materiaService) {
+    public SalaDeAulaController(
+            SalaDeAulaService salaService,
+            SalaConsultaService salaConsultaService
+    ) {
         this.salaService = salaService;
-        this.materiaService = materiaService;
+        this.salaConsultaService = salaConsultaService;
     }
 
     @GetMapping
     public ResponseEntity<List<SalaDeAulaResponse>> listarTodas() {
-        List<SalaDeAulaResponse> salas = salaService.listarTodas()
-                .stream()
-                .map(sala -> new SalaDeAulaResponse(
-                        sala.getId(),
-                        sala.getNome(),
-                        sala.getSemestre(),
-                        sala.getCodigoConvite()
-                ))
-                .toList();
-        return ResponseEntity.ok(salas);
+        return ResponseEntity.ok(salaConsultaService.listarTodas());
     }
 
     @GetMapping("/cursos")
     public ResponseEntity<List<CursoResponse>> listarCursosComSemestres() {
-        List<SalaDeAula> salas = salaService.listarTodas();
+        List<SalaDeAulaResponse> salas = salaConsultaService.listarTodas();
 
         Map<String, CursoInfo> cursosMap = new HashMap<>();
 
-        for (SalaDeAula sala : salas) {
-            String cursoNome = extrairCursoNome(sala.getNome());
+        for (SalaDeAulaResponse sala : salas) {
+            String cursoNome = extrairCursoNome(sala.nome());
             String nomeCompleto = obterNomeCompletoCurso(cursoNome);
-            String semestreNumero = extrairSemestreNumero(sala.getNome());
+            String semestreNumero = extrairSemestreNumero(sala.nome());
 
             CursoInfo cursoInfo = cursosMap.computeIfAbsent(cursoNome,
                 k -> new CursoInfo(cursoNome, nomeCompleto, new ArrayList<>()));
 
             cursoInfo.semestres.add(new SemestreResponse(
-                sala.getId().intValue(),
-                sala.getNome(),
+                sala.id(),
+                sala.nome(),
                 semestreNumero
             ));
 
@@ -84,8 +77,8 @@ public class SalaDeAulaController {
 
     @GetMapping("/curso/{cursoNome}")
     public ResponseEntity<CursoResponse> buscarCursoPorNome(@PathVariable String cursoNome) {
-        List<SalaDeAula> salas = salaService.listarTodas().stream()
-                .filter(sala -> sala.getNome().toUpperCase().startsWith(cursoNome.toUpperCase()))
+        List<SalaDeAulaResponse> salas = salaConsultaService.listarTodas().stream()
+                .filter(sala -> sala.nome().toUpperCase().startsWith(cursoNome.toUpperCase()))
                 .toList();
 
         if (salas.isEmpty()) {
@@ -96,9 +89,9 @@ public class SalaDeAulaController {
 
         List<SemestreResponse> semestres = salas.stream()
                 .map(sala -> new SemestreResponse(
-                        sala.getId().intValue(),
-                        sala.getNome(),
-                        extrairSemestreNumero(sala.getNome())
+                        sala.id(),
+                        sala.nome(),
+                        extrairSemestreNumero(sala.nome())
                 ))
                 .sorted(Comparator.comparingInt(s -> {
                     String semestre = s.semestre().replace("°", "");
@@ -135,20 +128,12 @@ public class SalaDeAulaController {
 
     @GetMapping("/{salaId}/materias")
     public ResponseEntity<List<MateriaResponse>> listarMateriasPorSala(@PathVariable Integer salaId) {
-        List<MateriaResponse> materias = materiaService.listarPorSala(salaId)
-                .stream()
-                .map(this::toMateriaResponse)
-                .toList();
-        return ResponseEntity.ok(materias);
+        return ResponseEntity.ok(salaConsultaService.listarMateriasPorSala(salaId));
     }
 
-    private MateriaResponse toMateriaResponse(Materia materia) {
-        return new MateriaResponse(
-                materia.getId(),
-                materia.getNome(),
-                materia.getProfessor(),
-                materia.getSala().getNome()
-        );
+    @GetMapping("/{salaId}/calendario")
+    public ResponseEntity<SalaCalendarioResponse> buscarCalendarioPorSala(@PathVariable Integer salaId) {
+        return ResponseEntity.ok(salaConsultaService.buscarCalendarioPorSala(salaId));
     }
 
     private String extrairCursoNome(String nomeSala) {
