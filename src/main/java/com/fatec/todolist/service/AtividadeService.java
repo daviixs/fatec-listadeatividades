@@ -9,6 +9,7 @@ import com.fatec.todolist.repository.AtividadeRepository;
 import com.fatec.todolist.repository.MateriaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -21,7 +22,9 @@ public class AtividadeService {
     private final AtividadeRepository repository;
     private final MateriaRepository materiaRepository;
     private final VotacaoService votacaoService;
+    private final CacheInvalidationService cacheInvalidationService;
     
+    @Transactional
     public AtividadeResponse criar(AtividadeRequest request) {
         Materia materia = materiaRepository.findById(request.materiaId())
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Matéria não encontrada"));
@@ -47,36 +50,43 @@ public class AtividadeService {
                 }
             }
         }
+
+        cacheInvalidationService.evictSalaRelacionada(materia.getSala().getId());
         
         return converterParaResponse(salva);
     }
     
+    @Transactional(readOnly = true)
     public AtividadeResponse buscarPorId(Long id) {
         Atividade atividade = repository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
         return converterParaResponse(atividade);
     }
     
+    @Transactional(readOnly = true)
     public List<AtividadeResponse> listarTodas() {
         return repository.findAll().stream()
                 .map(this::converterParaResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AtividadeResponse> listarPorMateria(Long materiaId) {
-        return repository.findByMateriaId(materiaId).stream()
+        return repository.findDetalhadasByMateriaId(materiaId).stream()
                 .map(this::converterParaResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AtividadeResponse> listarExpirando(int horas) {
         LocalDate hoje = LocalDate.now();
         LocalDate limite = hoje.plusDays(horas / 24);
-        return repository.findByPrazoBetween(hoje, limite).stream()
+        return repository.findDetalhadasByPrazoBetween(hoje, limite).stream()
                 .map(this::converterParaResponse)
                 .collect(Collectors.toList());
     }
     
+    @Transactional
     public AtividadeResponse atualizar(Long id, AtividadeRequest request) {
         Atividade atividade = repository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
@@ -84,6 +94,7 @@ public class AtividadeService {
         Materia materia = materiaRepository.findById(request.materiaId())
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Matéria não encontrada"));
         
+        Integer salaAnteriorId = atividade.getMateria().getSala().getId();
         atividade.setTitulo(request.titulo());
         atividade.setDescricao(request.descricao());
         atividade.setTipoEntrega(request.tipoEntrega());
@@ -94,14 +105,18 @@ public class AtividadeService {
         atividade.setTipo(request.tipo());
         
         Atividade atualizada = repository.save(atividade);
+        cacheInvalidationService.evictSalaRelacionada(salaAnteriorId);
+        cacheInvalidationService.evictSalaRelacionada(materia.getSala().getId());
         return converterParaResponse(atualizada);
     }
     
+    @Transactional
     public void excluir(Long id) {
-        if (!repository.existsById(id)) {
-            throw new RecursoNaoEncontradoException("Atividade não encontrada");
-        }
-        repository.deleteById(id);
+        Atividade atividade = repository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
+        Integer salaId = atividade.getMateria().getSala().getId();
+        repository.delete(atividade);
+        cacheInvalidationService.evictSalaRelacionada(salaId);
     }
     
     private AtividadeResponse converterParaResponse(Atividade atividade) {
@@ -121,37 +136,52 @@ public class AtividadeService {
         );
     }
 
+    @Transactional(readOnly = true)
     public List<AtividadeResponse> listarPorSala(Integer salaId) {
-        return repository.findBySalaId(salaId).stream()
+        return repository.findDetalhadasBySalaId(salaId).stream()
                 .map(this::converterParaResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AtividadeResponse> listarPendentes(Integer salaId) {
-        return repository.findBySalaIdAndStatusAprovacao(salaId, com.fatec.todolist.entity.StatusAprovacao.PENDENTE).stream()
+        return repository.findDetalhadasBySalaIdAndStatusAprovacao(
+                        salaId,
+                        com.fatec.todolist.entity.StatusAprovacao.PENDENTE
+                ).stream()
                 .map(this::converterParaResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AtividadeResponse> listarProvas(Integer salaId) {
-        return repository.findBySalaIdAndTipo(salaId, com.fatec.todolist.entity.TipoAtividade.PROVA).stream()
+        return repository.findDetalhadasBySalaIdAndTipo(
+                        salaId,
+                        com.fatec.todolist.entity.TipoAtividade.PROVA
+                ).stream()
                 .map(this::converterParaResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional
     public AtividadeResponse aprovar(Long atividadeId) {
         Atividade atividade = repository.findById(atividadeId)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
+        Integer salaId = atividade.getMateria().getSala().getId();
         atividade.setStatusAprovacao(com.fatec.todolist.entity.StatusAprovacao.APROVADA);
         Atividade salva = repository.save(atividade);
+        cacheInvalidationService.evictSalaRelacionada(salaId);
         return converterParaResponse(salva);
     }
 
+    @Transactional
     public AtividadeResponse rejeitar(Long atividadeId) {
         Atividade atividade = repository.findById(atividadeId)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Atividade não encontrada"));
+        Integer salaId = atividade.getMateria().getSala().getId();
         atividade.setStatusAprovacao(com.fatec.todolist.entity.StatusAprovacao.REJEITADA);
         Atividade salva = repository.save(atividade);
+        cacheInvalidationService.evictSalaRelacionada(salaId);
         return converterParaResponse(salva);
     }
 }

@@ -14,9 +14,14 @@ import java.util.UUID;
 public class SalaDeAulaService {
 
     private final SalaDeAulaRepository salaRepository;
+    private final CacheInvalidationService cacheInvalidationService;
 
-    public SalaDeAulaService(SalaDeAulaRepository salaRepository) {
+    public SalaDeAulaService(
+            SalaDeAulaRepository salaRepository,
+            CacheInvalidationService cacheInvalidationService
+    ) {
         this.salaRepository = salaRepository;
+        this.cacheInvalidationService = cacheInvalidationService;
     }
 
     @Transactional(readOnly = true)
@@ -37,7 +42,9 @@ public class SalaDeAulaService {
         sala.setSemestre(request.semestre());
         sala.setSegredoLider(request.segredoLider());
         sala.setCodigoConvite(gerarCodigoConvite());
-        return salaRepository.save(sala);
+        SalaDeAula salva = salaRepository.save(sala);
+        cacheInvalidationService.evictSalasESalasRelacionadas(salva.getId());
+        return salva;
     }
 
     @Transactional
@@ -46,7 +53,9 @@ public class SalaDeAulaService {
         sala.setNome(request.nome());
         sala.setSemestre(request.semestre());
         sala.setSegredoLider(request.segredoLider());
-        return salaRepository.save(sala);
+        SalaDeAula atualizada = salaRepository.save(sala);
+        cacheInvalidationService.evictSalasESalasRelacionadas(atualizada.getId());
+        return atualizada;
     }
 
     @Transactional
@@ -55,8 +64,10 @@ public class SalaDeAulaService {
             throw new RecursoNaoEncontradoException("Sala nao encontrada");
         }
         salaRepository.deleteById(id);
+        cacheInvalidationService.evictSalasESalasRelacionadas(id);
     }
 
+    @Transactional(readOnly = true)
     public SalaDeAula acessarPorCodigo(String codigo) {
         return salaRepository.findByCodigoConvite(codigo)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Sala nao encontrada"));

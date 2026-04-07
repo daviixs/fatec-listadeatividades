@@ -29,6 +29,12 @@ export interface LembreteResponse {
   ultimoEnvio: string | null;
 }
 
+export interface SalaCalendarioResponse {
+  sala: SalaApiResponse;
+  materias: MateriaApiResponse[];
+  atividades: Array<Atividade & { materiaId: number }>;
+}
+
 export interface CriarAtividadeRequest {
   id?: number | null;
   titulo: string;
@@ -49,6 +55,11 @@ export const studentApi = {
 
   getMateriasPorSala: async (salaId: number): Promise<MateriaApiResponse[]> => {
     const response = await api.get<MateriaApiResponse[]>(`/salas/${salaId}/materias`);
+    return response.data;
+  },
+
+  getCalendarioSala: async (salaId: number): Promise<SalaCalendarioResponse> => {
+    const response = await api.get<SalaCalendarioResponse>(`/salas/${salaId}/calendario`);
     return response.data;
   },
 

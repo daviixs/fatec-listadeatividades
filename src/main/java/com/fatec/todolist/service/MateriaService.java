@@ -16,11 +16,14 @@ public class MateriaService {
 
     private final MateriaRepository materiaRepository;
     private final SalaDeAulaRepository salaRepository;
+    private final CacheInvalidationService cacheInvalidationService;
 
     public MateriaService(MateriaRepository materiaRepository,
-                          SalaDeAulaRepository salaRepository) {
+                          SalaDeAulaRepository salaRepository,
+                          CacheInvalidationService cacheInvalidationService) {
         this.materiaRepository = materiaRepository;
         this.salaRepository = salaRepository;
+        this.cacheInvalidationService = cacheInvalidationService;
     }
 
     @Transactional(readOnly = true)
@@ -37,7 +40,7 @@ public class MateriaService {
 
     @Transactional(readOnly = true)
     public List<Materia> listarPorSala(Integer salaId) {
-        return materiaRepository.findBySalaId(salaId);
+        return materiaRepository.findBySalaIdOrderByNomeAsc(salaId);
     }
 
     @Transactional
@@ -51,7 +54,9 @@ public class MateriaService {
         materia.setProfessor(request.professor());
         materia.setSala(sala);
 
-        return materiaRepository.save(materia);
+        Materia salva = materiaRepository.save(materia);
+        cacheInvalidationService.evictSalaRelacionada(sala.getId());
+        return salva;
     }
 
     @Transactional
@@ -64,19 +69,25 @@ public class MateriaService {
                 .orElseThrow(() -> new RecursoNaoEncontradoException(
                         "Sala não encontrada com id: " + request.salaId()));
 
+        Integer salaAnteriorId = materia.getSala().getId();
         materia.setNome(request.nome());
         materia.setProfessor(request.professor());
         materia.setSala(sala);
 
-        return materiaRepository.save(materia);
+        Materia atualizada = materiaRepository.save(materia);
+        cacheInvalidationService.evictSalaRelacionada(salaAnteriorId);
+        cacheInvalidationService.evictSalaRelacionada(sala.getId());
+        return atualizada;
     }
 
     @Transactional
     public void deletarMateria(Long id) {
-        if (!materiaRepository.existsById(id)) {
-            throw new RecursoNaoEncontradoException(
-                    "Matéria não encontrada com id: " + id);
-        }
-        materiaRepository.deleteById(id);
+        Materia materia = materiaRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException(
+                        "Matéria não encontrada com id: " + id));
+
+        Integer salaId = materia.getSala().getId();
+        materiaRepository.delete(materia);
+        cacheInvalidationService.evictSalaRelacionada(salaId);
     }
 }

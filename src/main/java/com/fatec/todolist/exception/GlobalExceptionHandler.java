@@ -20,4 +20,10 @@ public class GlobalExceptionHandler {
     public ErroResponse argumentoInvalido(IllegalArgumentException ex) {
         return ErroResponse.criar(400, "ARGUMENTO_INVALIDO", ex.getMessage(), null);
     }
+
+    @ExceptionHandler(IllegalStateException.class)
+    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+    public ErroResponse estadoInvalido(IllegalStateException ex) {
+        return ErroResponse.criar(503, "SERVICO_INDISPONIVEL", ex.getMessage(), null);
+    }
 }

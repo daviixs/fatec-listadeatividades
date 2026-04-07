@@ -12,7 +12,29 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface AtividadeRepository extends JpaRepository<Atividade, Long> {
-    List<Atividade> findByPrazoBetween(LocalDate inicio, LocalDate fim);
+    @Query("""
+        select a
+        from Atividade a
+        join fetch a.materia m
+        join fetch m.sala s
+        where a.prazo between :inicio and :fim
+        order by a.prazo asc, a.id asc
+    """)
+    List<Atividade> findDetalhadasByPrazoBetween(
+            @Param("inicio") LocalDate inicio,
+            @Param("fim") LocalDate fim
+    );
+
+    @Query("""
+        select a
+        from Atividade a
+        join fetch a.materia m
+        join fetch m.sala s
+        where m.id = :materiaId
+        order by a.prazo asc, a.id asc
+    """)
+    List<Atividade> findDetalhadasByMateriaId(@Param("materiaId") Long materiaId);
+
     List<Atividade> findByMateriaId(Long materiaId);
 
     @Query("""
@@ -31,27 +53,40 @@ public interface AtividadeRepository extends JpaRepository<Atividade, Long> {
             @Param("hoje") LocalDate hoje
     );
 
-    @Query("SELECT a FROM Atividade a JOIN a.materia m WHERE m.sala.id = :salaId")
-    List<Atividade> findBySalaId(@Param("salaId") Integer salaId);
+    @Query("""
+        select a
+        from Atividade a
+        join fetch a.materia m
+        join fetch m.sala s
+        where s.id = :salaId
+        order by a.prazo asc, a.id asc
+    """)
+    List<Atividade> findDetalhadasBySalaId(@Param("salaId") Integer salaId);
 
     @Query("""
-        SELECT a FROM Atividade a
-        JOIN a.materia m
-        WHERE m.sala.id = :salaId
-        AND a.statusAprovacao = :statusAprovacao
+        select a
+        from Atividade a
+        join fetch a.materia m
+        join fetch m.sala s
+        where s.id = :salaId
+          and a.statusAprovacao = :statusAprovacao
+        order by a.prazo asc, a.id asc
     """)
-    List<Atividade> findBySalaIdAndStatusAprovacao(
+    List<Atividade> findDetalhadasBySalaIdAndStatusAprovacao(
         @Param("salaId") Integer salaId,
         @Param("statusAprovacao") StatusAprovacao statusAprovacao
     );
 
     @Query("""
-        SELECT a FROM Atividade a
-        JOIN a.materia m
-        WHERE m.sala.id = :salaId
-        AND a.tipo = :tipo
+        select a
+        from Atividade a
+        join fetch a.materia m
+        join fetch m.sala s
+        where s.id = :salaId
+          and a.tipo = :tipo
+        order by a.prazo asc, a.id asc
     """)
-    List<Atividade> findBySalaIdAndTipo(
+    List<Atividade> findDetalhadasBySalaIdAndTipo(
         @Param("salaId") Integer salaId,
         @Param("tipo") TipoAtividade tipo
     );

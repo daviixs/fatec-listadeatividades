@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react"
 import { useParams } from "react-router-dom"
-import { AlertTriangle, Loader2 } from "lucide-react"
+import { AlertTriangle, Bell, Loader2 } from "lucide-react"
 import { PageTransition } from "@/components/layout/PageTransition"
 import { getCourseById, getSemesterById } from "@/data/courses"
 import { FilterSidebar } from "@/components/calendario/FilterSidebar"
@@ -12,9 +12,9 @@ import { DayDetailModal } from "@/components/calendario/DayDetailModal"
 import { AddActivityModal } from "@/components/calendario/AddActivityModal"
 import studentApi, { type MateriaApiResponse } from "@/lib/studentApi"
 import { resolveSalaFromRoute } from "@/lib/routeResolver"
-import { toast } from "sonner"
 import { type Atividade } from "@/types/admin"
 import { TipoAtividade } from "@/types/admin"
+import { SalaEmailSubscriptionDialog } from "@/components/lembrete/SalaEmailSubscriptionDialog"
 
 export function CalendarioSemestre() {
   const { courseId, periodId, semesterId } = useParams()
@@ -62,23 +62,10 @@ export function CalendarioSemestre() {
           return
         }
 
-        setSala({ id: resolvedSala.id, nome: resolvedSala.nome, semestre: resolvedSala.semestre })
-
-        const materiasData = await studentApi.getMateriasPorSala(resolvedSala.id)
-        setMaterias(materiasData)
-
-        const atividadesPorMateria = await Promise.all(
-          materiasData.map(async (materia) => {
-            const atividadesData = await studentApi.getAtividadesPorMateria(materia.id)
-            return atividadesData.map((atividade) => ({
-              ...atividade,
-              materiaNome: materia.nome,
-            }))
-          })
-        )
-
-        const todasAtividades = atividadesPorMateria.flat()
-        setAtividades(todasAtividades)
+        const calendarioData = await studentApi.getCalendarioSala(resolvedSala.id)
+        setSala(calendarioData.sala)
+        setMaterias(calendarioData.materias)
+        setAtividades(calendarioData.atividades)
       } catch (err) {
         console.error("Erro ao carregar dados do calendário:", err)
         setErrorMessage("Não foi possível carregar os dados do calendário no momento.")
@@ -119,18 +106,9 @@ export function CalendarioSemestre() {
 
   const handleAtividadeSuccess = async () => {
     if (sala) {
-      const atividadesPorMateria = await Promise.all(
-        materias.map(async (materia) => {
-          const atividadesData = await studentApi.getAtividadesPorMateria(materia.id)
-          return atividadesData.map((atividade) => ({
-            ...atividade,
-            materiaNome: materia.nome,
-          }))
-        })
-      )
-
-      const todasAtividades = atividadesPorMateria.flat()
-      setAtividades(todasAtividades)
+      const calendarioData = await studentApi.getCalendarioSala(sala.id)
+      setMaterias(calendarioData.materias)
+      setAtividades(calendarioData.atividades)
     }
   }
 
@@ -224,6 +202,22 @@ export function CalendarioSemestre() {
               {sala?.nome && ` • ${sala.nome}`}
             </p>
           </div>
+
+          {sala && (
+            <div className="flex flex-col gap-3 rounded-[8px] border-[3px] border-[var(--ink)] bg-[var(--paper)] p-4 shadow-brutal sm:flex-row sm:items-center sm:justify-between">
+              <div className="space-y-1 text-left">
+                <div className="flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-[var(--ink)]/70">
+                  <Bell className="size-4" />
+                  Notificações da sala
+                </div>
+                <p className="text-sm text-[var(--ink)]/80">
+                  Cadastre um e-mail para receber alertas e lembretes desta sala sem sair do calendário.
+                </p>
+              </div>
+
+              <SalaEmailSubscriptionDialog salaId={sala.id} salaNome={sala.nome} />
+            </div>
+          )}
         </div>
       </div>
 
