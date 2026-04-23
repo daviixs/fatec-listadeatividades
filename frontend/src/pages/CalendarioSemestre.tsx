@@ -68,7 +68,11 @@ export function CalendarioSemestre() {
         setAtividades(calendarioData.atividades)
       } catch (err) {
         console.error("Erro ao carregar dados do calendário:", err)
-        setErrorMessage("Não foi possível carregar os dados do calendário no momento.")
+        setErrorMessage(
+          err instanceof Error
+            ? err.message
+            : "Não foi possível carregar os dados do calendário no momento."
+        )
       } finally {
         setLoading(false)
       }

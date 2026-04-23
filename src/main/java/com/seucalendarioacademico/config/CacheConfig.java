@@ -27,7 +27,7 @@ public class CacheConfig extends CachingConfigurerSupport {
     private static final Logger log = LoggerFactory.getLogger(CacheConfig.class);
 
     @Bean
-    @ConditionalOnProperty(name = "spring.cache.type", havingValue = "redis", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring.cache.type", havingValue = "redis")
     public RedisCacheManager cacheManager(
             RedisConnectionFactory connectionFactory,
             AppCacheProperties cacheProperties

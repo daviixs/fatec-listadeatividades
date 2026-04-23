@@ -58,7 +58,11 @@ export function Materias() {
         setMaterias(materiasData);
       } catch (err) {
         console.error('Erro ao carregar matérias:', err);
-        setErrorMessage('Não foi possível carregar as matérias desta sala no momento.');
+        setErrorMessage(
+          err instanceof Error
+            ? err.message
+            : 'Não foi possível carregar as matérias desta sala no momento.'
+        );
       } finally {
         setLoading(false);
       }

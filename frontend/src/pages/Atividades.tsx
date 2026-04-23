@@ -174,8 +174,13 @@ export function Atividades() {
         const atividadesData = await studentApi.getAtividadesPorMateria(resolvedPair.materia.id);
         setAtividades(atividadesData);
         await carregarVotacoes(atividadesData);
-      } catch {
-        setErrorMessage('Não foi possível carregar os dados desta matéria no momento.');
+      } catch (err) {
+        console.error('Erro ao carregar dados da matéria:', err);
+        setErrorMessage(
+          err instanceof Error
+            ? err.message
+            : 'Não foi possível carregar os dados desta matéria no momento.'
+        );
       } finally {
         setLoading(false);
       }
