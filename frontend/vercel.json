@@ -5,6 +5,19 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://listadeatividades.davixs.com.br/",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "neq": "listadeatividades.davixs.com.br"
+          }
+        }
+      ]
+    },
+    {
       "source": "/:path*",
       "destination": "https://listadeatividades.davixs.com.br/:path*",
       "permanent": true,
