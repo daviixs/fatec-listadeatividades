@@ -30,5 +30,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/Favicon/favicon.ico"
+    },
+    {
+      "source": "/((?!api/|assets/|Favicon/|images/|favicon\\.ico|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
