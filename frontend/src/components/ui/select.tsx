@@ -22,7 +22,7 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
   return (
     <SelectPrimitive.Value
       data-slot="select-value"
-      className={cn("flex flex-1 text-left", className)}
+      className={cn("flex min-w-0 flex-1 truncate text-left", className)}
       {...props}
     />
   )
@@ -41,7 +41,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "flex w-fit items-center justify-between gap-2 rounded-[6px] border-[3px] border-ink bg-paper py-2 pr-3 pl-3 text-xs sm:text-sm font-mono uppercase tracking-[0.08em] whitespace-nowrap shadow-brutal transition-transform duration-150 outline-none select-none focus-visible:-translate-y-[1px] focus-visible:bg-accent/60 disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-ink/50 data-[size=default]:h-11 data-[size=sm]:h-10 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "flex w-full max-w-full min-w-0 overflow-hidden items-center justify-between gap-2 rounded-[6px] border-[3px] border-ink bg-paper py-2 pr-3 pl-3 text-xs sm:text-sm font-mono uppercase tracking-[0.08em] whitespace-nowrap shadow-brutal transition-transform duration-150 outline-none select-none focus-visible:-translate-y-[1px] focus-visible:bg-accent/60 disabled:cursor-not-allowed disabled:opacity-50 data-placeholder:text-ink/50 data-[size=default]:h-11 data-[size=sm]:h-10 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -83,7 +83,7 @@ function SelectContent({
         <SelectPrimitive.Popup
           data-slot="select-content"
           data-align-trigger={alignItemWithTrigger}
-          className={cn("relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-40 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[6px] border-[3px] border-ink bg-paper text-ink shadow-brutal duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className )}
+          className={cn("relative isolate z-50 max-h-(--available-height) w-(--anchor-width) max-w-[calc(100vw-2rem)] min-w-40 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[6px] border-[3px] border-ink bg-paper text-ink shadow-brutal duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className )}
           {...props}
         >
           <SelectScrollUpButton />
@@ -117,12 +117,12 @@ function SelectItem({
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        "relative flex w-full cursor-default items-center gap-2 rounded-[4px] py-2 pr-8 pl-3 text-xs sm:text-sm font-mono uppercase tracking-[0.06em] outline-hidden select-none hover:bg-accent/60 hover:text-ink focus:bg-accent focus:text-ink data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative flex w-full min-w-0 cursor-default items-center gap-2 rounded-[4px] py-2 pr-8 pl-3 text-xs sm:text-sm font-mono uppercase tracking-[0.06em] outline-hidden select-none hover:bg-accent/60 hover:text-ink focus:bg-accent focus:text-ink data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
     >
-      <SelectPrimitive.ItemText className="flex flex-1 shrink-0 gap-2 whitespace-nowrap">
+      <SelectPrimitive.ItemText className="flex flex-1 min-w-0 truncate gap-2 whitespace-nowrap">
         {children}
       </SelectPrimitive.ItemText>
       <SelectPrimitive.ItemIndicator

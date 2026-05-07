@@ -43,8 +43,8 @@ export function FilterSidebar({
   return (
     <aside
       className={cn(
-        "w-64 shrink-0 border-r border-slate-200 bg-slate-50 transition-all",
-        isCollapsed && "w-16"
+        "w-full min-w-0 shrink-0 border-b border-slate-200 bg-slate-50 transition-all lg:w-64 lg:border-b-0 lg:border-r",
+        isCollapsed && "lg:w-16"
       )}
     >
       <div className="flex h-full flex-col p-4">

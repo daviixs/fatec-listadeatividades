@@ -225,7 +225,7 @@ export function CalendarioSemestre() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex min-w-0 flex-col gap-6 lg:flex-row">
         <FilterSidebar
           materias={materias}
           materiaSelecionada={materiaFiltro}
@@ -235,7 +235,7 @@ export function CalendarioSemestre() {
           onAdicionarTarefa={handleAdicionarTarefa}
         />
 
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           <div className="flex items-center justify-end mb-3">
             <button
               type="button"
