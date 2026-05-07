@@ -1,9 +1,21 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "builds": [
     { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
   ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://listadeatividades.davixs.com.br/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "neq": "listadeatividades.davixs.com.br"
+          }
+        }
+      ]
+    }
   ]
 }
