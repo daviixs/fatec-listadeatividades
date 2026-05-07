@@ -1,12 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { ActionCard } from '@/components/ui/ActionCard';
-import { getCourseById } from '@/data/courses';
+import { getCourseById, getSemestersByPeriod } from '@/data/courses';
 
 export function Semestre() {
   const { courseId, periodId } = useParams();
   const navigate = useNavigate();
   const course = getCourseById(courseId || '');
+  const semesters = getSemestersByPeriod(courseId || '', periodId);
 
   if (!course) {
     return <div className="p-8 text-center text-slate-500">Curso não encontrado.</div>;
@@ -28,7 +29,7 @@ export function Semestre() {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
-        {course.semesters.map((semester, index) => {
+        {semesters.map((semester, index) => {
           const semNum = semester.name.match(/\d+/)?.[0] || String(index + 1);
 
           return (

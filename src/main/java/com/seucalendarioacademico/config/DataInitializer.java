@@ -54,7 +54,7 @@ public class DataInitializer implements CommandLineRunner {
 
         for (CursoConfig curso : CursoConfig.values()) {
             for (Turno turno : Turno.values()) {
-                if (curso == CursoConfig.DSM && turno == Turno.MANHA) {
+                if (!curso.possuiTurno(turno)) {
                     continue;
                 }
                 for (int semestre = 1; semestre <= 6; semestre++) {
@@ -74,7 +74,7 @@ public class DataInitializer implements CommandLineRunner {
                     var sala = salaDeAulaService.criarSala(salaRequest);
                     salasCriadas++;
 
-                    for (String nomeMateria : curso.getMaterias(semestre)) {
+                    for (String nomeMateria : curso.getMaterias(turno, semestre)) {
                         MateriaRequest materiaRequest = new MateriaRequest(
                             nomeMateria,
                             professorPadrao,

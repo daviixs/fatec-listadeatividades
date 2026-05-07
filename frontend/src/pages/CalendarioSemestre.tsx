@@ -34,7 +34,7 @@ export function CalendarioSemestre() {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
   const course = getCourseById(courseId || "")
-  const semester = getSemesterById(courseId || "", semesterId || "")
+  const semester = getSemesterById(courseId || "", semesterId || "", periodId)
 
   const periodText = periodId === "diurno" ? "Diurno" : "Noturno"
   const formattedSemester = useMemo(

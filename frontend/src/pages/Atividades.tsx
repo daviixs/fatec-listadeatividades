@@ -81,8 +81,8 @@ export function Atividades() {
   const [jaVotou, setJaVotou] = useState<Record<number, boolean>>({});
 
   const course = getCourseById(courseId || '');
-  const semester = getSemesterById(courseId || '', semesterId || '');
-  const legacySubject = getSubjectById(courseId || '', semesterId || '', subjectId || '');
+  const semester = getSemesterById(courseId || '', semesterId || '', periodId);
+  const legacySubject = getSubjectById(courseId || '', semesterId || '', subjectId || '', periodId);
 
   const numericMateriaId = useMemo(() => {
     if (!subjectId) {

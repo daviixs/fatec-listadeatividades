@@ -13,6 +13,16 @@ export function Periodo() {
     return <div className="p-8 text-center text-slate-500">Curso não encontrado.</div>;
   }
 
+  const iconByTurno = {
+    matutino: <Sun className="w-8 h-8 text-amber-500" />,
+    noturno: <Moon className="w-8 h-8 text-slate-600" />,
+  };
+
+  const titleByTurno = {
+    matutino: 'Manhã',
+    noturno: 'Noite',
+  };
+
   return (
     <PageTransition>
       <div className="mb-6 sm:mb-8 lg:mb-10 animate-in-fade space-y-3">
@@ -27,21 +37,16 @@ export function Periodo() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-        <ActionCard
-          title="Manhã"
-          badge="01"
-          icon={<Sun className="w-8 h-8 text-amber-500" />}
-          delay={0.1}
-          onClick={() => navigate(`/${course.id}/diurno/semestres`)}
-        />
-
-        <ActionCard
-          title="Noite"
-          badge="02"
-          icon={<Moon className="w-8 h-8 text-slate-600" />}
-          delay={0.2}
-          onClick={() => navigate(`/${course.id}/noturno/semestres`)}
-        />
+        {course.turnos.map((turno, index) => (
+          <ActionCard
+            key={turno.id}
+            title={titleByTurno[turno.id]}
+            badge={String(index + 1).padStart(2, '0')}
+            icon={iconByTurno[turno.id]}
+            delay={(index + 1) * 0.1}
+            onClick={() => navigate(`/${course.id}/${turno.periodId}/semestres`)}
+          />
+        ))}
       </div>
     </PageTransition>
   );

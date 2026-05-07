@@ -810,4 +810,4 @@ export const schedules: CourseSchedule[] = [
       },
     ],
   },
-];
+]
