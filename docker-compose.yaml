@@ -6,6 +6,7 @@ services:
       - "traefik.http.routers.app.rule=Host(`api.listadeatividades.davixs.com.br`)"
       - "traefik.http.routers.app.entrypoints=https"
       - "traefik.http.routers.app.tls=true"
+      - "traefik.http.routers.app.tls.certresolver=letsencrypt"
       - "traefik.http.services.app.loadbalancer.server.port=9090"
     expose:
       - "9090"
@@ -14,9 +15,6 @@ services:
 
   redis:
     image: 'redis:7.4-alpine'
-    container_name: seu-calendario-academico-redis
-    ports:
-      - '6379:6379'
     volumes:
       - 'redis_data:/data'
 
