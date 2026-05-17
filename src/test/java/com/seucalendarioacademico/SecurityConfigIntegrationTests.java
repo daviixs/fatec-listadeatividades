@@ -13,6 +13,7 @@ import java.util.UUID;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -24,6 +25,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         })
 @AutoConfigureMockMvc
 class SecurityConfigIntegrationTests {
+    private static final String FRONTEND_PRODUCAO_ORIGIN = "https://listadeatividades.davixs.com.br";
+
 
     @Autowired
     private SalaDeAulaRepository salaRepository;
@@ -61,6 +64,27 @@ class SecurityConfigIntegrationTests {
         mockMvc.perform(get("/api/salas"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("ADS 1° DIURNO")));
+    }
+
+    @Test
+    void devePermitirPreflightOptionsDeOrigemDeProducaoParaSalas() throws Exception {
+        mockMvc.perform(options("/api/salas")
+                        .header("Origin", FRONTEND_PRODUCAO_ORIGIN)
+                        .header("Access-Control-Request-Method", "GET")
+                        .header("Access-Control-Request-Headers", "X-Test-Header"))
+                .andExpect(status().isOk())
+                .andExpect(header().string("Access-Control-Allow-Origin", FRONTEND_PRODUCAO_ORIGIN))
+                .andExpect(header().string("Access-Control-Allow-Methods", containsString("GET")));
+    }
+
+    @Test
+    void deveRetornarCabecalhoCorsEmGetDeSalasParaFrontendDeProducao() throws Exception {
+        salaRepository.save(novaSala("ADS 1° DIURNO", "1"));
+
+        mockMvc.perform(get("/api/salas")
+                        .header("Origin", FRONTEND_PRODUCAO_ORIGIN))
+                .andExpect(status().isOk())
+                .andExpect(header().string("Access-Control-Allow-Origin", FRONTEND_PRODUCAO_ORIGIN));
     }
 
     @Test
