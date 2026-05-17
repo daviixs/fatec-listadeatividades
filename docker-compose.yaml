@@ -6,9 +6,9 @@ services:
       - "traefik.http.routers.app.rule=Host(`api.listadeatividades.davixs.com.br`)"
       - "traefik.http.routers.app.entrypoints=https"
       - "traefik.http.routers.app.tls=true"
-      - "traefik.http.services.app.loadbalancer.server.port=8080"
+      - "traefik.http.services.app.loadbalancer.server.port=9090"
     expose:
-      - "8080"
+      - "9090"
     depends_on:
       - redis
 
