@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { getWeeksOfMonth, formatMonthYear } from "@/lib/calendarUtils"
+import { dateToLocalDateKey, localDateKey } from "@/lib/localDate"
 import { type Atividade, TipoAtividade } from "@/types/admin"
 import { CalendarDay } from "./CalendarDay"
 import { DayTooltip } from "./DayTooltip"
@@ -64,9 +65,11 @@ export function CalendarGrid({
 
   const getActivitiesForDay = (date: Date | null): Atividade[] => {
     if (!date) return []
+    const dayKey = dateToLocalDateKey(date)
+
     return atividades.filter((atividade) => {
-      const atividadeDate = new Date(atividade.prazo)
-      return atividadeDate.toDateString() === date.toDateString()
+      const prazoKey = localDateKey(atividade.prazo)
+      return prazoKey !== null && prazoKey === dayKey
     })
   }
 

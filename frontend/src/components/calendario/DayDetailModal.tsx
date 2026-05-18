@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { cn } from "@/lib/utils"
-import { formatDateFull, formatDate } from "@/lib/calendarUtils"
+import { formatDateFull } from "@/lib/calendarUtils"
+import { formatLocalDatePtBr } from "@/lib/localDate"
 import { type Atividade } from "@/types/admin"
 import { TipoAtividade, StatusAprovacao } from "@/types/admin"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -169,7 +170,7 @@ export function DayDetailModal({
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-slate-700">Prazo:</span>
                         <span className="text-slate-900">
-                          {formatDate(new Date(atividade.prazo))}
+                          {formatLocalDatePtBr(atividade.prazo)}
                         </span>
                       </div>
                       <div className="flex items-center justify-between">

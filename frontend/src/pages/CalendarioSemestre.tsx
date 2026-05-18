@@ -12,6 +12,7 @@ import { DayDetailModal } from "@/components/calendario/DayDetailModal"
 import { AddActivityModal } from "@/components/calendario/AddActivityModal"
 import studentApi, { type MateriaApiResponse } from "@/lib/studentApi"
 import { resolveSalaFromRoute } from "@/lib/routeResolver"
+import { dateToLocalDateKey, localDateKey } from "@/lib/localDate"
 import { type Atividade } from "@/types/admin"
 import { TipoAtividade } from "@/types/admin"
 import { SalaEmailSubscriptionDialog } from "@/components/lembrete/SalaEmailSubscriptionDialog"
@@ -133,10 +134,11 @@ export function CalendarioSemestre() {
 
   const atividadesDoDia = useMemo(() => {
     if (!diaSelecionado) return []
-    const diaData = new Date(diaSelecionado)
+    const diaKey = dateToLocalDateKey(diaSelecionado)
+
     return filteredAtividades.filter((atividade) => {
-      const atividadeDate = new Date(atividade.prazo)
-      return atividadeDate.toDateString() === diaData.toDateString()
+      const prazoKey = localDateKey(atividade.prazo)
+      return prazoKey !== null && prazoKey === diaKey
     })
   }, [diaSelecionado, filteredAtividades])
 
