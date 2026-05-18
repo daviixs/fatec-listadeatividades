@@ -1,4 +1,5 @@
 const LOCAL_DATE_RE = /^(\d{4})-(\d{2})-(\d{2})$/
+const MIN_SUPPORTED_YEAR = 100
 
 export function parseLocalDate(value: string): Date | null {
   const match = LOCAL_DATE_RE.exec(value)
@@ -9,6 +10,12 @@ export function parseLocalDate(value: string): Date | null {
   const year = Number(match[1])
   const monthIndex = Number(match[2]) - 1
   const day = Number(match[3])
+
+  // JS Date constructor remaps years 0..99 to 1900..1999.
+  // Keep parser contract explicit: only 0100-9999 is supported.
+  if (year < MIN_SUPPORTED_YEAR) {
+    return null
+  }
 
   const parsed = new Date(year, monthIndex, day)
 
