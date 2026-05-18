@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LayoutDashboard, Mail, FileText, Users, LogOut, Trash2 } from 'lucide-react';
 import { masterAdminApi, masterAdminStorage } from '@/lib/masterAdminApi';
+import { formatLocalDatePtBr } from '@/lib/localDate';
 import type { EmailAssinanteResponse, AtividadeAdminResponse, SalaAdminResponse } from '@/types/admin';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -292,7 +293,7 @@ export function MasterAdminDashboard() {
                     </p>
                     {atividade.prazo && (
                       <p className="text-sm text-slate-500 dark:text-slate-500 mt-2">
-                        Prazo: {new Date(atividade.prazo).toLocaleDateString('pt-BR')}
+                        Prazo: {formatLocalDatePtBr(atividade.prazo)}
                       </p>
                     )}
                   </div>

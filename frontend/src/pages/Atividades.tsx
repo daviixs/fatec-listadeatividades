@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/select';
 import { toast } from 'sonner';
 import studentApi, { type MateriaApiResponse } from '@/lib/studentApi';
+import { formatLocalDatePtBr } from '@/lib/localDate';
 import { normalizeText, resolveCandidateSalasFromRoute } from '@/lib/routeResolver';
 import { TipoAtividade, TipoEntrega, type Atividade } from '@/types/admin';
 import type { VotacaoCancelamento } from '@/types';
@@ -412,7 +413,7 @@ export function Atividades() {
                       {activity.titulo}
                     </td>
                     <td className="py-4 px-6 text-sm text-slate-600">
-                      {new Date(activity.prazo).toLocaleDateString('pt-BR')}
+                      {formatLocalDatePtBr(activity.prazo)}
                     </td>
                     <td className="py-4 px-6 text-sm text-slate-600">
                       {activity.tipoEntrega === 'LINK_EXTERNO' ? 'Link Externo' : 'Entrega Manual'}
@@ -480,7 +481,7 @@ export function Atividades() {
                     <div className="flex flex-wrap gap-3 sm:gap-6">
                       <div className="flex items-center gap-2 text-sm text-slate-600">
                         <Clock className="w-4 h-4 shrink-0" />
-                        <span>{new Date(activity.prazo).toLocaleDateString('pt-BR')}</span>
+                        <span>{formatLocalDatePtBr(activity.prazo)}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600">
                         <FileText className="w-4 h-4 shrink-0" />
@@ -529,7 +530,7 @@ export function Atividades() {
                           </p>
                           <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">{atividade.titulo}</h4>
                           <p className="text-xs sm:text-sm text-slate-600">
-                            Prazo: {new Date(atividade.prazo).toLocaleDateString('pt-BR')}
+                            Prazo: {formatLocalDatePtBr(atividade.prazo)}
                           </p>
                         </div>
                         {cancelada && (

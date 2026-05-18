@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Calendar, Clock, FileText, Edit, Trash2 } from 'lucide-react';
 import { adminApi } from '@/lib/adminApi';
+import { formatLocalDatePtBr } from '@/lib/localDate';
 import type { Atividade } from '@/types/admin';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -111,11 +112,7 @@ export function AdminProvas() {
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                       <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       <span className="font-medium">
-                        {new Date(prova.prazo).toLocaleDateString('pt-BR', {
-                          day: '2-digit',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
+                        {formatLocalDatePtBr(prova.prazo)}
                       </span>
                     </div>
                   </div>

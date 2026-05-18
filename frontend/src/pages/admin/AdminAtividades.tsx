@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PlusCircle, Check, X, Edit, Trash2, Filter } from 'lucide-react';
 import { adminApi } from '@/lib/adminApi';
+import { formatLocalDatePtBr } from '@/lib/localDate';
 import type { Atividade } from '@/types/admin';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -169,7 +170,7 @@ export function AdminAtividades() {
                         </p>
                         <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
                           <span>📚 {atividade.materiaNome}</span>
-                          <span>📅 Prazo: {new Date(atividade.prazo).toLocaleDateString('pt-BR')}</span>
+                          <span>📅 Prazo: {formatLocalDatePtBr(atividade.prazo)}</span>
                         </div>
                       </div>
                       <div className="flex gap-2">
